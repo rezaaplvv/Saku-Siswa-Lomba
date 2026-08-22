@@ -7,29 +7,30 @@
         </svg>
     </div>
 
-    <!-- Header Banner Card (Inverted Dark Slate Container - Fully Optimized Mobile & Desktop) -->
-    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-md flex items-center justify-between min-h-[120px] sm:min-h-[140px] md:min-h-[160px] relative z-10 font-['Outfit'] text-white">
+    <!-- Header Banner Card (Inverted Dark Slate Container - Fully Centered Illustration & Enlarged Title) -->
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-md flex items-center justify-between min-h-[130px] sm:min-h-[145px] md:min-h-[165px] relative z-10 font-['Outfit'] text-white">
         
-        <div class="text-left space-y-2 sm:space-y-3 relative z-10 pr-24 sm:pr-36 md:pr-48">
-            <div class="space-y-0.5 sm:space-y-1">
-                <h1 class="text-lg sm:text-2xl md:text-3xl font-black text-white tracking-tight">Riwayat Transaksi</h1>
+        <div class="text-left space-y-2 relative z-10 pr-28 sm:pr-44 md:pr-56">
+            <div class="space-y-0.5">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">Riwayat Transaksi</h1>
             </div>
             
-            <!-- Badges Layout (Unified Mobile & Desktop) -->
+            <!-- Badges Layout (Compact Size) -->
             <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
                 @if(Auth::user()->school_name)
-                    <div class="inline-flex items-center px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-white/10 text-white border border-white/20 backdrop-blur-xs rounded-full text-[10px] sm:text-xs font-bold shadow-xs">
+                    <div class="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 bg-white/10 text-white border border-white/20 backdrop-blur-xs rounded-full text-[9px] sm:text-[11px] font-bold shadow-xs">
                         <span>{{ Auth::user()->school_name }}</span>
                     </div>
                 @endif
-                <div class="inline-flex items-center px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-[10px] sm:text-xs font-black shadow-xs">
+                <div class="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 bg-[#ffd554] text-slate-950 rounded-full text-[9px] sm:text-[11px] font-black shadow-xs">
                     <span>Kelas {{ $className }}</span>
                 </div>
             </div>
         </div>
 
-        <div class="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-32 h-28 sm:w-48 sm:h-36 md:w-72 md:h-48 pointer-events-none z-0">
-            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-bottom">
+        <!-- Centered Vertical Illustration on Right -->
+        <div class="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 w-36 h-36 sm:w-52 sm:h-52 md:w-64 md:h-64 pointer-events-none z-0">
+            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-center">
         </div>
     </div>
 
