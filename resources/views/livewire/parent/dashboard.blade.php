@@ -153,7 +153,58 @@
             </div>
         </div>
 
-        <!-- 3. Target Tabungan Anak Card (Di atas Informasi Identitas Siswa) -->
+        <!-- 3. Informasi Identitas Siswa Card (With Ajukan Penarikan Button) -->
+        <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs relative z-10">
+            <div class="flex items-center space-x-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                </div>
+                <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider font-['Outfit']">Informasi Identitas Siswa</h4>
+            </div>
+
+            <div class="space-y-1">
+                <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-500">Nama Lengkap</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-900 tracking-tight">{{ $student->name }}</span>
+                </div>
+
+                <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm-1.25 5.25a3.75 3.75 0 00-5 0v1.125h5v-1.125z" />
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-500">NISN</span>
+                    </div>
+                    <span class="text-xs font-mono font-extrabold text-slate-900">{{ $student->nisn }}</span>
+                </div>
+
+                <div class="flex items-center justify-between py-3.5">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147L12 3.75l7.74 6.397m-15.48 0L12 16.5l7.74-6.353m-15.48 0v4.441c0 .762.407 1.464 1.072 1.84L12 20.25l6.668-3.952c.665-.376 1.072-1.078 1.072-1.84V10.147" />
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-500">Kelas</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-900">{{ $student->class_name }}</span>
+                </div>
+            </div>
+
+            <button @click="showModal = true" class="w-full mt-5 py-3.5 bg-[#ffd554] hover:bg-[#e5bf43] text-slate-900 text-sm font-extrabold rounded-2xl shadow-md shadow-amber-500/10 active:scale-[0.99] transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                <span>Ajukan Penarikan Saldo</span>
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- 4. Target Tabungan Anak Card -->
         @php
             $percentage = $student->saving_target > 0 ? min(100, round(($student->balance / $student->saving_target) * 100)) : 0;
         @endphp
@@ -211,57 +262,6 @@
                 <span>Mencapai Rp {{ number_format($student->balance, 0, ',', '.') }}</span>
                 <span>Target: Rp {{ number_format($student->saving_target, 0, ',', '.') }} ({{ $percentage }}%)</span>
             </div>
-        </div>
-
-        <!-- 4. Informasi Identitas Siswa Card (With Ajukan Penarikan Button) -->
-        <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs relative z-10">
-            <div class="flex items-center space-x-3 mb-5">
-                <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 shrink-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                    </svg>
-                </div>
-                <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider font-['Outfit']">Informasi Identitas Siswa</h4>
-            </div>
-
-            <div class="space-y-1">
-                <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
-                    <div class="flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                        </svg>
-                        <span class="text-xs font-semibold text-slate-500">Nama Lengkap</span>
-                    </div>
-                    <span class="text-xs font-extrabold text-slate-900 tracking-tight">{{ $student->name }}</span>
-                </div>
-
-                <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
-                    <div class="flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm-1.25 5.25a3.75 3.75 0 00-5 0v1.125h5v-1.125z" />
-                        </svg>
-                        <span class="text-xs font-semibold text-slate-500">NISN</span>
-                    </div>
-                    <span class="text-xs font-mono font-extrabold text-slate-900">{{ $student->nisn }}</span>
-                </div>
-
-                <div class="flex items-center justify-between py-3.5">
-                    <div class="flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147L12 3.75l7.74 6.397m-15.48 0L12 16.5l7.74-6.353m-15.48 0v4.441c0 .762.407 1.464 1.072 1.84L12 20.25l6.668-3.952c.665-.376 1.072-1.078 1.072-1.84V10.147" />
-                        </svg>
-                        <span class="text-xs font-semibold text-slate-500">Kelas</span>
-                    </div>
-                    <span class="text-xs font-extrabold text-slate-900">{{ $student->class_name }}</span>
-                </div>
-            </div>
-
-            <button @click="showModal = true" class="w-full mt-5 py-3.5 bg-[#ffd554] hover:bg-[#e5bf43] text-slate-900 text-sm font-extrabold rounded-2xl shadow-md shadow-amber-500/10 active:scale-[0.99] transition-all flex items-center justify-center space-x-2 cursor-pointer">
-                <span>Ajukan Penarikan Saldo</span>
-                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-            </button>
         </div>
 
         <!-- 5. 3 Transaksi Terakhir Card -->
