@@ -176,70 +176,81 @@
         <!-- BOTTOM GRID (2-COLUMN ON DESKTOP) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
             
-            <!-- LEFT COLUMN: KEAMANAN AKUN -->
-            <div class="bg-white rounded-3xl p-6 shadow-xs border border-slate-100/80 space-y-4">
-                <div class="flex items-center space-x-2 pb-1">
-                    <div class="w-6 h-6 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 shrink-0">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                        </svg>
-                    </div>
-                    <h4 class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wider">Keamanan Akun</h4>
-                </div>
-
-                <div class="space-y-3">
-                    <!-- Action Button 1: Ubah PIN Penarikan -->
-                    <button type="button" 
-                            @click="modalType = 'pin'; showModal = true" 
-                            class="flex items-center justify-between w-full p-4 rounded-2xl border border-slate-100 bg-[#fffdf9] hover:bg-amber-50/30 hover:border-amber-200/60 transition-all cursor-pointer text-left group">
-                        <div class="flex items-center space-x-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100/60 flex items-center justify-center text-amber-700 shrink-0 group-hover:scale-105 transition-transform">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h5 class="text-xs font-bold text-slate-800">Ubah PIN Penarikan (6-Digit)</h5>
-                                <p class="text-[10px] text-slate-400 font-medium mt-0.5">Keamanan otorisasi saat melakukan tarik tabungan</p>
-                            </div>
-                        </div>
-                        <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
-
-                    <!-- Action Button 2: Ubah Password Login -->
-                    <button type="button" 
-                            @click="modalType = 'password'; showModal = true" 
-                            class="flex items-center justify-between w-full p-4 rounded-2xl border border-slate-100 bg-[#fffdf9] hover:bg-amber-50/30 hover:border-amber-200/60 transition-all cursor-pointer text-left group">
-                        <div class="flex items-center space-x-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100/60 flex items-center justify-center text-amber-700 shrink-0 group-hover:scale-105 transition-transform">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h5 class="text-xs font-bold text-slate-800">Ubah Password Login</h5>
-                                <p class="text-[10px] text-slate-400 font-medium mt-0.5">Perbarui kata sandi untuk masuk ke aplikasi SakuSiswa</p>
-                            </div>
-                        </div>
-                        <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- RIGHT COLUMN: STATUS KARTU & LOGOUT ACTION -->
+            <!-- LEFT COLUMN: KEAMANAN AKUN & LOGOUT ACTION -->
             <div class="space-y-4">
-                <!-- CARD: Status Kartu Identitas Siswa -->
+                <!-- CARD 1: Keamanan Akun -->
                 <div class="bg-white rounded-3xl p-6 shadow-xs border border-slate-100/80 space-y-4">
                     <div class="flex items-center space-x-2 pb-1">
                         <div class="w-6 h-6 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 shrink-0">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5ptm-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                             </svg>
                         </div>
+                        <h4 class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wider">Keamanan Akun</h4>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Action Button 1: Ubah PIN Penarikan -->
+                        <button type="button" 
+                                @click="modalType = 'pin'; showModal = true" 
+                                class="flex items-center justify-between w-full p-4 rounded-2xl border border-slate-100 bg-[#fffdf9] hover:bg-amber-50/30 hover:border-amber-200/60 transition-all cursor-pointer text-left group">
+                            <div class="flex items-center space-x-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100/60 flex items-center justify-center text-amber-700 shrink-0 group-hover:scale-105 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-slate-800">Ubah PIN Penarikan (6-Digit)</h5>
+                                    <p class="text-[10px] text-slate-400 font-medium mt-0.5">Keamanan otorisasi saat melakukan tarik tabungan</p>
+                                </div>
+                            </div>
+                            <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+
+                        <!-- Action Button 2: Ubah Password Login -->
+                        <button type="button" 
+                                @click="modalType = 'password'; showModal = true" 
+                                class="flex items-center justify-between w-full p-4 rounded-2xl border border-slate-100 bg-[#fffdf9] hover:bg-amber-50/30 hover:border-amber-200/60 transition-all cursor-pointer text-left group">
+                            <div class="flex items-center space-x-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100/60 flex items-center justify-center text-amber-700 shrink-0 group-hover:scale-105 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-slate-800">Ubah Password Login</h5>
+                                    <p class="text-[10px] text-slate-400 font-medium mt-0.5">Perbarui kata sandi untuk masuk ke aplikasi SakuSiswa</p>
+                                </div>
+                            </div>
+                            <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD: Logout Action (Moved to Left Column under Keamanan Akun) -->
+                <div class="bg-white rounded-3xl p-5 shadow-xs border border-slate-100/80">
+                    <form method="POST" action="{{ route('logout') }}" class="w-full">
+                        @csrf
+                        <button type="submit" class="w-full py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-xs transition-all active:scale-[0.98] cursor-pointer shadow-md font-sans">
+                            <svg class="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                            </svg>
+                            <span>Keluar dari Akun</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: STATUS KARTU & HUBUNGI ADMIN -->
+            <div class="space-y-4">
+                <!-- CARD 2: Status Kartu Identitas Siswa (Icon removed) -->
+                <div class="bg-white rounded-3xl p-6 shadow-xs border border-slate-100/80 space-y-4">
+                    <div class="pb-1">
                         <h4 class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wider">Status Kartu Identitas Tabungan</h4>
                     </div>
 
@@ -261,17 +272,12 @@
                     </div>
                 </div>
 
-                <!-- CARD 3: Hubungi Admin SakuSiswa -->
+                <!-- CARD 3: Hubungi Admin SakuSiswa (Icon removed) -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs text-slate-800 relative z-10 overflow-hidden flex flex-col justify-between min-h-[175px]">
                     <div class="flex">
                         <!-- Left Side Details -->
                         <div class="w-3/5 pr-1 z-10">
-                            <div class="flex items-center space-x-2.5 mb-2.5">
-                                <div class="w-6 h-6 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 shrink-0">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-                                    </svg>
-                                </div>
+                            <div class="mb-2.5">
                                 <h5 class="text-[11px] font-extrabold text-slate-800 uppercase tracking-wider font-['Outfit']">Hubungi Admin SakuSiswa</h5>
                             </div>
                             <p class="text-[10px] text-slate-500 font-semibold leading-relaxed mb-4">
@@ -300,19 +306,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </a>
-                </div>
-
-                <!-- CARD: Logout Action -->
-                <div class="bg-white rounded-3xl p-5 shadow-xs border border-slate-100/80">
-                    <form method="POST" action="{{ route('logout') }}" class="w-full">
-                        @csrf
-                        <button type="submit" class="w-full py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-xs transition-all active:scale-[0.98] cursor-pointer shadow-md font-sans">
-                            <svg class="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                            </svg>
-                            <span>Keluar dari Akun</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
