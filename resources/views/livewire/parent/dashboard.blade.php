@@ -183,7 +183,12 @@
                 <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm-1.25 5.25a3.75 3.75 0 00-5 0v1.125h5v-1.125z" />
+                            <rect x="3" y="4" width="18" height="16" rx="3" stroke-width="2" />
+                            <circle cx="9" cy="10" r="2" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 16c0-1.8 1.5-2.5 3-2.5s3 .7 3 2.5" />
+                            <line x1="14" y1="9" x2="18" y2="9" stroke-linecap="round" />
+                            <line x1="14" y1="12.5" x2="18" y2="12.5" stroke-linecap="round" />
+                            <line x1="14" y1="16" x2="16.5" y2="16" stroke-linecap="round" />
                         </svg>
                         <span class="text-xs font-semibold text-slate-500">NISN</span>
                     </div>
