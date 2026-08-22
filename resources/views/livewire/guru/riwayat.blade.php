@@ -7,21 +7,21 @@
         </svg>
     </div>
 
-    <!-- Header Welcome/Banner Area (Pure White Container) -->
-    <div class="relative overflow-hidden bg-white border border-white rounded-3xl p-6 shadow-sm flex items-center justify-between min-h-[160px] relative z-10 font-['Outfit']">
+    <!-- Header Welcome/Banner Area (Dark Container with White Text) -->
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-md flex items-center justify-between min-h-[160px] relative z-10 font-['Outfit'] text-white">
         <!-- Info Left Section -->
         <div class="text-left space-y-3.5 relative z-10 pr-24 md:pr-48">
             <div class="space-y-1.5">
-                <h1 class="text-2xl md:text-3xl font-black text-[#0f172a] tracking-tight">Riwayat Transaksi</h1>
-                <p class="text-xs md:text-sm text-slate-500 font-semibold leading-relaxed max-w-[280px] xs:max-w-xs md:max-w-md">Pantau riwayat setor tunai dan penarikan tabungan kelas Anda</p>
+                <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">Riwayat Transaksi</h1>
+                <p class="text-xs md:text-sm text-slate-300 font-semibold leading-relaxed max-w-[280px] xs:max-w-xs md:max-w-md">Pantau riwayat setor tunai dan penarikan tabungan kelas Anda</p>
             </div>
             
             @if($className)
                 <!-- Pill Badge: KELAS AKTIF | 1-A -->
-                <div class="inline-flex items-center space-x-2.5 px-4 py-2 bg-white border border-slate-200 rounded-full text-[11px] font-black shadow-2xs">
-                    <span class="text-slate-500 uppercase tracking-wider">Kelas Aktif</span>
-                    <span class="text-slate-300">|</span>
-                    <span class="text-slate-900">{{ $className }}</span>
+                <div class="inline-flex items-center space-x-2.5 px-4 py-2 bg-white/10 border border-white/20 backdrop-blur-xs rounded-full text-[11px] font-black shadow-xs">
+                    <span class="text-slate-300 uppercase tracking-wider">Kelas Aktif</span>
+                    <span class="text-white/30">|</span>
+                    <span class="text-amber-400 font-extrabold">{{ $className }}</span>
                 </div>
             @endif
         </div>
