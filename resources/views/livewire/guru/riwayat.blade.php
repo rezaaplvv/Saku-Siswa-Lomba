@@ -7,8 +7,15 @@
         </svg>
     </div>
 
-    <!-- Header Welcome/Banner Area (Dark Container with White Text) -->
+    <!-- Header Welcome/Banner Area (Dark Container with White Text & High Contrast Badges) -->
     <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-md flex items-center justify-between min-h-[160px] relative z-10 font-['Outfit'] text-white">
+        <!-- Mobile Only: Top Right Corner Badge (Nama Sekolah) -->
+        @if(Auth::user()->school_name)
+            <div class="md:hidden absolute top-4 right-4 z-20 inline-flex items-center px-3 py-1 bg-white/10 text-white rounded-full text-[10px] font-extrabold shadow-xs border border-white/20 backdrop-blur-xs">
+                <span>{{ Auth::user()->school_name }}</span>
+            </div>
+        @endif
+
         <!-- Info Left Section -->
         <div class="text-left space-y-3.5 relative z-10 pr-24 md:pr-48">
             <div class="space-y-1">
@@ -17,19 +24,29 @@
                 </div>
             </div>
             
-            @if($className)
-                <!-- Pill Badge: KELAS AKTIF | 1-A -->
-                <div class="inline-flex items-center space-x-2.5 px-4 py-2 bg-white/10 border border-white/20 backdrop-blur-xs rounded-full text-[11px] font-black shadow-xs">
-                    <span class="text-slate-300 uppercase tracking-wider">Kelas Aktif</span>
-                    <span class="text-white/30">|</span>
-                    <span class="text-amber-400 font-extrabold">{{ $className }}</span>
+            <!-- Mobile Badge Layout (Only Kelas under title) -->
+            <div class="flex md:hidden items-center gap-2">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
+                    <span>Kelas {{ $className }}</span>
                 </div>
-            @endif
+            </div>
+
+            <!-- Desktop Badge Layout (Side-by-side under title: Nama Sekolah + Kelas) -->
+            <div class="hidden md:flex flex-wrap items-center gap-2">
+                @if(Auth::user()->school_name)
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 backdrop-blur-xs rounded-full text-xs font-bold shadow-xs">
+                        <span>{{ Auth::user()->school_name }}</span>
+                    </div>
+                @endif
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
+                    <span>Kelas {{ $className }}</span>
+                </div>
+            </div>
         </div>
 
-        <!-- Header Illustration on the right -->
-        <div class="absolute -right-4 -bottom-3 w-52 h-40 md:w-72 md:h-48 pointer-events-none z-0">
-            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-bottom scale-105">
+        <!-- Header Illustration on the right (Exact size and position matching Kelola Siswa) -->
+        <div class="absolute -right-4 -bottom-4 w-52 h-40 md:w-72 md:h-48 pointer-events-none z-0">
+            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-bottom">
         </div>
     </div>
 
