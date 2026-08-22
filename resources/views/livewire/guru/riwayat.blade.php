@@ -11,9 +11,10 @@
     <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-md flex items-center justify-between min-h-[160px] relative z-10 font-['Outfit'] text-white">
         <!-- Info Left Section -->
         <div class="text-left space-y-3.5 relative z-10 pr-24 md:pr-48">
-            <div class="space-y-1.5">
-                <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">Riwayat Transaksi</h1>
-                <p class="text-xs md:text-sm text-slate-300 font-semibold leading-relaxed max-w-[280px] xs:max-w-xs md:max-w-md">Pantau riwayat setor tunai dan penarikan tabungan kelas Anda</p>
+            <div class="space-y-1">
+                <div class="flex items-center space-x-2">
+                    <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">Riwayat Transaksi</h1>
+                </div>
             </div>
             
             @if($className)
