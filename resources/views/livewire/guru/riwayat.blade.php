@@ -8,9 +8,9 @@
     </div>
 
     <!-- Header Banner Card (Inverted Dark Slate Container - Fully Centered Illustration & Enlarged Title) -->
-    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-md flex items-center justify-between min-h-[130px] sm:min-h-[145px] md:min-h-[165px] relative z-10 font-['Outfit'] text-white">
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-md flex items-center justify-between min-h-[135px] sm:min-h-[150px] md:min-h-[170px] relative z-10 font-['Outfit'] text-white">
         
-        <div class="text-left space-y-2 relative z-10 pr-28 sm:pr-44 md:pr-56">
+        <div class="text-left space-y-2 relative z-10 pr-28 sm:pr-48 md:pr-60">
             <div class="space-y-0.5">
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">Riwayat Transaksi</h1>
             </div>
@@ -28,9 +28,9 @@
             </div>
         </div>
 
-        <!-- Centered Vertical Illustration on Right -->
-        <div class="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 w-36 h-36 sm:w-52 sm:h-52 md:w-64 md:h-64 pointer-events-none z-0">
-            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-center">
+        <!-- Centered Vertical Illustration on Right (Enlarged) -->
+        <div class="absolute -right-3 sm:-right-4 top-1/2 -translate-y-1/2 w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 pointer-events-none z-0">
+            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-center scale-110 sm:scale-105">
         </div>
     </div>
 
