@@ -261,23 +261,6 @@
                     </div>
                 </div>
 
-                <!-- CARD: Logout Action -->
-                <div class="bg-white rounded-3xl p-5 shadow-xs border border-slate-100/80">
-                    <form method="POST" action="{{ route('logout') }}" class="w-full">
-                        @csrf
-                        <button type="submit" class="w-full py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-xs transition-all active:scale-[0.98] cursor-pointer shadow-md font-sans">
-                            <svg class="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                            </svg>
-                            <span>Keluar dari Akun</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
                 <!-- CARD 3: Hubungi Admin SakuSiswa -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs text-slate-800 relative z-10 overflow-hidden flex flex-col justify-between min-h-[175px]">
                     <div class="flex">
@@ -317,6 +300,19 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                     </a>
+                </div>
+
+                <!-- CARD: Logout Action -->
+                <div class="bg-white rounded-3xl p-5 shadow-xs border border-slate-100/80">
+                    <form method="POST" action="{{ route('logout') }}" class="w-full">
+                        @csrf
+                        <button type="submit" class="w-full py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-xs transition-all active:scale-[0.98] cursor-pointer shadow-md font-sans">
+                            <svg class="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                            </svg>
+                            <span>Keluar dari Akun</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
