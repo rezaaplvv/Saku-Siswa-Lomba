@@ -342,8 +342,8 @@
         <div class="bg-[#fffbeb] border border-amber-200/60 rounded-2xl p-5 shadow-xs text-slate-800">
             <div class="flex items-center space-x-2.5 mb-2.5">
                 <div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 shrink-0">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z" />
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-1.5m0 0a6 6 0 10-6-6c0 2.22 1.21 4.156 3 5.19V18a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0012 18zM9.75 21h4.5" />
                     </svg>
                 </div>
                 <h5 class="text-xs font-extrabold text-amber-800 uppercase tracking-wider">Tips Hari Ini</h5>
@@ -574,8 +574,8 @@
                 <div class="bg-[#fffbeb] border border-amber-200/70 rounded-3xl p-5 shadow-xs text-slate-800 space-y-2.5">
                     <div class="flex items-center space-x-2">
                         <div class="w-6 h-6 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 shrink-0">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z" />
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-1.5m0 0a6 6 0 10-6-6c0 2.22 1.21 4.156 3 5.19V18a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0012 18zM9.75 21h4.5" />
                             </svg>
                         </div>
                         <h5 class="text-xs font-extrabold text-amber-900 uppercase tracking-wider">Tips Keuangan Hari Ini</h5>
