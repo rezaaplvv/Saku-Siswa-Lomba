@@ -99,47 +99,49 @@
         </div>
     </div>
 
-    <!-- Active Summary Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 md:gap-4 relative z-10 no-print font-['Outfit']">
-        <!-- 1. Total Setoran Card -->
-        <div class="bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-950 text-white rounded-3xl p-4.5 sm:p-5 shadow-md relative overflow-hidden border border-emerald-700/30 flex items-center justify-between min-h-[110px]">
-            <div class="space-y-1 relative z-10">
-                <span class="text-[9px] sm:text-[10px] text-white/90 font-extrabold uppercase tracking-wider block">Total Setoran</span>
-                <span class="text-base sm:text-xl font-black text-white block">Rp {{ number_format($totalSetoran, 0, ',', '.') }}</span>
-                <span class="text-[9px] text-white/80 font-semibold block">Total akumulasi dana masuk</span>
-            </div>
-            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 flex items-center justify-center text-white shrink-0 relative z-10">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-                </svg>
-            </div>
-        </div>
-
-        <!-- 2. Total Penarikan Card -->
-        <div class="bg-gradient-to-br from-rose-900 via-rose-950 to-pink-950 text-white rounded-3xl p-4.5 sm:p-5 shadow-md relative overflow-hidden border border-rose-700/30 flex items-center justify-between min-h-[110px]">
-            <div class="space-y-1 relative z-10">
-                <span class="text-[9px] sm:text-[10px] text-white/90 font-extrabold uppercase tracking-wider block">Total Penarikan</span>
-                <span class="text-base sm:text-xl font-black text-white block">Rp {{ number_format($totalPenarikan, 0, ',', '.') }}</span>
-                <span class="text-[9px] text-white/80 font-semibold block">Total akumulasi dana ditarik</span>
-            </div>
-            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 flex items-center justify-center text-white shrink-0 relative z-10">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
-                </svg>
-            </div>
-        </div>
-
-        <!-- 3. Saldo Bersih Card (Dark Metal Card with wallet.png) -->
-        <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white rounded-3xl p-4.5 sm:p-5 shadow-md relative overflow-hidden border border-slate-700/30 flex items-center justify-between min-h-[110px]">
+    <!-- Active Summary Cards (Mobile: Saldo Bersih Full Width Top, Setoran & Penarikan 2-Column Bottom | Desktop: 3 Columns) -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 relative z-10 no-print font-['Outfit']">
+        
+        <!-- 3. Saldo Bersih Card (Mobile: Row 1 Full-Width | Desktop: Column 3) -->
+        <div class="col-span-2 md:col-span-1 order-1 md:order-3 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-md relative overflow-hidden border border-slate-700/30 flex items-center justify-between min-h-[105px] sm:min-h-[110px]">
             <div class="space-y-1 relative z-10">
                 <span class="text-[9px] sm:text-[10px] text-white/90 font-extrabold uppercase tracking-wider block">Saldo Bersih</span>
-                <span class="text-base sm:text-xl font-black text-white block">Rp {{ number_format($saldoBersih, 0, ',', '.') }}</span>
+                <span class="text-lg sm:text-xl font-black text-white block">Rp {{ number_format($saldoBersih, 0, ',', '.') }}</span>
                 <span class="text-[9px] text-white/80 font-semibold block">Selisih arus kas aktif</span>
             </div>
             <div class="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative z-10">
                 <img src="/assets/walletyellow.png" alt="Wallet Icon" class="w-full h-full object-contain filter drop-shadow-md">
             </div>
         </div>
+
+        <!-- 1. Total Setoran Card (Mobile: Row 2 Left Column | Desktop: Column 1) -->
+        <div class="col-span-1 order-2 md:order-1 bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-950 text-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-md relative overflow-hidden border border-emerald-700/30 flex items-center justify-between min-h-[100px] sm:min-h-[110px]">
+            <div class="space-y-0.5 sm:space-y-1 min-w-0 pr-1 relative z-10">
+                <span class="text-[8px] sm:text-[10px] text-white/90 font-extrabold uppercase tracking-wider block">Total Setoran</span>
+                <span class="text-xs sm:text-xl font-black text-white block truncate">Rp {{ number_format($totalSetoran, 0, ',', '.') }}</span>
+                <span class="hidden sm:block text-[9px] text-white/80 font-semibold">Total akumulasi dana masuk</span>
+            </div>
+            <div class="w-7 h-7 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 flex items-center justify-center text-white shrink-0 relative z-10">
+                <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- 2. Total Penarikan Card (Mobile: Row 2 Right Column | Desktop: Column 2) -->
+        <div class="col-span-1 order-3 md:order-2 bg-gradient-to-br from-rose-900 via-rose-950 to-pink-950 text-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-md relative overflow-hidden border border-rose-700/30 flex items-center justify-between min-h-[100px] sm:min-h-[110px]">
+            <div class="space-y-0.5 sm:space-y-1 min-w-0 pr-1 relative z-10">
+                <span class="text-[8px] sm:text-[10px] text-white/90 font-extrabold uppercase tracking-wider block">Total Penarikan</span>
+                <span class="text-xs sm:text-xl font-black text-white block truncate">Rp {{ number_format($totalPenarikan, 0, ',', '.') }}</span>
+                <span class="hidden sm:block text-[9px] text-white/80 font-semibold">Total akumulasi dana ditarik</span>
+            </div>
+            <div class="w-7 h-7 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 flex items-center justify-center text-white shrink-0 relative z-10">
+                <svg class="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                </svg>
+            </div>
+        </div>
+
     </div>
 
     <!-- Filter Configuration Card -->
