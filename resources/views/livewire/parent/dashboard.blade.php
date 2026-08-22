@@ -162,7 +162,7 @@
             <div class="space-y-1">
                 <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
                     <div class="flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                         </svg>
                         <span class="text-xs font-semibold text-slate-500">Nama Lengkap</span>
@@ -172,7 +172,7 @@
 
                 <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
                     <div class="flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="16" rx="3" stroke-width="2" />
                             <circle cx="9" cy="10" r="2" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 16c0-1.8 1.5-2.5 3-2.5s3 .7 3 2.5" />
@@ -187,7 +187,7 @@
 
                 <div class="flex items-center justify-between py-3.5">
                     <div class="flex items-center space-x-3">
-                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13.18v4L12 21l7-3.82v-4" />
                         </svg>
