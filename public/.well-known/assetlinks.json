@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "id.sch.sdncigowong01.tabungan.twa",
+    "sha256_cert_fingerprints": [
+      "AF:60:A6:E0:2D:B2:4D:08:91:E4:D7:F7:EE:56:86:AA:DE:4B:54:C0:09:B2:F5:37:64:AF:CF:2F:F3:F2:5D:AE"
+    ]
+  }
+}]

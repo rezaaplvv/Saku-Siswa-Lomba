@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koneksi Terputus - SakuSiswa</title>
+    <style>
+        body {
+            background-color: #ffd554;
+            color: #0c1a30;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 40px 24px;
+            max-width: 360px;
+            width: 90%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+        }
+        p {
+            font-size: 14px;
+            color: #4a5568;
+            margin: 0 0 24px 0;
+            line-height: 1.5;
+        }
+        button {
+            background-color: #0c1a30;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #1a2e4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">⚠️</div>
+        <h1>Koneksi Terputus</h1>
+        <p>Aplikasi SakuSiswa memerlukan koneksi internet aktif untuk mengakses data tabungan Anda. Silakan periksa jaringan internet Anda dan coba lagi.</p>
+        <button onclick="window.location.reload()">Coba Lagi</button>
+    </div>
+</body>
+</html>
