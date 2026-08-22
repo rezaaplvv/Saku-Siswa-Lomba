@@ -81,7 +81,6 @@
         <div class="text-left space-y-2.5 sm:space-y-3 relative z-10 pr-28 sm:pr-44 md:pr-60">
             <div class="space-y-1">
                 <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">Laporan Keuangan Global</h1>
-                <p class="hidden sm:block text-xs md:text-sm text-slate-300 font-medium leading-relaxed max-w-md">Rekapitulasi setoran dan penarikan tabungan siswa serta ekspor data laporan</p>
             </div>
 
             <!-- Role Badge -->
