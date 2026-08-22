@@ -198,7 +198,8 @@
                 <div class="flex items-center justify-between py-3.5">
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147L12 3.75l7.74 6.397m-15.48 0L12 16.5l7.74-6.353m-15.48 0v4.441c0 .762.407 1.464 1.072 1.84L12 20.25l6.668-3.952c.665-.376 1.072-1.078 1.072-1.84V10.147" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13.18v4L12 21l7-3.82v-4" />
                         </svg>
                         <span class="text-xs font-semibold text-slate-500">Kelas</span>
                     </div>
