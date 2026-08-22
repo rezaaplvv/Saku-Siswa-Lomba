@@ -71,23 +71,293 @@
         </div>
     @endif
 
-    <!-- Main Dashboard Layout (Option 1: Full-Width Hero Top + 3 Mini Cards + Balanced 2-Column Grid) -->
-    <div class="space-y-5 relative z-10 font-['Outfit']">
+    <!-- ======================================================== -->
+    <!-- MOBILE VIEW ONLY (< md): ORIGINAL MOBILE LAYOUT          -->
+    <!-- ======================================================== -->
+    <div class="block md:hidden space-y-5 relative z-10 font-sans">
         
-        <!-- ======================================================== -->
-        <!-- BARIS 1: FULL-WIDTH DARK SLATE HERO CARD                -->
-        <!-- ======================================================== -->
+        <!-- 1. Balance Card (Original Dark Metal Card) -->
+        <div class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-6 text-white shadow-xl overflow-hidden border border-slate-700/30 min-h-[175px]">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none z-0"></div>
+            <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-[#65b33b]/10 rounded-full blur-xl pointer-events-none z-0"></div>
+            
+            <div class="absolute -right-6 -bottom-9 w-[70%] h-64 flex items-center justify-end pointer-events-none z-0">
+                <img src="/assets/uang.png" alt="Saldo" class="w-64 h-64 object-contain translate-y-3">
+            </div>
+            
+            <div class="relative z-10 flex flex-col justify-between min-h-[127px] w-[65%]">
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <p class="text-[10px] text-slate-400 font-extrabold tracking-wider uppercase">Total Saldo Aktif</p>
+                        <button type="button" @click="showBalance = !showBalance" class="focus:outline-hidden cursor-pointer" title="Tampilkan/Sembunyikan Saldo">
+                            <template x-if="showBalance">
+                                <svg class="w-4 h-4 text-slate-400 hover:text-slate-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.43 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </template>
+                            <template x-if="!showBalance">
+                                <svg class="w-4 h-4 text-slate-400 hover:text-slate-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                                </svg>
+                            </template>
+                        </button>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mt-1 font-['Outfit'] tracking-tight">
+                        <span x-show="showBalance">Rp {{ number_format($student->balance, 0, ',', '.') }}</span>
+                        <span x-show="!showBalance" style="display: none;">Rp ••••••</span>
+                    </h3>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 border-t border-slate-800/80 pt-3 mt-3">
+                    <div>
+                        <p class="text-[9px] text-slate-500 uppercase font-extrabold tracking-wider">Pemilik Akun</p>
+                        <div class="flex items-center space-x-2 mt-1.5">
+                            <div class="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img src="/assets/{{ $student->avatar ?? 'i1.png' }}" alt="Profile" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <p class="text-xs font-bold tracking-tight text-slate-200">{{ $student->name }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-[9px] text-slate-500 uppercase font-extrabold tracking-wider">Kelas</p>
+                        <p class="text-xs font-bold mt-2.5 tracking-tight text-slate-200">{{ $student->class_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Setoran vs Penarikan (Pastel Split 2-Column Cards) -->
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-[#f0fdf4] border border-green-200/50 rounded-2xl p-4 shadow-xs flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center text-green-700 shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-[10px] text-green-700 font-bold uppercase tracking-wider">Total Ditabung</p>
+                    <p class="text-sm font-extrabold text-slate-800 mt-0.5">Rp {{ number_format($total_deposits, 0, ',', '.') }}</p>
+                </div>
+            </div>
+            <div class="bg-[#fff1f2] border border-rose-200/50 rounded-2xl p-4 shadow-xs flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center text-rose-700 shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-[10px] text-rose-700 font-bold uppercase tracking-wider">Total Ditarik</p>
+                    <p class="text-sm font-extrabold text-slate-800 mt-0.5">Rp {{ number_format($total_withdrawals, 0, ',', '.') }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Informasi Identitas Siswa Card (With Ajukan Penarikan Button) -->
+        <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs relative z-10">
+            <div class="flex items-center space-x-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                </div>
+                <h4 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider font-['Outfit']">Informasi Identitas Siswa</h4>
+            </div>
+
+            <div class="space-y-1">
+                <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-500">Nama Lengkap</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-900 tracking-tight">{{ $student->name }}</span>
+                </div>
+
+                <div class="flex items-center justify-between py-3.5 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm-1.25 5.25a3.75 3.75 0 00-5 0v1.125h5v-1.125z" />
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-500">NISN</span>
+                    </div>
+                    <span class="text-xs font-mono font-extrabold text-slate-900">{{ $student->nisn }}</span>
+                </div>
+
+                <div class="flex items-center justify-between py-3.5">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147L12 3.75l7.74 6.397m-15.48 0L12 16.5l7.74-6.353m-15.48 0v4.441c0 .762.407 1.464 1.072 1.84L12 20.25l6.668-3.952c.665-.376 1.072-1.078 1.072-1.84V10.147" />
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-500">Kelas</span>
+                    </div>
+                    <span class="text-xs font-extrabold text-slate-900">{{ $student->class_name }}</span>
+                </div>
+            </div>
+
+            <button @click="showModal = true" class="w-full mt-5 py-3.5 bg-[#ffd554] hover:bg-[#e5bf43] text-slate-900 text-sm font-extrabold rounded-2xl shadow-md shadow-amber-500/10 active:scale-[0.99] transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                <span>Ajukan Penarikan Saldo</span>
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- 4. Target Tabungan Anak Card -->
+        @php
+            $percentage = $student->saving_target > 0 ? min(100, round(($student->balance / $student->saving_target) * 100)) : 0;
+        @endphp
+        <div class="bg-gradient-to-br from-[#fffdf3] to-[#fffbeb] border border-amber-200/50 rounded-3xl p-5 shadow-xs relative z-10">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                    <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider font-['Outfit']">Target Tabungan Anak</h4>
+                    @if($percentage >= 100)
+                        <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[8px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200/50 uppercase tracking-wider">Tercapai</span>
+                    @endif
+                </div>
+                
+                @if(!$is_editing_target)
+                    <button wire:click="startEditTarget" class="text-xs font-bold text-amber-600 hover:underline flex items-center space-x-1 cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                        </svg>
+                        <span>Ubah</span>
+                    </button>
+                @endif
+            </div>
+            
+            @if($is_editing_target)
+                <div class="mb-4 p-3 bg-white/80 border border-amber-100 rounded-xl space-y-2">
+                    <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Set Target Baru</label>
+                    <div class="flex items-center space-x-2">
+                        <div class="relative flex-1">
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 text-xs font-semibold">Rp</span>
+                            <input type="number" 
+                                   wire:model="new_target" 
+                                   class="w-full pl-8 pr-3 py-2 rounded-lg border border-slate-200 text-xs focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-white" 
+                                   placeholder="Contoh: 500000"
+                                   required>
+                        </div>
+                        <button wire:click="saveTarget" class="px-3.5 py-2 bg-[#ffd554] hover:bg-[#e5bf43] text-slate-900 text-xs font-extrabold rounded-lg cursor-pointer transition-colors">
+                            Simpan
+                        </button>
+                        <button wire:click="$set('is_editing_target', false)" class="px-3.5 py-2 bg-slate-200 hover:bg-slate-300 text-slate-600 text-xs font-bold rounded-lg cursor-pointer transition-colors">
+                            Batal
+                        </button>
+                    </div>
+                </div>
+            @endif
+
+            <div class="w-full bg-slate-200/60 rounded-full h-2.5 overflow-hidden">
+                <div class="{{ $percentage >= 100 ? 'bg-emerald-500' : 'bg-amber-500' }} h-2.5 rounded-full transition-all duration-500" style="width: {{ $percentage }}%"></div>
+            </div>
+            
+            <div class="flex justify-between items-center mt-3 text-xs text-slate-600 font-semibold leading-relaxed">
+                <span>Mencapai Rp {{ number_format($student->balance, 0, ',', '.') }}</span>
+                <span>Target: Rp {{ number_format($student->saving_target, 0, ',', '.') }} ({{ $percentage }}%)</span>
+            </div>
+        </div>
+
+        <!-- 5. 3 Transaksi Terakhir Card -->
+        <div class="space-y-3">
+            <div class="flex justify-between items-center">
+                <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider">3 Transaksi Terakhir</h4>
+                <a href="/parent/riwayat" wire:navigate class="text-xs font-bold text-amber-700 hover:underline transition-all">Lihat Semua</a>
+            </div>
+            
+            <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-xs space-y-4">
+                @forelse($transactions as $tx)
+                    <div class="flex items-center justify-between {{ !$loop->last ? 'pb-4 border-b border-slate-100' : '' }}">
+                        <div class="flex items-center space-x-3.5">
+                            @if($tx->type === 'deposit')
+                                <div class="w-10 h-10 rounded-full bg-green-50 border border-green-100 flex items-center justify-center text-green-600 shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+                                    </svg>
+                                </div>
+                            @else
+                                <div class="w-10 h-10 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5V4.5m0 0l6.75 6.75M12 4.5L5.25 11.25" />
+                                    </svg>
+                                </div>
+                            @endif
+                            
+                            <div>
+                                <h5 class="text-sm font-bold text-slate-800 tracking-tight">
+                                    {{ $tx->type === 'deposit' ? 'Setoran Tabungan' : 'Penarikan Saldo' }}
+                                </h5>
+                                <p class="text-[11px] text-gray-400 font-medium">
+                                    {{ $tx->created_at->format('d M Y, H:i') }}
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-right">
+                            <span class="text-sm font-extrabold block tracking-tight {{ $tx->type === 'deposit' ? 'text-green-600' : 'text-rose-600' }}">
+                                {{ $tx->type === 'deposit' ? '+' : '-' }} Rp {{ number_format($tx->amount, 0, ',', '.') }}
+                            </span>
+                            
+                            @if($tx->status === 'approved')
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-bold bg-green-50 text-green-700 border border-green-200/50 mt-1">
+                                    Sukses
+                                </span>
+                            @elseif($tx->status === 'pending')
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-200/50 mt-1">
+                                    Pending
+                                </span>
+                            @else
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[9px] font-bold bg-rose-50 text-rose-700 border border-rose-200/50 mt-1">
+                                    Ditolak
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                @empty
+                    <div class="py-4 text-center">
+                        <p class="text-xs text-gray-400 font-medium">Belum ada riwayat transaksi</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+
+        <!-- 6. Tips Hari Ini Card -->
+        <div class="bg-[#fffbeb] border border-amber-200/60 rounded-2xl p-5 shadow-xs text-slate-800">
+            <div class="flex items-center space-x-2.5 mb-2.5">
+                <div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925 3.546 5.974 5.974 0 0 1-2.133-1A3.75 3.75 0 0 0 12 18Z" />
+                    </svg>
+                </div>
+                <h5 class="text-xs font-extrabold text-amber-800 uppercase tracking-wider">Tips Hari Ini</h5>
+            </div>
+            <p class="text-xs text-amber-950/90 font-medium leading-relaxed">
+                Ajarkan anak membagi uang sakunya menjadi tiga bagian utama: untuk jajan (spending), untuk ditabung (saving), dan untuk berbagi (sharing).
+            </p>
+        </div>
+    </div>
+
+
+    <!-- ======================================================== -->
+    <!-- DESKTOP VIEW ONLY (>= md): OPTION 1 LAYOUT               -->
+    <!-- ======================================================== -->
+    <div class="hidden md:block space-y-5 relative z-10 font-['Outfit']">
+        
+        <!-- BARIS 1: FULL-WIDTH DARK SLATE HERO CARD -->
         <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-7 shadow-xl text-white min-h-[185px] flex items-center justify-between">
-            <!-- Subtle glow background accents -->
             <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none z-0"></div>
             <div class="absolute -bottom-8 -left-8 w-40 h-40 bg-emerald-500/10 rounded-full blur-xl pointer-events-none z-0"></div>
             
-            <!-- Left Content Section -->
             <div class="space-y-3 relative z-10 max-w-[65%] sm:max-w-[70%]">
                 <div>
                     <div class="flex items-center space-x-2">
                         <p class="text-[10px] sm:text-xs text-slate-400 font-extrabold tracking-wider uppercase">Total Saldo Aktif</p>
-                        <!-- Eye Toggle Button -->
                         <button type="button" @click="showBalance = !showBalance" class="focus:outline-hidden cursor-pointer" title="Tampilkan/Sembunyikan Saldo">
                             <template x-if="showBalance">
                                 <svg class="w-4 h-4 text-slate-400 hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -103,14 +373,12 @@
                         </button>
                     </div>
 
-                    <!-- Balance Amount Display -->
                     <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight pt-0.5">
                         <span x-show="showBalance">Rp {{ number_format($student->balance, 0, ',', '.') }}</span>
                         <span x-show="!showBalance" style="display: none;">Rp ••••••</span>
                     </h3>
                 </div>
 
-                <!-- Account Owner Pill & Class Badge -->
                 <div class="flex flex-wrap items-center gap-2 pt-1">
                     <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xs px-3 py-1 rounded-full text-xs font-bold text-slate-200">
                         <div class="w-5 h-5 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden">
@@ -121,7 +389,6 @@
                         <span class="text-[#ffd554] font-extrabold">{{ $student->class_name }}</span>
                     </div>
 
-                    <!-- Direct Action Button inside Hero Banner -->
                     <button @click="showModal = true" class="inline-flex items-center space-x-2 px-4 py-1.5 bg-[#ffd554] hover:bg-[#e5bf43] text-slate-950 font-black rounded-full text-xs transition-all shadow-md active:scale-95 cursor-pointer">
                         <span>Ajukan Penarikan Saldo</span>
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
@@ -131,21 +398,14 @@
                 </div>
             </div>
 
-            <!-- Right 3D Wallet Graphic (Centered Vertically) -->
             <div class="absolute -right-3 -bottom-5 sm:-right-6 sm:-bottom-9 w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 pointer-events-none z-0">
                 <img src="/assets/uang.png" alt="Wallet Illustration" class="w-full h-full object-contain object-right-center">
             </div>
         </div>
 
-        <!-- ======================================================== -->
-        <!-- BARIS 2: 3 MINI SUMMARY CARDS (GRID 3 COLUMNS)           -->
-        <!-- ======================================================== -->
-        @php
-            $percentage = $student->saving_target > 0 ? min(100, round(($student->balance / $student->saving_target) * 100)) : 0;
-        @endphp
+        <!-- BARIS 2: 3 MINI SUMMARY CARDS (GRID 3 COLUMNS) -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             
-            <!-- 1. Total Ditabung Card -->
             <div class="bg-[#f0fdf4] border border-emerald-200/60 rounded-2xl sm:rounded-3xl p-4.5 shadow-xs flex items-center justify-between">
                 <div class="space-y-0.5">
                     <span class="text-[9px] sm:text-[10px] text-emerald-800 font-extrabold uppercase tracking-wider block">Total Ditabung</span>
@@ -158,7 +418,6 @@
                 </div>
             </div>
 
-            <!-- 2. Total Ditarik Card -->
             <div class="bg-[#fff1f2] border border-rose-200/60 rounded-2xl sm:rounded-3xl p-4.5 shadow-xs flex items-center justify-between">
                 <div class="space-y-0.5">
                     <span class="text-[9px] sm:text-[10px] text-rose-800 font-extrabold uppercase tracking-wider block">Total Ditarik</span>
@@ -171,7 +430,6 @@
                 </div>
             </div>
 
-            <!-- 3. Target Tabungan Card -->
             <div class="bg-gradient-to-br from-[#fffdf3] to-[#fffbeb] border border-amber-200/70 rounded-2xl sm:rounded-3xl p-4.5 shadow-xs space-y-2 flex flex-col justify-between">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-1.5">
@@ -193,7 +451,6 @@
                     @endif
                 </div>
 
-                <!-- Editable inline form -->
                 @if($is_editing_target)
                     <div class="p-2.5 bg-white/90 border border-amber-200 rounded-xl space-y-2">
                         <div class="flex items-center space-x-1.5">
@@ -214,7 +471,6 @@
                         </div>
                     </div>
                 @else
-                    <!-- Progress Bar & Text -->
                     <div class="space-y-1.5">
                         <div class="w-full bg-slate-200/80 rounded-full h-2 overflow-hidden">
                             <div class="{{ $percentage >= 100 ? 'bg-emerald-500' : 'bg-amber-500' }} h-full rounded-full transition-all duration-500" style="width: {{ $percentage }}%"></div>
@@ -228,12 +484,9 @@
             </div>
         </div>
 
-        <!-- ======================================================== -->
-        <!-- BARIS 3: GRID 2-KOLOM SIMETRIS (60% LEFT, 40% RIGHT)    -->
-        <!-- ======================================================== -->
+        <!-- BARIS 3: GRID 2-KOLOM SIMETRIS (60% LEFT, 40% RIGHT) -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
             
-            <!-- LEFT COLUMN: 3 TRANSAKSI TERAKHIR (7 COLS / 60%) -->
             <div class="md:col-span-7 space-y-4">
                 <div class="bg-white border border-slate-100 rounded-3xl p-5 sm:p-6 shadow-xs space-y-4">
                     <div class="flex justify-between items-center pb-1 border-b border-slate-100">
@@ -305,9 +558,7 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: TIPS & INFORMASI SISWA (5 COLS / 40%) -->
             <div class="md:col-span-5 space-y-4">
-                <!-- Tips Keuangan Card -->
                 <div class="bg-[#fffbeb] border border-amber-200/70 rounded-3xl p-5 shadow-xs text-slate-800 space-y-2.5">
                     <div class="flex items-center space-x-2">
                         <div class="w-6 h-6 rounded-lg bg-amber-100 flex items-center justify-center text-amber-700 shrink-0">
@@ -322,7 +573,6 @@
                     </p>
                 </div>
 
-                <!-- Informative Student Card -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-5 shadow-xs space-y-3">
                     <div class="flex items-center space-x-2 pb-1 border-b border-slate-100">
                         <div class="w-6 h-6 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 shrink-0">
