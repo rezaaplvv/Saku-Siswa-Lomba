@@ -7,25 +7,28 @@
         </svg>
     </div>
 
-    <!-- Header Welcome/Banner Area -->
-    <div class="relative flex items-center justify-between min-h-[140px] z-10 font-['Outfit'] pt-4 pb-2">
-        <!-- Info Left Section -->
-        <div class="text-left space-y-3.5 relative z-10 pr-32 sm:pr-48 md:pr-64">
-            <div class="space-y-1.5">
-                <h1 class="text-2xl md:text-3xl font-black text-[#0f172a] tracking-tight max-w-[200px] sm:max-w-none">Riwayat Transaksi Global</h1>
-                <p class="hidden md:block text-xs md:text-sm text-slate-750 font-bold leading-relaxed max-w-xs md:max-w-lg">Pantau riwayat setor tunai dan penarikan tabungan global siswa keseluruhan kelas</p>
+    <!-- Header Banner Card (Inverted Dark Slate Container with High-Contrast Badges & Illustration) -->
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-md flex items-center justify-between min-h-[140px] sm:min-h-[160px] relative z-10 font-['Outfit'] text-white">
+        <!-- Text Left Section -->
+        <div class="text-left space-y-2.5 sm:space-y-3 relative z-10 pr-28 sm:pr-44 md:pr-60">
+            <div class="space-y-1">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">Riwayat Transaksi Global</h1>
+                <p class="hidden sm:block text-xs md:text-sm text-slate-300 font-medium leading-relaxed max-w-md">Pantau riwayat setor tunai dan penarikan tabungan global siswa keseluruhan kelas</p>
             </div>
-            
-            <div class="inline-flex items-center space-x-2.5 px-4.5 py-2.5 bg-[#fff8e5] border border-amber-200/20 rounded-full text-[11px] font-black shadow-3xs">
-                <span class="text-amber-800 uppercase tracking-wider">Akses Utama</span>
-                <span class="text-slate-400">|</span>
-                <span class="text-slate-900">Administrator</span>
+
+            <!-- Role Badge -->
+            <div class="flex flex-wrap items-center gap-2">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
+                    <span>Akses Utama</span>
+                    <span class="opacity-40">|</span>
+                    <span>Administrator</span>
+                </div>
             </div>
         </div>
 
-        <!-- Header Illustration on the right (centered vertically) -->
-        <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-44 h-32 sm:w-60 sm:h-44 md:w-72 md:h-48 pointer-events-none z-0">
-            <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-center scale-105">
+        <!-- Header Illustration on the right -->
+        <div class="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-44 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 pointer-events-none z-0">
+            <img src="/assets/headerguru.png" alt="Transaction Illustration" class="w-full h-full object-contain object-right-bottom">
         </div>
     </div>
 

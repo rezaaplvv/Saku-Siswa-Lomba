@@ -72,11 +72,28 @@
         </svg>
     </div>
 
-    <!-- Header -->
-    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 font-['Outfit'] pt-4 pb-2">
-        <div class="text-left space-y-1">
-            <h1 class="text-2xl md:text-3xl font-black text-[#0f172a] tracking-tight">Manajemen Siswa</h1>
-            <p class="text-[11px] md:text-xs text-slate-800 font-bold opacity-80">Kelola data siswa, target tabungan, dan bantuan kredensial orang tua</p>
+    <!-- Header Banner Card (Inverted Dark Slate Container with High-Contrast Badges & Illustration) -->
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-md flex items-center justify-between min-h-[140px] sm:min-h-[160px] relative z-10 font-['Outfit'] text-white">
+        <!-- Text Left Section -->
+        <div class="text-left space-y-2.5 sm:space-y-3 relative z-10 pr-28 sm:pr-44 md:pr-60">
+            <div class="space-y-1">
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">Manajemen Siswa</h1>
+                <p class="hidden sm:block text-xs md:text-sm text-slate-300 font-medium leading-relaxed max-w-md">Kelola data siswa, target tabungan, dan bantuan kredensial orang tua</p>
+            </div>
+
+            <!-- Role Badge -->
+            <div class="flex flex-wrap items-center gap-2">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
+                    <span>Akses Utama</span>
+                    <span class="opacity-40">|</span>
+                    <span>Administrator</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Illustration on the right -->
+        <div class="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-44 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 pointer-events-none z-0">
+            <img src="/assets/headerguru.png" alt="Siswa Illustration" class="w-full h-full object-contain object-right-bottom">
         </div>
     </div>
 
