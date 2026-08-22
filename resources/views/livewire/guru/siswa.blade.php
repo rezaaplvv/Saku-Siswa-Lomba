@@ -24,43 +24,31 @@
         </svg>
     </div>
 
-    <!-- Header Banner Card (Inverted Dark Container with White Text & High Contrast Badges) -->
-    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-md flex items-center justify-between min-h-[160px] relative z-10 font-['Outfit'] text-white">
-        <!-- Mobile Only: Top Right Corner Badge (Nama Sekolah) -->
-        @if(Auth::user()->school_name)
-            <div class="md:hidden absolute top-4 right-4 z-20 inline-flex items-center px-3 py-1 bg-white/10 text-white rounded-full text-[10px] font-extrabold shadow-xs border border-white/20 backdrop-blur-xs">
-                <span>{{ Auth::user()->school_name }}</span>
-            </div>
-        @endif
-
-        <div class="text-left space-y-3.5 relative z-10 pr-24 md:pr-48">
-            <div class="space-y-1">
-                <div class="flex items-center space-x-2">
-                    <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">Kelola Siswa & Tabungan</h1>
-                </div>
+    <!-- Header Banner Card (Inverted Dark Slate Container - Fully Optimized Mobile & Desktop) -->
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-md flex items-center justify-between min-h-[120px] sm:min-h-[140px] md:min-h-[160px] relative z-10 font-['Outfit'] text-white">
+        
+        <div class="text-left space-y-2 sm:space-y-3 relative z-10 pr-24 sm:pr-36 md:pr-48">
+            <div class="space-y-0.5 sm:space-y-1">
+                <h1 class="text-lg sm:text-2xl md:text-3xl font-black text-white tracking-tight">
+                    <span class="sm:hidden">Kelola Siswa</span>
+                    <span class="hidden sm:inline">Kelola Siswa & Tabungan</span>
+                </h1>
             </div>
             
-            <!-- Mobile Badge Layout (Only Kelas under title) -->
-            <div class="flex md:hidden items-center gap-2">
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
-                    <span>Kelas {{ $className }}</span>
-                </div>
-            </div>
-
-            <!-- Desktop Badge Layout (Side-by-side under title: Nama Sekolah + Kelas) -->
-            <div class="hidden md:flex flex-wrap items-center gap-2">
+            <!-- Badges Layout (Unified Mobile & Desktop) -->
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
                 @if(Auth::user()->school_name)
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-white/10 text-white border border-white/20 backdrop-blur-xs rounded-full text-xs font-bold shadow-xs">
+                    <div class="inline-flex items-center px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-white/10 text-white border border-white/20 backdrop-blur-xs rounded-full text-[10px] sm:text-xs font-bold shadow-xs">
                         <span>{{ Auth::user()->school_name }}</span>
                     </div>
                 @endif
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
+                <div class="inline-flex items-center px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-[10px] sm:text-xs font-black shadow-xs">
                     <span>Kelas {{ $className }}</span>
                 </div>
             </div>
         </div>
 
-        <div class="absolute -right-4 -bottom-4 w-52 h-40 md:w-72 md:h-48 pointer-events-none z-0">
+        <div class="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-32 h-28 sm:w-48 sm:h-36 md:w-72 md:h-48 pointer-events-none z-0">
             <img src="/assets/headerguru.png" alt="Header Illustration" class="w-full h-full object-contain object-right-bottom">
         </div>
     </div>

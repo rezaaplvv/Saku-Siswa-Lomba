@@ -7,17 +7,20 @@
         </svg>
     </div>
 
-    <!-- Header Banner Card (Inverted Dark Slate Container with High-Contrast Badges & Illustration) -->
-    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-md flex items-center justify-between min-h-[140px] sm:min-h-[160px] relative z-10 font-['Outfit'] text-white">
+    <!-- Header Banner Card (Inverted Dark Slate Container - Fully Optimized Mobile & Desktop) -->
+    <div class="relative overflow-hidden bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-md flex items-center justify-between min-h-[120px] sm:min-h-[140px] md:min-h-[160px] relative z-10 font-['Outfit'] text-white">
         <!-- Text Left Section -->
-        <div class="text-left space-y-2.5 sm:space-y-3 relative z-10 pr-28 sm:pr-44 md:pr-60">
-            <div class="space-y-1">
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">Riwayat Transaksi Global</h1>
+        <div class="text-left space-y-2 sm:space-y-3 relative z-10 pr-24 sm:pr-36 md:pr-60">
+            <div class="space-y-0.5 sm:space-y-1">
+                <h1 class="text-lg sm:text-2xl md:text-3xl font-black text-white tracking-tight">
+                    <span class="sm:hidden">Riwayat Transaksi</span>
+                    <span class="hidden sm:inline">Riwayat Transaksi Global</span>
+                </h1>
             </div>
 
             <!-- Role Badge -->
-            <div class="flex flex-wrap items-center gap-2">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 sm:px-3.5 sm:py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-xs font-black shadow-xs">
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <div class="inline-flex items-center space-x-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-[#ffd554] text-slate-950 rounded-full text-[10px] sm:text-xs font-black shadow-xs">
                     <span>Akses Utama</span>
                     <span class="opacity-40">|</span>
                     <span>Administrator</span>
@@ -26,7 +29,7 @@
         </div>
 
         <!-- Header Illustration on the right -->
-        <div class="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-44 h-36 sm:w-56 sm:h-44 md:w-64 md:h-48 pointer-events-none z-0">
+        <div class="absolute -right-3 -bottom-3 sm:-right-4 sm:-bottom-4 w-32 h-28 sm:w-48 sm:h-36 md:w-64 md:h-48 pointer-events-none z-0">
             <img src="/assets/headerguru.png" alt="Transaction Illustration" class="w-full h-full object-contain object-right-bottom">
         </div>
     </div>
