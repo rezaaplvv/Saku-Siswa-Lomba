@@ -577,23 +577,46 @@
                     </p>
                 </div>
 
-                <div class="bg-white border border-slate-100 rounded-3xl p-5 shadow-xs space-y-3">
-                    <div class="pb-1 border-b border-slate-100">
-                        <h5 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Ringkasan Buah Hati</h5>
+                <div class="bg-white border border-slate-100 rounded-3xl p-5 shadow-xs space-y-1">
+                    <div class="mb-3">
+                        <h5 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider font-['Outfit']">Informasi Identitas Siswa</h5>
                     </div>
 
-                    <div class="space-y-2 text-xs">
-                        <div class="flex justify-between py-1 border-b border-slate-100/60">
-                            <span class="text-slate-500 font-medium">NISN</span>
-                            <span class="font-mono font-bold text-slate-900">{{ $student->nisn }}</span>
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-between py-3 border-b border-slate-100">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-4.5 h-4.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                                <span class="text-xs font-semibold text-slate-500">Nama Lengkap</span>
+                            </div>
+                            <span class="text-xs font-extrabold text-slate-900 tracking-tight">{{ $student->name }}</span>
                         </div>
-                        <div class="flex justify-between py-1 border-b border-slate-100/60">
-                            <span class="text-slate-500 font-medium">Status Akun</span>
-                            <span class="text-emerald-600 font-black">Aktif & Diverifikasi</span>
+
+                        <div class="flex items-center justify-between py-3 border-b border-slate-100">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-4.5 h-4.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="16" rx="3" stroke-width="2" />
+                                    <circle cx="9" cy="10" r="2" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 16c0-1.8 1.5-2.5 3-2.5s3 .7 3 2.5" />
+                                    <line x1="14" y1="9" x2="18" y2="9" stroke-linecap="round" />
+                                    <line x1="14" y1="12.5" x2="18" y2="12.5" stroke-linecap="round" />
+                                    <line x1="14" y1="16" x2="16.5" y2="16" stroke-linecap="round" />
+                                </svg>
+                                <span class="text-xs font-semibold text-slate-500">NISN</span>
+                            </div>
+                            <span class="text-xs font-mono font-extrabold text-slate-900">{{ $student->nisn }}</span>
                         </div>
-                        <div class="flex justify-between py-1">
-                            <span class="text-slate-500 font-medium">Wali Kelas</span>
-                            <span class="font-bold text-slate-900">{{ $student->class_name }}</span>
+
+                        <div class="flex items-center justify-between py-3">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-4.5 h-4.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13.18v4L12 21l7-3.82v-4" />
+                                </svg>
+                                <span class="text-xs font-semibold text-slate-500">Kelas</span>
+                            </div>
+                            <span class="text-xs font-extrabold text-slate-900">{{ $student->class_name }}</span>
                         </div>
                     </div>
                 </div>
