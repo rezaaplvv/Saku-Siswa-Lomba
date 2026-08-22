@@ -12,199 +12,175 @@
         </svg>
     </div>
 
-    <!-- Container for Profile Cards (Option 1: Asymmetrical 2-Column Desktop Grid, 1-Column Mobile Stack) -->
-    <div class="w-full max-w-7xl mx-auto relative z-10 font-['Outfit']">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 items-start">
+    <!-- Container for Profile Cards (Option 2: Hero Header Banner Top + 2-Column Grid Bottom) -->
+    <div class="w-full max-w-7xl mx-auto space-y-5 relative z-10 font-['Outfit']">
+
+        <!-- TOP CARD (FULL WIDTH HERO): Profile Header & Data Diri Guru -->
+        <div class="bg-gradient-to-br from-[#fffef9] via-white to-[#fffdfa] border border-amber-200/50 rounded-3xl p-6 shadow-xs relative overflow-hidden">
+            <!-- Subtle Decorative Ambient Background Glows -->
+            <div class="absolute -top-12 -right-12 w-44 h-44 bg-amber-300/20 rounded-full blur-2xl pointer-events-none z-0"></div>
+            <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-amber-400/15 rounded-full blur-xl pointer-events-none z-0"></div>
             
-            <!-- LEFT COLUMN (Desktop: 5 cols) -->
-            <div class="md:col-span-5 space-y-4">
-                <!-- CARD 1: Profile Header & Data Diri Guru -->
-                <div class="bg-gradient-to-br from-[#fffef9] via-white to-[#fffdfa] border border-amber-200/50 rounded-3xl p-6 shadow-xs space-y-5 relative overflow-hidden">
-                    <!-- Subtle Decorative Ambient Background Glows -->
-                    <div class="absolute -top-12 -right-12 w-44 h-44 bg-amber-300/20 rounded-full blur-2xl pointer-events-none z-0"></div>
-                    <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-amber-400/15 rounded-full blur-xl pointer-events-none z-0"></div>
-                    
-                    <!-- Decorative School Badge Watermark Pattern (Top Right) -->
-                    <div class="absolute -top-3 -right-3 w-36 h-36 opacity-[0.14] text-amber-800 pointer-events-none rotate-12 z-0">
-                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-full h-full">
-                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L3.8 12 12 7.5l8.2 4.5L12 16.5zM5 13.18v4l7 3.82 7-3.82v-4L12 17l-7-3.82z"/>
-                        </svg>
+            <!-- Profile Header Row: Avatar, Name, Role Badge, Edit Button -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-5 border-b border-dashed border-slate-200 relative z-10">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-slate-100 border-2 border-amber-300/60 flex items-center justify-center shrink-0 shadow-xs overflow-hidden">
+                        <img src="/assets/{{ $user->avatar ?? 'i1.png' }}" alt="Profile" class="w-full h-full object-cover rounded-full">
                     </div>
-
-                    <!-- Profile Header: Avatar, Name and Role -->
-                    <div class="flex items-center space-x-4 relative z-10">
-                        <div class="w-16 h-16 rounded-full bg-slate-100 border border-amber-200/60 flex items-center justify-center shrink-0 shadow-3xs overflow-hidden">
-                            <img src="/assets/{{ $user->avatar ?? 'i1.png' }}" alt="Profile" class="w-full h-full object-cover rounded-full">
-                        </div>
-                        <div class="text-left space-y-1.5">
-                            <h2 class="text-base font-extrabold text-slate-900 leading-tight font-sans">{{ $user->name }}</h2>
-                            <div class="flex flex-wrap items-center gap-1.5">
-                                <div class="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#fff8e5] border border-amber-250/20 rounded-full text-[9px] font-extrabold text-amber-850 uppercase tracking-wide">
-                                    <svg class="w-3.5 h-3.5 text-amber-700 mr-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                                    </svg>
-                                    Wali Kelas
-                                </div>
-                                <!-- Dedicated Edit Profil Button with Pencil Icon -->
-                                <button 
-                                    type="button"
-                                    wire:click="openProfileModal"
-                                    class="inline-flex items-center space-x-1 px-3 py-1 bg-amber-400 hover:bg-amber-500 text-slate-900 rounded-full text-[9px] font-extrabold shadow-3xs transition-all active:scale-95 cursor-pointer"
-                                >
-                                    <svg class="w-3 h-3 text-slate-900" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                    </svg>
-                                    <span>Edit Profil</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Section 1: Data Diri Guru -->
-                    <div class="space-y-4 pt-4 border-t border-dashed border-slate-200 relative z-10">
-                        <div class="flex items-center space-x-2 text-slate-800">
-                            <div class="w-7 h-7 rounded-lg bg-[#fff8e5] border border-amber-100/50 flex items-center justify-center text-amber-700 shrink-0">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <div class="text-left space-y-1.5">
+                        <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 leading-tight font-sans">{{ $user->name }}</h2>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <div class="inline-flex items-center space-x-1.5 px-3 py-1 bg-[#fff8e5] border border-amber-250/20 rounded-full text-xs font-extrabold text-amber-850 uppercase tracking-wide">
+                                <svg class="w-3.5 h-3.5 text-amber-700 mr-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                                 </svg>
+                                Wali Kelas
                             </div>
-                            <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-wider block">Data Diri Guru</h3>
-                        </div>
-
-                        <div class="space-y-3">
-                            <!-- NIP card -->
-                            <div class="bg-[#fffdf9] border border-amber-100/60 rounded-2xl p-3 flex items-center justify-between shadow-3xs">
-                                <div class="flex items-center space-x-3 min-w-0 flex-1">
-                                    <div class="w-9 h-9 rounded-xl bg-[#fff8e5] border border-amber-100 flex items-center justify-center text-amber-700 shrink-0">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                                        </svg>
-                                    </div>
-                                    <div class="text-left min-w-0">
-                                        <span class="text-[8px] sm:text-[9px] text-amber-800/80 font-extrabold uppercase tracking-wider block">NIP (Nomor Induk Pegawai)</span>
-                                        <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5">{{ $user->nip ?? '-' }}</span>
-                                    </div>
-                                </div>
-                                <!-- Copy Action button -->
-                                <div x-data="{ copied: false }" class="shrink-0 pl-2">
-                                    <button 
-                                        type="button"
-                                        @click="navigator.clipboard.writeText('{{ $user->nip ?? '-' }}'); copied = true; setTimeout(() => copied = false, 2000)" 
-                                        class="w-8.5 h-8.5 rounded-lg border border-amber-200/60 bg-white flex items-center justify-center hover:bg-amber-50 transition-colors shadow-3xs cursor-pointer active:scale-95"
-                                    >
-                                        <svg x-show="!copied" class="w-4.5 h-4.5 text-amber-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" />
-                                        </svg>
-                                        <svg x-show="copied" class="w-4.5 h-4.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display: none;">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Email Aktif card -->
-                            <div class="bg-[#fffdf9] border border-amber-100/60 rounded-2xl p-3 flex items-center justify-between shadow-3xs">
-                                <div class="flex items-center space-x-3 min-w-0 flex-1">
-                                    <div class="w-9 h-9 rounded-xl bg-[#fff8e5] border border-amber-100 flex items-center justify-center text-amber-700 shrink-0">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                                        </svg>
-                                    </div>
-                                    <div class="text-left min-w-0">
-                                        <span class="text-[8px] sm:text-[9px] text-amber-800/80 font-extrabold uppercase tracking-wider block">Email Aktif</span>
-                                        <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5 truncate">{{ $user->email ?? '-' }}</span>
-                                    </div>
-                                </div>
-                                <!-- Copy Action button -->
-                                <div x-data="{ copied: false }" class="shrink-0 pl-2">
-                                    <button 
-                                        type="button"
-                                        @click="navigator.clipboard.writeText('{{ $user->email ?? '-' }}'); copied = true; setTimeout(() => copied = false, 2000)" 
-                                        class="w-8.5 h-8.5 rounded-lg border border-amber-200/60 bg-white flex items-center justify-center hover:bg-amber-50 transition-colors shadow-3xs cursor-pointer active:scale-95"
-                                    >
-                                        <svg x-show="!copied" class="w-4.5 h-4.5 text-amber-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" />
-                                        </svg>
-                                        <svg x-show="copied" class="w-4.5 h-4.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display: none;">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
+                            <button 
+                                type="button"
+                                wire:click="openProfileModal"
+                                class="inline-flex items-center space-x-1.5 px-3.5 py-1 bg-amber-400 hover:bg-amber-500 text-slate-900 rounded-full text-xs font-extrabold shadow-xs transition-all active:scale-95 cursor-pointer"
+                            >
+                                <svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                </svg>
+                                <span>Edit Profil</span>
+                            </button>
                         </div>
                     </div>
-                </div>
-
-                <!-- CARD 4: Logout Action (Solid Black Button) -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-5 shadow-xs">
-                    <form method="POST" action="{{ route('logout') }}" class="w-full">
-                        @csrf
-                        <button type="submit" class="w-full py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-xs transition-all active:scale-[0.98] cursor-pointer shadow-md font-sans">
-                            <svg class="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                            </svg>
-                            <span>Keluar dari Akun</span>
-                        </button>
-                    </form>
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN (Desktop: 7 cols) -->
-            <div class="md:col-span-7 space-y-4">
-                <!-- CARD 2: Informasi Kelas & Sekolah -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs space-y-4">
-                    <div class="flex items-center space-x-2 text-slate-800">
-                        <div class="w-7 h-7 rounded-lg bg-[#fff8e5] border border-amber-100/50 flex items-center justify-center text-amber-700 shrink-0">
-                            <!-- School Icon -->
-                            <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21V10.5m0 0a3 3 0 11-6 0M12 10.5a3 3 0 106 0M3 21h18M12 3v3.75m0 0H7.5m4.5 0H16.5M7.5 12h9m-9 3h9m-9 3h9" />
-                            </svg>
+            <!-- Section 1: Data Diri Guru (Full-width 2-column Grid on Desktop) -->
+            <div class="space-y-3 pt-5 relative z-10">
+                <div class="flex items-center space-x-2 text-slate-800">
+                    <div class="w-7 h-7 rounded-lg bg-[#fff8e5] border border-amber-100/50 flex items-center justify-center text-amber-700 shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-wider block">Data Diri Guru</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- NIP card -->
+                    <div class="bg-[#fffdf9] border border-amber-100/60 rounded-2xl p-3.5 flex items-center justify-between shadow-3xs">
+                        <div class="flex items-center space-x-3 min-w-0 flex-1">
+                            <div class="w-9 h-9 rounded-xl bg-[#fff8e5] border border-amber-100 flex items-center justify-center text-amber-700 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                                </svg>
+                            </div>
+                            <div class="text-left min-w-0">
+                                <span class="text-[8px] sm:text-[9px] text-amber-800/80 font-extrabold uppercase tracking-wider block">NIP (Nomor Induk Pegawai)</span>
+                                <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5">{{ $user->nip ?? '-' }}</span>
+                            </div>
                         </div>
-                        <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-wider block">Informasi Kelas & Sekolah</h3>
+                        <div x-data="{ copied: false }" class="shrink-0 pl-2">
+                            <button 
+                                type="button"
+                                @click="navigator.clipboard.writeText('{{ $user->nip ?? '-' }}'); copied = true; setTimeout(() => copied = false, 2000)" 
+                                class="w-8.5 h-8.5 rounded-lg border border-amber-200/60 bg-white flex items-center justify-center hover:bg-amber-50 transition-colors shadow-3xs cursor-pointer active:scale-95"
+                            >
+                                <svg x-show="!copied" class="w-4.5 h-4.5 text-amber-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" />
+                                </svg>
+                                <svg x-show="copied" class="w-4.5 h-4.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display: none;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-2.5 text-left">
-                        <!-- Kelas Card -->
-                        <div class="bg-[#fffbeb] border border-amber-100/60 rounded-2xl p-3 flex flex-col justify-between min-h-[120px]">
-                            <div class="w-7 h-7 rounded-lg bg-[#fff1cc] flex items-center justify-center text-amber-800 shrink-0">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                    <!-- Email Aktif card -->
+                    <div class="bg-[#fffdf9] border border-amber-100/60 rounded-2xl p-3.5 flex items-center justify-between shadow-3xs">
+                        <div class="flex items-center space-x-3 min-w-0 flex-1">
+                            <div class="w-9 h-9 rounded-xl bg-[#fff8e5] border border-amber-100 flex items-center justify-center text-amber-700 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
                             </div>
-                            <div class="mt-2.5">
-                                <span class="text-[8px] sm:text-[9px] text-amber-800 font-extrabold uppercase tracking-wider block">Kelas</span>
-                                <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5">{{ $className ?? '-' }}</span>
+                            <div class="text-left min-w-0">
+                                <span class="text-[8px] sm:text-[9px] text-amber-800/80 font-extrabold uppercase tracking-wider block">Email Aktif</span>
+                                <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5 truncate">{{ $user->email ?? '-' }}</span>
                             </div>
                         </div>
-
-                        <!-- Jumlah Siswa Card -->
-                        <div class="bg-[#fffbeb] border border-amber-100/60 rounded-2xl p-3 flex flex-col justify-between min-h-[120px]">
-                            <div class="w-7 h-7 rounded-lg bg-[#fff1cc] flex items-center justify-center text-amber-800 shrink-0">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                        <div x-data="{ copied: false }" class="shrink-0 pl-2">
+                            <button 
+                                type="button"
+                                @click="navigator.clipboard.writeText('{{ $user->email ?? '-' }}'); copied = true; setTimeout(() => copied = false, 2000)" 
+                                class="w-8.5 h-8.5 rounded-lg border border-amber-200/60 bg-white flex items-center justify-center hover:bg-amber-50 transition-colors shadow-3xs cursor-pointer active:scale-95"
+                            >
+                                <svg x-show="!copied" class="w-4.5 h-4.5 text-amber-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z" />
                                 </svg>
-                            </div>
-                            <div class="mt-2.5">
-                                <span class="text-[8px] sm:text-[9px] text-amber-800 font-extrabold uppercase tracking-wider block">Jumlah Siswa</span>
-                                <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5">{{ $siswaCount }} Siswa</span>
-                            </div>
-                        </div>
-
-                        <!-- Sekolah Card -->
-                        <div class="bg-[#fffbeb] border border-amber-100/60 rounded-2xl p-3 flex flex-col justify-between min-h-[120px]">
-                            <div class="w-7 h-7 rounded-lg bg-[#fff1cc] flex items-center justify-center text-amber-800 shrink-0">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                <svg x-show="copied" class="w-4.5 h-4.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display: none;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                 </svg>
-                            </div>
-                            <div class="mt-2.5 min-w-0">
-                                <span class="text-[8px] sm:text-[9px] text-amber-800 font-extrabold uppercase tracking-wider block">Sekolah</span>
-                                <span class="text-[10px] sm:text-xs font-black text-slate-800 block mt-0.5 leading-tight break-words">{{ $user->school_name ?? '-' }}</span>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <!-- BOTTOM GRID (2-COLUMN ON DESKTOP) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+            <!-- LEFT COLUMN: Informasi Kelas & Sekolah -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs space-y-4">
+                <div class="flex items-center space-x-2 text-slate-800">
+                    <div class="w-7 h-7 rounded-lg bg-[#fff8e5] border border-amber-100/50 flex items-center justify-center text-amber-700 shrink-0">
+                        <svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21V10.5m0 0a3 3 0 11-6 0M12 10.5a3 3 0 106 0M3 21h18M12 3v3.75m0 0H7.5m4.5 0H16.5M7.5 12h9m-9 3h9m-9 3h9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-wider block">Informasi Kelas & Sekolah</h3>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2.5 text-left">
+                    <!-- Kelas Card -->
+                    <div class="bg-[#fffbeb] border border-amber-100/60 rounded-2xl p-3 flex flex-col justify-between min-h-[110px]">
+                        <div class="w-7 h-7 rounded-lg bg-[#fff1cc] flex items-center justify-center text-amber-800 shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                            </svg>
+                        </div>
+                        <div class="mt-2.5">
+                            <span class="text-[8px] sm:text-[9px] text-amber-800 font-extrabold uppercase tracking-wider block">Kelas</span>
+                            <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5">{{ $className ?? '-' }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Jumlah Siswa Card -->
+                    <div class="bg-[#fffbeb] border border-amber-100/60 rounded-2xl p-3 flex flex-col justify-between min-h-[110px]">
+                        <div class="w-7 h-7 rounded-lg bg-[#fff1cc] flex items-center justify-center text-amber-800 shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                            </svg>
+                        </div>
+                        <div class="mt-2.5">
+                            <span class="text-[8px] sm:text-[9px] text-amber-800 font-extrabold uppercase tracking-wider block">Jumlah Siswa</span>
+                            <span class="text-xs sm:text-sm font-black text-slate-800 block mt-0.5">{{ $siswaCount }} Siswa</span>
+                        </div>
+                    </div>
+
+                    <!-- Sekolah Card -->
+                    <div class="bg-[#fffbeb] border border-amber-100/60 rounded-2xl p-3 flex flex-col justify-between min-h-[110px]">
+                        <div class="w-7 h-7 rounded-lg bg-[#fff1cc] flex items-center justify-center text-amber-800 shrink-0">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </div>
+                        <div class="mt-2.5 min-w-0">
+                            <span class="text-[8px] sm:text-[9px] text-amber-800 font-extrabold uppercase tracking-wider block">Sekolah</span>
+                            <span class="text-[10px] sm:text-xs font-black text-slate-800 block mt-0.5 leading-tight break-words">{{ $user->school_name ?? '-' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Pengaturan Keamanan & Logout Action -->
+            <div class="space-y-4">
                 <!-- CARD 3: Pengaturan Keamanan -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs space-y-4">
                     <div class="flex items-center space-x-2 text-slate-800">
@@ -235,9 +211,22 @@
                         </svg>
                     </button>
                 </div>
-            </div>
 
+                <!-- CARD 4: Logout Action (Solid Black Button) -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-5 shadow-xs">
+                    <form method="POST" action="{{ route('logout') }}" class="w-full">
+                        @csrf
+                        <button type="submit" class="w-full py-3.5 bg-slate-950 hover:bg-slate-900 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-xs transition-all active:scale-[0.98] cursor-pointer shadow-md font-sans">
+                            <svg class="w-4.5 h-4.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                            </svg>
+                            <span>Keluar dari Akun</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <!-- Change Password Modal -->
