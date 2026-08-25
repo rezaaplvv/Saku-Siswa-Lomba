@@ -319,33 +319,33 @@
             // Set initial starting coordinates (Top Right of Showcase at Feature 1)
             gsap.set(phoneContainer, {
                 top: "50%",
-                left: "67%",
+                left: "66%",
                 yPercent: -50,
                 xPercent: 0,
                 rotation: 0,
             });
 
-            // STAGE 1 -> STAGE 2: Phone travels diagonally to the LEFT at Feature 2
+            // STAGE 1 -> STAGE 2: Phone travels to the LEFT at Feature 2 (docked at 26% inward)
             // And crossfades to Image 2 (Riwayat)
             motionTl.to(phoneContainer, {
-                left: "17%",
+                left: "26%",
                 rotation: -3,
                 ease: "power1.inOut",
-                duration: 1.5
+                duration: 1.2
             }, 0.2)
-            .to("#motion-img-1", { opacity: 0, duration: 0.6 }, 0.5)
-            .to("#motion-img-2", { opacity: 1, duration: 0.6 }, 0.5);
+            .to("#motion-img-1", { opacity: 0, duration: 0.5 }, 0.4)
+            .to("#motion-img-2", { opacity: 1, duration: 0.5 }, 0.4);
 
-            // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT at Feature 3
-            // And crossfades to Image 3 (Guru)
+            // STAGE 2 -> STAGE 3: Phone travels smoothly back to the RIGHT (66%)
+            // Starts in the gap so it is already well to the right when Feature 3 text arrives
             motionTl.to(phoneContainer, {
-                left: "67%",
+                left: "66%",
                 rotation: 2,
                 ease: "power1.inOut",
-                duration: 1.5
-            }, 2.0)
-            .to("#motion-img-2", { opacity: 0, duration: 0.6 }, 2.3)
-            .to("#motion-img-3", { opacity: 1, duration: 0.6 }, 2.3);
+                duration: 1.2
+            }, 1.5)
+            .to("#motion-img-2", { opacity: 0, duration: 0.5 }, 1.7)
+            .to("#motion-img-3", { opacity: 1, duration: 0.5 }, 1.7);
 
         });
     </script>
