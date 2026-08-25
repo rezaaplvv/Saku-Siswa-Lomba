@@ -72,22 +72,49 @@
     </header>
 
     <!-- ======================================================== -->
+    <!-- DESKTOP CONTINUOUS FLOATING IPHONE (SINGLE LIVING OBJECT) -->
+    <!-- ======================================================== -->
+    <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[165px] xl:w-[185px]">
+        <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
+            
+            <!-- Screen 1: Target Tabungan -->
+            <img id="motion-img-1" 
+                 src="/assets/iphone.png" 
+                 alt="SakuSiswa Target Tabungan" 
+                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_22px_32px_rgba(0,0,0,0.22)] select-none">
+
+            <!-- Screen 2: Riwayat Transaksi -->
+            <img id="motion-img-2" 
+                 src="/assets/iphone_riwayat.png" 
+                 alt="SakuSiswa Riwayat Transaksi" 
+                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_22px_32px_rgba(0,0,0,0.22)] select-none opacity-0">
+
+            <!-- Screen 3: Input Guru -->
+            <img id="motion-img-3" 
+                 src="/assets/iphone_guru.png" 
+                 alt="SakuSiswa Panel Guru" 
+                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_22px_32px_rgba(0,0,0,0.22)] select-none opacity-0">
+
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
     <!-- SECTION 1: HERO SECTION                                  -->
     <!-- ======================================================== -->
-    <section id="hero-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-6 pb-20 lg:pb-28 flex items-center min-h-[calc(100vh-100px)] relative">
+    <section id="hero-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-6 pb-20 lg:pb-32 flex items-center min-h-[calc(100vh-100px)] relative">
         <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-            <!-- LEFT COLUMN: DEVICE MOCKUPS (LAPTOP & IPHONE) -->
-            <div class="lg:col-span-7 flex items-center justify-center relative">
-                <div class="relative w-full max-w-[540px] sm:max-w-[600px] lg:max-w-[640px] flex items-center justify-center">
+            <!-- LEFT COLUMN: MACBOOK LAPTOP WRAPPER (Slides Left on Scroll) -->
+            <div id="hero-macbook-col" class="lg:col-span-7 flex items-center justify-center relative">
+                <div id="hero-macbook-wrap" class="relative w-full max-w-[540px] sm:max-w-[600px] lg:max-w-[640px] flex items-center justify-center">
                     
                     <!-- Macbook Laptop Mockup -->
                     <img src="/assets/macbook.png" 
                          alt="SakuSiswa on Macbook Laptop" 
                          class="w-full h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.15)] select-none pointer-events-none">
 
-                    <!-- iPhone in Hero -->
-                    <div id="hero-iphone" class="absolute -right-2 sm:-right-4 md:-right-6 bottom-0 sm:-bottom-2 w-[28%] sm:w-[32%] md:w-[34%] z-10">
+                    <!-- Mobile-Only Static Phone in Hero (< lg) -->
+                    <div class="block lg:hidden absolute -right-2 sm:-right-4 md:-right-6 bottom-0 sm:-bottom-2 w-[28%] sm:w-[32%] md:w-[34%] z-10">
                         <img src="/assets/iphone.png" 
                              alt="SakuSiswa on iPhone Smartphone" 
                              class="w-full h-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.25)] select-none pointer-events-none">
@@ -95,8 +122,8 @@
                 </div>
             </div>
 
-            <!-- RIGHT COLUMN: HERO HEADLINE, SUBTEXT & 3D BUTTONS -->
-            <div class="lg:col-span-5 flex flex-col items-start text-left space-y-5 sm:space-y-6 z-20">
+            <!-- RIGHT COLUMN: HERO HEADLINE & 3D BUTTONS (Slides Right on Scroll) -->
+            <div id="hero-text-wrap" class="lg:col-span-5 flex flex-col items-start text-left space-y-5 sm:space-y-6 z-20">
                 
                 <!-- Main Bold Headline (Font: Fredoka) -->
                 <h1 class="font-fredoka font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] text-slate-900 leading-[1.12] tracking-tight">
@@ -134,32 +161,6 @@
     <!-- SECTION 2: CONTINUOUS SCROLLING SHOWCASE (MOTION PATH)   -->
     <!-- ======================================================== -->
     <section id="showcase-section" class="w-full bg-[#FFE96E] relative overflow-hidden py-16 lg:py-24">
-        
-        <!-- DESKTOP CONTINUOUS FLOATING IPHONE (ALONG MOTION PATH) -->
-        <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[180px] xl:w-[200px] opacity-0 transition-opacity duration-300">
-            <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
-                
-                <!-- Screen 1: Target Tabungan -->
-                <img id="motion-img-1" 
-                     src="/assets/iphone.png" 
-                     alt="SakuSiswa Target Tabungan" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.20)] select-none">
-
-                <!-- Screen 2: Riwayat Transaksi -->
-                <img id="motion-img-2" 
-                     src="/assets/iphone_riwayat.png" 
-                     alt="SakuSiswa Riwayat Transaksi" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.20)] select-none opacity-0">
-
-                <!-- Screen 3: Input Guru -->
-                <img id="motion-img-3" 
-                     src="/assets/iphone_guru.png" 
-                     alt="SakuSiswa Panel Guru" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.20)] select-none opacity-0">
-
-            </div>
-        </div>
-
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64">
 
             <!-- ---------------------------------------------------- -->
@@ -168,7 +169,7 @@
             <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 
                 <!-- Text on Left -->
-                <div class="lg:col-span-6 space-y-5 text-left">
+                <div id="feature-1-text" class="lg:col-span-6 space-y-5 text-left">
                     <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
                         seru. mudah. terarah.
                     </h2>
@@ -199,7 +200,7 @@
                 </div>
 
                 <!-- Text on Right -->
-                <div class="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
+                <div id="feature-2-text" class="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
                     <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
                         aman. transparan. tenang.
                     </h2>
@@ -216,7 +217,7 @@
             <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 
                 <!-- Text on Left -->
-                <div class="lg:col-span-6 space-y-5 text-left">
+                <div id="feature-3-text" class="lg:col-span-6 space-y-5 text-left">
                     <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
                         cepat. rapi. otomatis.
                     </h2>
@@ -293,59 +294,103 @@
         });
         gsap.ticker.lagSmoothing(0);
 
-        // 2. GSAP ScrollTrigger Motion Path (Continuous Floating Object)
+        // 2. GSAP ScrollTrigger Master Choreography
         gsap.registerPlugin(ScrollTrigger);
 
         const mm = gsap.matchMedia();
 
         mm.add("(min-width: 1024px)", () => {
             const phoneContainer = document.getElementById("motion-phone-container");
+            const heroSection = document.getElementById("hero-section");
             const showcaseSection = document.getElementById("showcase-section");
-            
-            // Motion Path Timeline that runs continuously as user scrolls showcase
-            const motionTl = gsap.timeline({
+            const ctaSection = document.getElementById("cta-section");
+
+            // Initial State: Phone is positioned at Hero beside the Laptop
+            gsap.set(phoneContainer, {
+                top: "54%",
+                left: "44%",
+                yPercent: -50,
+                xPercent: -50,
+                scale: 0.95,
+                rotation: 0,
+                opacity: 1,
+            });
+
+            // ========================================================
+            // TIMELINE: FROM HERO -> DETACH -> SECTION 1 -> 2 -> 3 -> CTA
+            // ========================================================
+            const masterTl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: showcaseSection,
-                    start: "top 70%",
-                    end: "bottom 30%",
-                    scrub: 1.2,
-                    onEnter: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
-                    onLeave: () => gsap.to(phoneContainer, { opacity: 0, duration: 0.3 }),
-                    onEnterBack: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
-                    onLeaveBack: () => gsap.to(phoneContainer, { opacity: 0, duration: 0.3 }),
+                    trigger: heroSection,
+                    endTrigger: ctaSection,
+                    start: "top top",
+                    end: "top 70%",
+                    scrub: 1.1,
                 }
             });
 
-            // Set initial starting coordinates (Top Right of Showcase at Feature 1)
-            gsap.set(phoneContainer, {
+            // --------------------------------------------------------
+            // STEP 1: HERO SCROLL EXIT & DETACH INTO SECTION 1
+            // --------------------------------------------------------
+            // Macbook exits to the left
+            masterTl.to("#hero-macbook-wrap", {
+                x: -180,
+                opacity: 0,
+                ease: "power1.inOut",
+                duration: 1.0
+            }, 0);
+
+            // Hero text & buttons exit to the right
+            masterTl.to("#hero-text-wrap", {
+                x: 180,
+                opacity: 0,
+                ease: "power1.inOut",
+                duration: 1.0
+            }, 0);
+
+            // iPhone detaches and glides to Section 1 (Right: 66%)
+            masterTl.to(phoneContainer, {
                 top: "50%",
                 left: "66%",
-                yPercent: -50,
                 xPercent: 0,
+                scale: 1,
                 rotation: 0,
-            });
+                ease: "power1.inOut",
+                duration: 1.2
+            }, 0.2);
 
-            // STAGE 1 -> STAGE 2: Phone travels to the LEFT at Feature 2 (docked at 26% inward)
-            // And crossfades to Image 2 (Riwayat)
-            motionTl.to(phoneContainer, {
+            // --------------------------------------------------------
+            // STEP 2: SECTION 1 -> SECTION 2 (GLIDE TO LEFT: 26%)
+            // --------------------------------------------------------
+            masterTl.to(phoneContainer, {
                 left: "26%",
                 rotation: -3,
                 ease: "power1.inOut",
                 duration: 1.2
-            }, 0.2)
-            .to("#motion-img-1", { opacity: 0, duration: 0.5 }, 0.4)
-            .to("#motion-img-2", { opacity: 1, duration: 0.5 }, 0.4);
+            }, 1.8)
+            .to("#motion-img-1", { opacity: 0, duration: 0.5 }, 2.0)
+            .to("#motion-img-2", { opacity: 1, duration: 0.5 }, 2.0);
 
-            // STAGE 2 -> STAGE 3: Phone travels smoothly back to the RIGHT (66%)
-            // Starts in the gap so it is already well to the right when Feature 3 text arrives
-            motionTl.to(phoneContainer, {
+            // --------------------------------------------------------
+            // STEP 3: SECTION 2 -> SECTION 3 (GLIDE BACK TO RIGHT: 66%)
+            // --------------------------------------------------------
+            masterTl.to(phoneContainer, {
                 left: "66%",
                 rotation: 2,
                 ease: "power1.inOut",
                 duration: 1.2
-            }, 1.5)
-            .to("#motion-img-2", { opacity: 0, duration: 0.5 }, 1.7)
-            .to("#motion-img-3", { opacity: 1, duration: 0.5 }, 1.7);
+            }, 3.4)
+            .to("#motion-img-2", { opacity: 0, duration: 0.5 }, 3.6)
+            .to("#motion-img-3", { opacity: 1, duration: 0.5 }, 3.6);
+
+            // --------------------------------------------------------
+            // STEP 4: SECTION 3 -> CTA (FADE OUT INTO BOTTOM BANNER)
+            // --------------------------------------------------------
+            masterTl.to(phoneContainer, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.6
+            }, 4.8);
 
         });
     </script>
