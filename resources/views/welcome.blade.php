@@ -10,10 +10,10 @@
     <link rel="shortcut icon" type="image/png" href="/assets/iconaplikasi.png">
     <link rel="apple-touch-icon" href="/assets/iconaplikasi.png">
 
-    <!-- Google Fonts: Fredoka (Bold Headlines) & Inter (Sub-headline & Body) -->
+    <!-- Google Fonts: Fredoka & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS / Vite -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -131,140 +131,76 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 2: SCROLLTRIGGER INTERACTIVE SHOWCASE            -->
+    <!-- SECTION 2: DUOLINGO-STYLE SCROLL SHOWCASE (NO BOXES)     -->
     <!-- ======================================================== -->
-    <section id="scrolly-section" class="w-full bg-[#FFF38C] py-16 lg:py-24 relative overflow-hidden border-t border-amber-300/40">
+    <section class="w-full bg-[#FFE96E] relative overflow-hidden py-12 lg:py-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-            
-            <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-20">
-                <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold font-fredoka tracking-wider bg-white text-amber-900 border border-amber-300/80 shadow-xs uppercase">
-                    Eksplorasi Fitur
-                </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-fredoka font-bold text-slate-900 mt-3.5 tracking-tight">
-                    Satu Aplikasi, Tiga Solusi Nyata
-                </h2>
-                <p class="text-sm sm:text-base text-slate-800/80 font-medium mt-3 leading-relaxed">
-                    Dirancang khusus untuk menghubungkan siswa, orang tua, dan guru dalam ekosistem tabungan yang transparan.
-                </p>
-            </div>
 
-            <!-- DESKTOP PINNED SCROLLTRIGGER CONTAINER (>= lg) -->
-            <div class="hidden lg:block relative min-h-[300vh]" id="pinned-container">
-                <div class="sticky top-20 h-[80vh] flex items-center justify-between w-full">
+            <!-- DESKTOP PINNED SCROLL CONTAINER (>= lg) -->
+            <div class="hidden lg:block relative min-h-[320vh]" id="duo-pinned-container">
+                <div class="sticky top-16 h-[85vh] flex items-center justify-between w-full">
                     
-                    <!-- LEFT TEXT STACK (Story 1 & Story 3) -->
-                    <div class="w-[45%] flex flex-col justify-center relative h-full">
+                    <!-- LEFT TEXT COLUMN (For Stage 1 & Stage 3) -->
+                    <div class="w-[46%] flex flex-col justify-center relative h-full">
                         
-                        <!-- Story 1: Target Tabungan (Left Text, Phone on Right) -->
-                        <div id="story-1" class="absolute inset-x-0 my-auto space-y-4 bg-white/95 backdrop-blur-sm p-8 rounded-3xl border-2 border-amber-200/80 shadow-[0_12px_0_#e2e8f0]">
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-extrabold font-fredoka bg-amber-100 text-amber-900 uppercase tracking-wider">
-                                01. Motivasi Siswa
-                            </span>
-                            <h3 class="text-2xl xl:text-3xl font-fredoka font-bold text-slate-900 leading-tight">
-                                Tetapkan Impian, Capai Target Tabungan!
-                            </h3>
-                            <p class="text-sm xl:text-base text-slate-700 font-medium leading-relaxed">
-                                Siswa bukan cuma diajak menyimpan uang, tapi termotivasi mencapai target impian mereka seperti membeli buku baru, sepeda, atau perlengkapan sekolah dengan indikator progres yang interaktif.
+                        <!-- STAGE 1 TEXT (Left) -->
+                        <div id="duo-text-1" class="absolute inset-x-0 my-auto space-y-5 text-left">
+                            <h2 class="font-fredoka font-bold text-4xl xl:text-5xl 2xl:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                                seru. mudah. terarah.
+                            </h2>
+                            <p class="font-inter text-base xl:text-lg text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                                Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
                             </p>
-                            <div class="pt-2 space-y-2">
-                                <div class="flex items-center space-x-3 text-xs font-bold text-slate-800">
-                                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                    </div>
-                                    <span>Target Tabungan Personal & Fleksibel</span>
-                                </div>
-                                <div class="flex items-center space-x-3 text-xs font-bold text-slate-800">
-                                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                    </div>
-                                    <span>Visualisasi Progres Real-Time</span>
-                                </div>
-                            </div>
                         </div>
 
-                        <!-- Story 3: Guru & Sekolah (Left Text, Phone on Right) -->
-                        <div id="story-3" class="absolute inset-x-0 my-auto space-y-4 bg-white/95 backdrop-blur-sm p-8 rounded-3xl border-2 border-amber-200/80 shadow-[0_12px_0_#e2e8f0] opacity-0 pointer-events-none">
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-extrabold font-fredoka bg-amber-100 text-amber-900 uppercase tracking-wider">
-                                03. Efisiensi Sekolah
-                            </span>
-                            <h3 class="text-2xl xl:text-3xl font-fredoka font-bold text-slate-900 leading-tight">
-                                Pencatatan Cepat, Bebas Selisih Kas!
-                            </h3>
-                            <p class="text-sm xl:text-base text-slate-700 font-medium leading-relaxed">
-                                Tinggalkan pembukuan manual yang rawan hilang dan salah hitung. Guru kelas dapat menginput setoran siswa dalam hitungan detik, dan laporan rekapitulasi keuangan sekolah langsung siap dicetak.
+                        <!-- STAGE 3 TEXT (Left) -->
+                        <div id="duo-text-3" class="absolute inset-x-0 my-auto space-y-5 text-left opacity-0 pointer-events-none">
+                            <h2 class="font-fredoka font-bold text-4xl xl:text-5xl 2xl:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                                cepat. rapi. otomatis.
+                            </h2>
+                            <p class="font-inter text-base xl:text-lg text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                                Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
                             </p>
-                            <div class="pt-2 space-y-2">
-                                <div class="flex items-center space-x-3 text-xs font-bold text-slate-800">
-                                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                    </div>
-                                    <span>Input Setoran Kilat Tanpa Ribet</span>
-                                </div>
-                                <div class="flex items-center space-x-3 text-xs font-bold text-slate-800">
-                                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                    </div>
-                                    <span>Rekapitulasi dan Cetak Laporan PDF</span>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
 
-                    <!-- CENTER GLIDING PHONE CONTAINER -->
-                    <div id="gliding-phone" class="absolute z-20 w-[300px] xl:w-[330px] flex items-center justify-center" style="left: 65%;">
+                    <!-- GLIDING PHONE CONTAINER (Transitions Left <-> Right) -->
+                    <div id="duo-gliding-phone" class="absolute z-20 w-[300px] xl:w-[340px] flex items-center justify-center pointer-events-none" style="left: 62%;">
                         <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
                             
-                            <!-- Image 1: Target Tabungan -->
-                            <img id="img-phone-1" 
+                            <!-- Phone Image 1: Target Tabungan -->
+                            <img id="duo-img-1" 
                                  src="/assets/iphone.png" 
                                  alt="SakuSiswa Target Tabungan" 
-                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.25)]">
+                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] select-none">
 
-                            <!-- Image 2: Riwayat Transaksi -->
-                            <img id="img-phone-2" 
+                            <!-- Phone Image 2: Riwayat Transaksi -->
+                            <img id="duo-img-2" 
                                  src="/assets/iphone_riwayat.png" 
                                  alt="SakuSiswa Riwayat Transaksi" 
-                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.25)] opacity-0">
+                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] select-none opacity-0">
 
-                            <!-- Image 3: Input Guru -->
-                            <img id="img-phone-3" 
+                            <!-- Phone Image 3: Input Guru -->
+                            <img id="duo-img-3" 
                                  src="/assets/iphone_guru.png" 
                                  alt="SakuSiswa Panel Guru" 
-                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.25)] opacity-0">
+                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] select-none opacity-0">
 
                         </div>
                     </div>
 
-                    <!-- RIGHT TEXT STACK (Story 2) -->
-                    <div class="w-[45%] flex flex-col justify-center relative h-full">
+                    <!-- RIGHT TEXT COLUMN (For Stage 2) -->
+                    <div class="w-[46%] flex flex-col justify-center relative h-full ml-auto">
                         
-                        <!-- Story 2: Transparansi Wali (Right Text, Phone on Left) -->
-                        <div id="story-2" class="absolute inset-x-0 my-auto space-y-4 bg-white/95 backdrop-blur-sm p-8 rounded-3xl border-2 border-amber-200/80 shadow-[0_12px_0_#e2e8f0] opacity-0 pointer-events-none">
-                            <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-extrabold font-fredoka bg-amber-100 text-amber-900 uppercase tracking-wider">
-                                02. Transparansi Wali
-                            </span>
-                            <h3 class="text-2xl xl:text-3xl font-fredoka font-bold text-slate-900 leading-tight">
-                                Pantau Uang Saku Anak dari Mana Saja!
-                            </h3>
-                            <p class="text-sm xl:text-base text-slate-700 font-medium leading-relaxed">
-                                Orang tua tidak perlu lagi khawatir atau menerka sisa uang saku anak. Setiap transaksi setoran dan penarikan tercatat secara transparan dengan rincian lengkap langsung ke smartphone wali murid.
+                        <!-- STAGE 2 TEXT (Right) -->
+                        <div id="duo-text-2" class="absolute inset-x-0 my-auto space-y-5 text-left opacity-0 pointer-events-none">
+                            <h2 class="font-fredoka font-bold text-4xl xl:text-5xl 2xl:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                                aman. transparan. tenang.
+                            </h2>
+                            <p class="font-inter text-base xl:text-lg text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                                Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
                             </p>
-                            <div class="pt-2 space-y-2">
-                                <div class="flex items-center space-x-3 text-xs font-bold text-slate-800">
-                                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                    </div>
-                                    <span>Riwayat Mutasi Saldo Real-Time</span>
-                                </div>
-                                <div class="flex items-center space-x-3 text-xs font-bold text-slate-800">
-                                    <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-                                    </div>
-                                    <span>Pengajuan Penarikan Saldo Praktis</span>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
@@ -272,59 +208,50 @@
                 </div>
             </div>
 
-            <!-- MOBILE FALLBACK LIST (< lg): CLEAN STACKED CARDS -->
-            <div class="block lg:hidden space-y-12">
+            <!-- MOBILE STACKED LIST (< lg): CLEAN TYPOGRAPHY LAYOUT -->
+            <div class="block lg:hidden space-y-20 py-8">
                 
-                <!-- Card 1: Target Tabungan -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-amber-200 shadow-[0_8px_0_#e2e8f0] space-y-6">
-                    <div class="w-full max-w-[240px] mx-auto">
-                        <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-xl">
+                <!-- Mobile Stage 1 -->
+                <div class="space-y-6 text-left">
+                    <div class="w-full max-w-[260px] mx-auto py-2">
+                        <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
-                    <div class="space-y-3 text-left">
-                        <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-extrabold font-fredoka bg-amber-100 text-amber-900 uppercase">
-                            01. Motivasi Siswa
-                        </span>
-                        <h3 class="text-xl sm:text-2xl font-fredoka font-bold text-slate-900">
-                            Tetapkan Impian, Capai Target Tabungan!
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                            Siswa bukan cuma diajak menyimpan uang, tapi termotivasi mencapai target impian mereka seperti membeli buku baru, sepeda, atau perlengkapan sekolah dengan indikator progres yang interaktif.
+                    <div class="space-y-3">
+                        <h2 class="font-fredoka font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
+                            seru. mudah. terarah.
+                        </h2>
+                        <p class="font-inter text-sm sm:text-base text-slate-800/90 font-medium leading-relaxed">
+                            Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-2">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
                         </p>
                     </div>
                 </div>
 
-                <!-- Card 2: Riwayat Transaksi -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-amber-200 shadow-[0_8px_0_#e2e8f0] space-y-6">
-                    <div class="w-full max-w-[240px] mx-auto">
-                        <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-xl">
+                <!-- Mobile Stage 2 -->
+                <div class="space-y-6 text-left">
+                    <div class="w-full max-w-[260px] mx-auto py-2">
+                        <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
-                    <div class="space-y-3 text-left">
-                        <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-extrabold font-fredoka bg-amber-100 text-amber-900 uppercase">
-                            02. Transparansi Wali
-                        </span>
-                        <h3 class="text-xl sm:text-2xl font-fredoka font-bold text-slate-900">
-                            Pantau Uang Saku Anak dari Mana Saja!
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                            Orang tua tidak perlu lagi khawatir atau menerka sisa uang saku anak. Setiap transaksi setoran dan penarikan tercatat secara transparan dengan rincian lengkap langsung ke smartphone wali murid.
+                    <div class="space-y-3">
+                        <h2 class="font-fredoka font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
+                            aman. transparan. tenang.
+                        </h2>
+                        <p class="font-inter text-sm sm:text-base text-slate-800/90 font-medium leading-relaxed">
+                            Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-2">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
                         </p>
                     </div>
                 </div>
 
-                <!-- Card 3: Guru & Sekolah -->
-                <div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-amber-200 shadow-[0_8px_0_#e2e8f0] space-y-6">
-                    <div class="w-full max-w-[240px] mx-auto">
-                        <img src="/assets/iphone_guru.png" alt="Input Setoran Guru" class="w-full h-auto object-contain drop-shadow-xl">
+                <!-- Mobile Stage 3 -->
+                <div class="space-y-6 text-left">
+                    <div class="w-full max-w-[260px] mx-auto py-2">
+                        <img src="/assets/iphone_guru.png" alt="Panel Guru" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
-                    <div class="space-y-3 text-left">
-                        <span class="inline-flex items-center px-3 py-1 rounded-lg text-xs font-extrabold font-fredoka bg-amber-100 text-amber-900 uppercase">
-                            03. Efisiensi Sekolah
-                        </span>
-                        <h3 class="text-xl sm:text-2xl font-fredoka font-bold text-slate-900">
-                            Pencatatan Cepat, Bebas Selisih Kas!
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
-                            Tinggalkan pembukuan manual yang rawan hilang dan salah hitung. Guru kelas dapat menginput setoran siswa dalam hitungan detik, dan laporan rekapitulasi keuangan sekolah langsung siap dicetak.
+                    <div class="space-y-3">
+                        <h2 class="font-fredoka font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
+                            cepat. rapi. otomatis.
+                        </h2>
+                        <p class="font-inter text-sm sm:text-base text-slate-800/90 font-medium leading-relaxed">
+                            Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-2">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
                         </p>
                     </div>
                 </div>
@@ -391,7 +318,7 @@
         });
         gsap.ticker.lagSmoothing(0);
 
-        // 2. GSAP ScrollTrigger Timeline for Desktop Gliding Phone
+        // 2. GSAP ScrollTrigger Timeline for Desktop Gliding Phone (Duolingo Style)
         gsap.registerPlugin(ScrollTrigger);
 
         const mm = gsap.matchMedia();
@@ -399,7 +326,7 @@
         mm.add("(min-width: 1024px)", () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: "#pinned-container",
+                    trigger: "#duo-pinned-container",
                     start: "top top",
                     end: "bottom bottom",
                     scrub: 1,
@@ -407,22 +334,21 @@
                 }
             });
 
-            // Initial State:
-            // Phone at right (left: 65%), showing img-phone-1, story-1 visible
+            // Initial: Phone on Right (left: 62%), duo-img-1 visible, duo-text-1 visible
 
-            // --- STEP 1 -> STEP 2 (Phone moves to LEFT, Crossfade to Image 2, Story 1 fades out, Story 2 fades in) ---
-            tl.to("#story-1", { opacity: 0, y: -30, pointerEvents: "none", duration: 0.3 }, 0)
-              .to("#gliding-phone", { left: "5%", xPercent: 0, duration: 1, ease: "power2.inOut" }, 0.2)
-              .to("#img-phone-1", { opacity: 0, duration: 0.4 }, 0.4)
-              .to("#img-phone-2", { opacity: 1, duration: 0.4 }, 0.4)
-              .to("#story-2", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.4 }, 0.7);
+            // --- TRANSITION 1: Move Phone to LEFT, crossfade to Riwayat image, show Text 2 ---
+            tl.to("#duo-text-1", { opacity: 0, y: -40, duration: 0.35 }, 0)
+              .to("#duo-gliding-phone", { left: "6%", duration: 1, ease: "power2.inOut" }, 0.2)
+              .to("#duo-img-1", { opacity: 0, duration: 0.4 }, 0.45)
+              .to("#duo-img-2", { opacity: 1, duration: 0.4 }, 0.45)
+              .to("#duo-text-2", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.45 }, 0.75);
 
-            // --- STEP 2 -> STEP 3 (Phone moves back to RIGHT, Crossfade to Image 3, Story 2 fades out, Story 3 fades in) ---
-            tl.to("#story-2", { opacity: 0, y: -30, pointerEvents: "none", duration: 0.3 }, 1.3)
-              .to("#gliding-phone", { left: "65%", xPercent: 0, duration: 1, ease: "power2.inOut" }, 1.5)
-              .to("#img-phone-2", { opacity: 0, duration: 0.4 }, 1.7)
-              .to("#img-phone-3", { opacity: 1, duration: 0.4 }, 1.7)
-              .to("#story-3", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.4 }, 2.0);
+            // --- TRANSITION 2: Move Phone back to RIGHT, crossfade to Guru image, show Text 3 ---
+            tl.to("#duo-text-2", { opacity: 0, y: -40, duration: 0.35 }, 1.35)
+              .to("#duo-gliding-phone", { left: "62%", duration: 1, ease: "power2.inOut" }, 1.55)
+              .to("#duo-img-2", { opacity: 0, duration: 0.4 }, 1.75)
+              .to("#duo-img-3", { opacity: 1, duration: 0.4 }, 1.75)
+              .to("#duo-text-3", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.45 }, 2.05);
         });
     </script>
 
