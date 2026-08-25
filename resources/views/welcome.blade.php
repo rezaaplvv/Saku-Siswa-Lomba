@@ -136,26 +136,26 @@
     <section id="showcase-section" class="w-full bg-[#FFE96E] relative overflow-hidden py-16 lg:py-24">
         
         <!-- DESKTOP CONTINUOUS FLOATING IPHONE (ALONG MOTION PATH) -->
-        <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[290px] xl:w-[330px] opacity-0 transition-opacity duration-300">
+        <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[220px] xl:w-[250px] opacity-0 transition-opacity duration-300">
             <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
                 
                 <!-- Screen 1: Target Tabungan -->
                 <img id="motion-img-1" 
                      src="/assets/iphone.png" 
                      alt="SakuSiswa Target Tabungan" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.28)] select-none">
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] select-none">
 
                 <!-- Screen 2: Riwayat Transaksi -->
                 <img id="motion-img-2" 
                      src="/assets/iphone_riwayat.png" 
                      alt="SakuSiswa Riwayat Transaksi" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.28)] select-none opacity-0">
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] select-none opacity-0">
 
                 <!-- Screen 3: Input Guru -->
                 <img id="motion-img-3" 
                      src="/assets/iphone_guru.png" 
                      alt="SakuSiswa Panel Guru" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.28)] select-none opacity-0">
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] select-none opacity-0">
 
             </div>
         </div>
@@ -179,7 +179,7 @@
 
                 <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-1" class="lg:col-span-6 flex items-center justify-center">
-                    <div class="block lg:hidden w-full max-w-[260px] mx-auto py-4">
+                    <div class="block lg:hidden w-full max-w-[210px] mx-auto py-4">
                         <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                 
                 <!-- Target Dock on Left (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-2" class="lg:col-span-6 flex items-center justify-center order-2 lg:order-1">
-                    <div class="block lg:hidden w-full max-w-[260px] mx-auto py-4">
+                    <div class="block lg:hidden w-full max-w-[210px] mx-auto py-4">
                         <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
@@ -227,7 +227,7 @@
 
                 <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-3" class="lg:col-span-6 flex items-center justify-center">
-                    <div class="block lg:hidden w-full max-w-[260px] mx-auto py-4">
+                    <div class="block lg:hidden w-full max-w-[210px] mx-auto py-4">
                         <img src="/assets/iphone_guru.png" alt="Panel Guru" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
@@ -319,7 +319,7 @@
             // Set initial starting coordinates (Top Right of Showcase at Feature 1)
             gsap.set(phoneContainer, {
                 top: "50%",
-                left: "64%",
+                left: "67%",
                 yPercent: -50,
                 xPercent: 0,
                 rotation: 0,
@@ -328,7 +328,7 @@
             // STAGE 1 -> STAGE 2: Phone travels diagonally to the LEFT at Feature 2
             // And crossfades to Image 2 (Riwayat)
             motionTl.to(phoneContainer, {
-                left: "14%",
+                left: "17%",
                 rotation: -3,
                 ease: "power1.inOut",
                 duration: 1.5
@@ -339,7 +339,7 @@
             // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT at Feature 3
             // And crossfades to Image 3 (Guru)
             motionTl.to(phoneContainer, {
-                left: "64%",
+                left: "67%",
                 rotation: 2,
                 ease: "power1.inOut",
                 duration: 1.5
