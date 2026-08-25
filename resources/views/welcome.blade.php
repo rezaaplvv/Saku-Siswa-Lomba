@@ -136,26 +136,26 @@
     <section id="showcase-section" class="w-full bg-[#FFE96E] relative overflow-hidden py-16 lg:py-24">
         
         <!-- DESKTOP CONTINUOUS FLOATING IPHONE (ALONG MOTION PATH) -->
-        <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[220px] xl:w-[250px] opacity-0 transition-opacity duration-300">
+        <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[180px] xl:w-[200px] opacity-0 transition-opacity duration-300">
             <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
                 
                 <!-- Screen 1: Target Tabungan -->
                 <img id="motion-img-1" 
                      src="/assets/iphone.png" 
                      alt="SakuSiswa Target Tabungan" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] select-none">
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.20)] select-none">
 
                 <!-- Screen 2: Riwayat Transaksi -->
                 <img id="motion-img-2" 
                      src="/assets/iphone_riwayat.png" 
                      alt="SakuSiswa Riwayat Transaksi" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] select-none opacity-0">
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.20)] select-none opacity-0">
 
                 <!-- Screen 3: Input Guru -->
                 <img id="motion-img-3" 
                      src="/assets/iphone_guru.png" 
                      alt="SakuSiswa Panel Guru" 
-                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)] select-none opacity-0">
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.20)] select-none opacity-0">
 
             </div>
         </div>
@@ -179,7 +179,7 @@
 
                 <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-1" class="lg:col-span-6 flex items-center justify-center">
-                    <div class="block lg:hidden w-full max-w-[210px] mx-auto py-4">
+                    <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
                         <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                 
                 <!-- Target Dock on Left (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-2" class="lg:col-span-6 flex items-center justify-center order-2 lg:order-1">
-                    <div class="block lg:hidden w-full max-w-[210px] mx-auto py-4">
+                    <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
                         <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
@@ -227,7 +227,7 @@
 
                 <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-3" class="lg:col-span-6 flex items-center justify-center">
-                    <div class="block lg:hidden w-full max-w-[210px] mx-auto py-4">
+                    <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
                         <img src="/assets/iphone_guru.png" alt="Panel Guru" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
@@ -306,9 +306,9 @@
             const motionTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: showcaseSection,
-                    start: "top 65%",
-                    end: "bottom 35%",
-                    scrub: 1,
+                    start: "top 70%",
+                    end: "bottom 30%",
+                    scrub: 1.2,
                     onEnter: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
                     onLeave: () => gsap.to(phoneContainer, { opacity: 0, duration: 0.3 }),
                     onEnterBack: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
@@ -331,21 +331,21 @@
                 left: "17%",
                 rotation: -3,
                 ease: "power1.inOut",
-                duration: 1.0
+                duration: 1.5
             }, 0.2)
-            .to("#motion-img-1", { opacity: 0, duration: 0.4 }, 0.4)
-            .to("#motion-img-2", { opacity: 1, duration: 0.4 }, 0.4);
+            .to("#motion-img-1", { opacity: 0, duration: 0.6 }, 0.5)
+            .to("#motion-img-2", { opacity: 1, duration: 0.6 }, 0.5);
 
-            // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT early
-            // so it arrives at Feature 3 dock without overlapping the text
+            // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT at Feature 3
+            // And crossfades to Image 3 (Guru)
             motionTl.to(phoneContainer, {
                 left: "67%",
                 rotation: 2,
                 ease: "power1.inOut",
-                duration: 1.0
-            }, 1.4)
-            .to("#motion-img-2", { opacity: 0, duration: 0.4 }, 1.6)
-            .to("#motion-img-3", { opacity: 1, duration: 0.4 }, 1.6);
+                duration: 1.5
+            }, 2.0)
+            .to("#motion-img-2", { opacity: 0, duration: 0.6 }, 2.3)
+            .to("#motion-img-3", { opacity: 1, duration: 0.6 }, 2.3);
 
         });
     </script>
