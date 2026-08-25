@@ -74,7 +74,7 @@
     <!-- ======================================================== -->
     <!-- SECTION 1: HERO SECTION                                  -->
     <!-- ======================================================== -->
-    <section class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-6 pb-16 lg:pb-24 flex items-center min-h-[calc(100vh-100px)]">
+    <section id="hero-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-6 pb-20 lg:pb-28 flex items-center min-h-[calc(100vh-100px)] relative">
         <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
             <!-- LEFT COLUMN: DEVICE MOCKUPS (LAPTOP & IPHONE) -->
@@ -86,8 +86,8 @@
                          alt="SakuSiswa on Macbook Laptop" 
                          class="w-full h-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.15)] select-none pointer-events-none">
 
-                    <!-- iPhone Mobile Phone Mockup Overlapping on the Right -->
-                    <div class="absolute -right-2 sm:-right-4 md:-right-6 bottom-0 sm:-bottom-2 w-[28%] sm:w-[32%] md:w-[34%] z-10 transition-transform duration-300 hover:scale-105">
+                    <!-- iPhone in Hero -->
+                    <div id="hero-iphone" class="absolute -right-2 sm:-right-4 md:-right-6 bottom-0 sm:-bottom-2 w-[28%] sm:w-[32%] md:w-[34%] z-10">
                         <img src="/assets/iphone.png" 
                              alt="SakuSiswa on iPhone Smartphone" 
                              class="w-full h-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.25)] select-none pointer-events-none">
@@ -131,128 +131,104 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 2: DUOLINGO-STYLE SCROLL SHOWCASE (NO BOXES)     -->
+    <!-- SECTION 2: CONTINUOUS SCROLLING SHOWCASE (MOTION PATH)   -->
     <!-- ======================================================== -->
-    <section class="w-full bg-[#FFE96E] relative overflow-hidden py-12 lg:py-20">
-        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-
-            <!-- DESKTOP PINNED SCROLL CONTAINER (>= lg) -->
-            <div class="hidden lg:block relative min-h-[320vh]" id="duo-pinned-container">
-                <div class="sticky top-16 h-[85vh] flex items-center justify-between w-full">
-                    
-                    <!-- LEFT TEXT COLUMN (For Stage 1 & Stage 3) -->
-                    <div class="w-[46%] flex flex-col justify-center relative h-full">
-                        
-                        <!-- STAGE 1 TEXT (Left) -->
-                        <div id="duo-text-1" class="absolute inset-x-0 my-auto space-y-5 text-left">
-                            <h2 class="font-fredoka font-bold text-4xl xl:text-5xl 2xl:text-6xl text-slate-900 leading-[1.08] tracking-tight">
-                                seru. mudah. terarah.
-                            </h2>
-                            <p class="font-inter text-base xl:text-lg text-slate-800/90 font-medium leading-relaxed max-w-lg">
-                                Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
-                            </p>
-                        </div>
-
-                        <!-- STAGE 3 TEXT (Left) -->
-                        <div id="duo-text-3" class="absolute inset-x-0 my-auto space-y-5 text-left opacity-0 pointer-events-none">
-                            <h2 class="font-fredoka font-bold text-4xl xl:text-5xl 2xl:text-6xl text-slate-900 leading-[1.08] tracking-tight">
-                                cepat. rapi. otomatis.
-                            </h2>
-                            <p class="font-inter text-base xl:text-lg text-slate-800/90 font-medium leading-relaxed max-w-lg">
-                                Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <!-- GLIDING PHONE CONTAINER (Transitions Left <-> Right) -->
-                    <div id="duo-gliding-phone" class="absolute z-20 w-[300px] xl:w-[340px] flex items-center justify-center pointer-events-none" style="left: 62%;">
-                        <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
-                            
-                            <!-- Phone Image 1: Target Tabungan -->
-                            <img id="duo-img-1" 
-                                 src="/assets/iphone.png" 
-                                 alt="SakuSiswa Target Tabungan" 
-                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] select-none">
-
-                            <!-- Phone Image 2: Riwayat Transaksi -->
-                            <img id="duo-img-2" 
-                                 src="/assets/iphone_riwayat.png" 
-                                 alt="SakuSiswa Riwayat Transaksi" 
-                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] select-none opacity-0">
-
-                            <!-- Phone Image 3: Input Guru -->
-                            <img id="duo-img-3" 
-                                 src="/assets/iphone_guru.png" 
-                                 alt="SakuSiswa Panel Guru" 
-                                 class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_40px_rgba(0,0,0,0.25)] select-none opacity-0">
-
-                        </div>
-                    </div>
-
-                    <!-- RIGHT TEXT COLUMN (For Stage 2) -->
-                    <div class="w-[46%] flex flex-col justify-center relative h-full ml-auto">
-                        
-                        <!-- STAGE 2 TEXT (Right) -->
-                        <div id="duo-text-2" class="absolute inset-x-0 my-auto space-y-5 text-left opacity-0 pointer-events-none">
-                            <h2 class="font-fredoka font-bold text-4xl xl:text-5xl 2xl:text-6xl text-slate-900 leading-[1.08] tracking-tight">
-                                aman. transparan. tenang.
-                            </h2>
-                            <p class="font-inter text-base xl:text-lg text-slate-800/90 font-medium leading-relaxed max-w-lg">
-                                Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- MOBILE STACKED LIST (< lg): CLEAN TYPOGRAPHY LAYOUT -->
-            <div class="block lg:hidden space-y-20 py-8">
+    <section id="showcase-section" class="w-full bg-[#FFE96E] relative overflow-hidden py-16 lg:py-24">
+        
+        <!-- DESKTOP CONTINUOUS FLOATING IPHONE (ALONG MOTION PATH) -->
+        <div id="motion-phone-container" class="hidden lg:block fixed z-30 pointer-events-none w-[290px] xl:w-[330px] opacity-0 transition-opacity duration-300">
+            <div class="relative w-full aspect-[9/18.5] flex items-center justify-center">
                 
-                <!-- Mobile Stage 1 -->
-                <div class="space-y-6 text-left">
-                    <div class="w-full max-w-[260px] mx-auto py-2">
+                <!-- Screen 1: Target Tabungan -->
+                <img id="motion-img-1" 
+                     src="/assets/iphone.png" 
+                     alt="SakuSiswa Target Tabungan" 
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.28)] select-none">
+
+                <!-- Screen 2: Riwayat Transaksi -->
+                <img id="motion-img-2" 
+                     src="/assets/iphone_riwayat.png" 
+                     alt="SakuSiswa Riwayat Transaksi" 
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.28)] select-none opacity-0">
+
+                <!-- Screen 3: Input Guru -->
+                <img id="motion-img-3" 
+                     src="/assets/iphone_guru.png" 
+                     alt="SakuSiswa Panel Guru" 
+                     class="absolute inset-0 w-full h-full object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.28)] select-none opacity-0">
+
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-28 lg:space-y-48">
+
+            <!-- ---------------------------------------------------- -->
+            <!-- FEATURE 1: Target Tabungan (Text LEFT, Phone RIGHT)   -->
+            <!-- ---------------------------------------------------- -->
+            <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[60vh]">
+                
+                <!-- Text on Left -->
+                <div class="lg:col-span-6 space-y-5 text-left">
+                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                        seru. mudah. terarah.
+                    </h2>
+                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                        Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
+                    </p>
+                </div>
+
+                <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
+                <div id="dock-1" class="lg:col-span-6 flex items-center justify-center">
+                    <div class="block lg:hidden w-full max-w-[260px] mx-auto py-4">
                         <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
-                    <div class="space-y-3">
-                        <h2 class="font-fredoka font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
-                            seru. mudah. terarah.
-                        </h2>
-                        <p class="font-inter text-sm sm:text-base text-slate-800/90 font-medium leading-relaxed">
-                            Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-2">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
-                        </p>
-                    </div>
                 </div>
 
-                <!-- Mobile Stage 2 -->
-                <div class="space-y-6 text-left">
-                    <div class="w-full max-w-[260px] mx-auto py-2">
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- FEATURE 2: Riwayat Transaksi (Phone LEFT, Text RIGHT) -->
+            <!-- ---------------------------------------------------- -->
+            <div id="feature-2" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[60vh]">
+                
+                <!-- Target Dock on Left (For Desktop Motion) / Static on Mobile -->
+                <div id="dock-2" class="lg:col-span-6 flex items-center justify-center order-2 lg:order-1">
+                    <div class="block lg:hidden w-full max-w-[260px] mx-auto py-4">
                         <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
-                    <div class="space-y-3">
-                        <h2 class="font-fredoka font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
-                            aman. transparan. tenang.
-                        </h2>
-                        <p class="font-inter text-sm sm:text-base text-slate-800/90 font-medium leading-relaxed">
-                            Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-2">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
-                        </p>
-                    </div>
                 </div>
 
-                <!-- Mobile Stage 3 -->
-                <div class="space-y-6 text-left">
-                    <div class="w-full max-w-[260px] mx-auto py-2">
+                <!-- Text on Right -->
+                <div class="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
+                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                        aman. transparan. tenang.
+                    </h2>
+                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                        Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- FEATURE 3: Guru & Sekolah (Text LEFT, Phone RIGHT)   -->
+            <!-- ---------------------------------------------------- -->
+            <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[60vh]">
+                
+                <!-- Text on Left -->
+                <div class="lg:col-span-6 space-y-5 text-left">
+                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                        cepat. rapi. otomatis.
+                    </h2>
+                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                        Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
+                    </p>
+                </div>
+
+                <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
+                <div id="dock-3" class="lg:col-span-6 flex items-center justify-center">
+                    <div class="block lg:hidden w-full max-w-[260px] mx-auto py-4">
                         <img src="/assets/iphone_guru.png" alt="Panel Guru" class="w-full h-auto object-contain drop-shadow-2xl">
-                    </div>
-                    <div class="space-y-3">
-                        <h2 class="font-fredoka font-bold text-3xl sm:text-4xl text-slate-900 leading-tight">
-                            cepat. rapi. otomatis.
-                        </h2>
-                        <p class="font-inter text-sm sm:text-base text-slate-800/90 font-medium leading-relaxed">
-                            Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-2">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
-                        </p>
                     </div>
                 </div>
 
@@ -264,7 +240,7 @@
     <!-- ======================================================== -->
     <!-- SECTION 3: CALL TO ACTION BANNER (BOTTOM)                -->
     <!-- ======================================================== -->
-    <section class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-16 lg:py-24 text-center">
+    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-16 lg:py-24 text-center relative z-20">
         <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 lg:p-16 border-2 border-slate-950 shadow-[0_16px_0_#020617] relative overflow-hidden">
             
             <div class="relative z-10 max-w-3xl mx-auto space-y-6">
@@ -311,44 +287,66 @@
         }
         requestAnimationFrame(raf);
 
-        // Connect Lenis with GSAP ScrollTrigger
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time) => {
             lenis.raf(time * 1000);
         });
         gsap.ticker.lagSmoothing(0);
 
-        // 2. GSAP ScrollTrigger Timeline for Desktop Gliding Phone (Duolingo Style)
+        // 2. GSAP ScrollTrigger Motion Path (Continuous Floating Object)
         gsap.registerPlugin(ScrollTrigger);
 
         const mm = gsap.matchMedia();
 
         mm.add("(min-width: 1024px)", () => {
-            const tl = gsap.timeline({
+            const phoneContainer = document.getElementById("motion-phone-container");
+            const showcaseSection = document.getElementById("showcase-section");
+            
+            // Motion Path Timeline that runs continuously as user scrolls showcase
+            const motionTl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: "#duo-pinned-container",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                    pin: true,
+                    trigger: showcaseSection,
+                    start: "top 70%",
+                    end: "bottom 30%",
+                    scrub: 1.2,
+                    onEnter: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
+                    onLeave: () => gsap.to(phoneContainer, { opacity: 0, duration: 0.3 }),
+                    onEnterBack: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
+                    onLeaveBack: () => gsap.to(phoneContainer, { opacity: 0, duration: 0.3 }),
                 }
             });
 
-            // Initial: Phone on Right (left: 62%), duo-img-1 visible, duo-text-1 visible
+            // Set initial starting coordinates (Top Right of Showcase at Feature 1)
+            gsap.set(phoneContainer, {
+                top: "50%",
+                left: "64%",
+                yPercent: -50,
+                xPercent: 0,
+                rotation: 0,
+            });
 
-            // --- TRANSITION 1: Move Phone to LEFT, crossfade to Riwayat image, show Text 2 ---
-            tl.to("#duo-text-1", { opacity: 0, y: -40, duration: 0.35 }, 0)
-              .to("#duo-gliding-phone", { left: "6%", duration: 1, ease: "power2.inOut" }, 0.2)
-              .to("#duo-img-1", { opacity: 0, duration: 0.4 }, 0.45)
-              .to("#duo-img-2", { opacity: 1, duration: 0.4 }, 0.45)
-              .to("#duo-text-2", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.45 }, 0.75);
+            // STAGE 1 -> STAGE 2: Phone travels diagonally to the LEFT at Feature 2
+            // And crossfades to Image 2 (Riwayat)
+            motionTl.to(phoneContainer, {
+                left: "14%",
+                rotation: -3,
+                ease: "power1.inOut",
+                duration: 1.5
+            }, 0.2)
+            .to("#motion-img-1", { opacity: 0, duration: 0.6 }, 0.5)
+            .to("#motion-img-2", { opacity: 1, duration: 0.6 }, 0.5);
 
-            // --- TRANSITION 2: Move Phone back to RIGHT, crossfade to Guru image, show Text 3 ---
-            tl.to("#duo-text-2", { opacity: 0, y: -40, duration: 0.35 }, 1.35)
-              .to("#duo-gliding-phone", { left: "62%", duration: 1, ease: "power2.inOut" }, 1.55)
-              .to("#duo-img-2", { opacity: 0, duration: 0.4 }, 1.75)
-              .to("#duo-img-3", { opacity: 1, duration: 0.4 }, 1.75)
-              .to("#duo-text-3", { opacity: 1, y: 0, pointerEvents: "auto", duration: 0.45 }, 2.05);
+            // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT at Feature 3
+            // And crossfades to Image 3 (Guru)
+            motionTl.to(phoneContainer, {
+                left: "64%",
+                rotation: 2,
+                ease: "power1.inOut",
+                duration: 1.5
+            }, 2.0)
+            .to("#motion-img-2", { opacity: 0, duration: 0.6 }, 2.3)
+            .to("#motion-img-3", { opacity: 1, duration: 0.6 }, 2.3);
+
         });
     </script>
 
