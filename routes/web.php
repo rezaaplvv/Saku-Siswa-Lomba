@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return redirect()->route('login');
-});
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
