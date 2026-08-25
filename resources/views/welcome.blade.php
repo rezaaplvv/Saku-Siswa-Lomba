@@ -160,12 +160,12 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-28 lg:space-y-48">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64">
 
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 1: Target Tabungan (Text LEFT, Phone RIGHT)   -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[60vh]">
+            <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 
                 <!-- Text on Left -->
                 <div class="lg:col-span-6 space-y-5 text-left">
@@ -189,7 +189,7 @@
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 2: Riwayat Transaksi (Phone LEFT, Text RIGHT) -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-2" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[60vh]">
+            <div id="feature-2" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 
                 <!-- Target Dock on Left (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-2" class="lg:col-span-6 flex items-center justify-center order-2 lg:order-1">
@@ -213,7 +213,7 @@
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 3: Guru & Sekolah (Text LEFT, Phone RIGHT)   -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[60vh]">
+            <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 
                 <!-- Text on Left -->
                 <div class="lg:col-span-6 space-y-5 text-left">
@@ -306,9 +306,9 @@
             const motionTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: showcaseSection,
-                    start: "top 70%",
-                    end: "bottom 30%",
-                    scrub: 1.2,
+                    start: "top 65%",
+                    end: "bottom 35%",
+                    scrub: 1,
                     onEnter: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
                     onLeave: () => gsap.to(phoneContainer, { opacity: 0, duration: 0.3 }),
                     onEnterBack: () => gsap.to(phoneContainer, { opacity: 1, duration: 0.3 }),
@@ -331,21 +331,21 @@
                 left: "17%",
                 rotation: -3,
                 ease: "power1.inOut",
-                duration: 1.5
+                duration: 1.0
             }, 0.2)
-            .to("#motion-img-1", { opacity: 0, duration: 0.6 }, 0.5)
-            .to("#motion-img-2", { opacity: 1, duration: 0.6 }, 0.5);
+            .to("#motion-img-1", { opacity: 0, duration: 0.4 }, 0.4)
+            .to("#motion-img-2", { opacity: 1, duration: 0.4 }, 0.4);
 
-            // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT at Feature 3
-            // And crossfades to Image 3 (Guru)
+            // STAGE 2 -> STAGE 3: Phone travels diagonally back to the RIGHT early
+            // so it arrives at Feature 3 dock without overlapping the text
             motionTl.to(phoneContainer, {
                 left: "67%",
                 rotation: 2,
                 ease: "power1.inOut",
-                duration: 1.5
-            }, 2.0)
-            .to("#motion-img-2", { opacity: 0, duration: 0.6 }, 2.3)
-            .to("#motion-img-3", { opacity: 1, duration: 0.6 }, 2.3);
+                duration: 1.0
+            }, 1.4)
+            .to("#motion-img-2", { opacity: 0, duration: 0.4 }, 1.6)
+            .to("#motion-img-3", { opacity: 1, duration: 0.4 }, 1.6);
 
         });
     </script>
