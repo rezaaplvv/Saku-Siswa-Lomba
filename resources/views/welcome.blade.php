@@ -165,16 +165,36 @@
     <!-- ======================================================== -->
     <section id="showcase-section" class="w-full bg-transparent relative overflow-hidden py-16 lg:py-24">
         
-        <!-- SCROLL-DRIVEN TRACING BEAM (VERTICAL GLOWING LINE) -->
-        <div class="hidden lg:block absolute top-28 bottom-28 left-1/2 -translate-x-1/2 w-1.5 z-10 pointer-events-none">
-            <!-- Background Track (Mati / Redup) -->
-            <div class="w-full h-full bg-slate-300/80 rounded-full relative overflow-hidden shadow-xs">
-                <!-- Glowing Active Beam (Tumbuh Mengikuti Scroll) -->
-                <div id="tracing-beam" 
-                     class="w-full h-full rounded-full origin-top"
-                     style="transform: scaleY(0); background: linear-gradient(180deg, #FDE047 0%, #F59E0B 50%, #D97706 100%); box-shadow: 0 0 16px #f59e0b, 0 0 28px rgba(245, 158, 11, 0.6);">
-                </div>
-            </div>
+        <!-- ACETERNITY-STYLE SVG CURVED NEON TRACING BEAM -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-hidden">
+            <svg class="w-full h-full" viewBox="0 0 100 1000" preserveAspectRatio="none">
+                <defs>
+                    <!-- Neon Gradient -->
+                    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#22c55e" stop-opacity="0.2" />
+                        <stop offset="70%" stop-color="#22c55e" stop-opacity="1" />
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="1" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Background Track (Muted Path) -->
+                <path class="path-bg" 
+                      d="M 50,0 Q 80,250 50,500 T 50,1000" 
+                      fill="none" 
+                      stroke="rgba(0,0,0,0.07)" 
+                      stroke-width="3" 
+                      stroke-linecap="round" />
+
+                <!-- Active Neon Glowing Path (Animated via strokeDashoffset) -->
+                <path id="neonPath" 
+                      class="path-glow" 
+                      d="M 50,0 Q 80,250 50,500 T 50,1000" 
+                      fill="none" 
+                      stroke="url(#neonGradient)" 
+                      stroke-width="3.5" 
+                      stroke-linecap="round"
+                      style="filter: drop-shadow(0 0 8px #22c55e) drop-shadow(0 0 16px #10b981);" />
+            </svg>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64 relative z-20">
@@ -523,21 +543,24 @@
             }
         );
 
-        // 5. Scroll-Driven Tracing Beam Animation (0% to 100% Growth)
-        gsap.fromTo("#tracing-beam", 
-            { scaleY: 0, transformOrigin: "top center" },
-            {
-                scaleY: 1,
-                transformOrigin: "top center",
+        // 5. Aceternity-Style SVG Curved Neon Tracing Beam Scroll Drawing
+        const neonPath = document.getElementById("neonPath");
+        if (neonPath) {
+            const pathLength = neonPath.getTotalLength();
+            neonPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+            neonPath.style.strokeDashoffset = `${pathLength}`;
+
+            gsap.to(neonPath, {
+                strokeDashoffset: 0,
                 ease: "none",
                 scrollTrigger: {
                     trigger: "#showcase-section",
-                    start: "top 75%",
+                    start: "top 70%",
                     end: "bottom 80%",
-                    scrub: 0.5,
+                    scrub: 0.6,
                 }
-            }
-        );
+            });
+        }
     </script>
 
 </body>
