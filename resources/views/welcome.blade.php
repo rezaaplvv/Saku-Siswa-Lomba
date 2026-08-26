@@ -244,31 +244,31 @@
     <!-- ======================================================== -->
     <!-- SECTION 3: GET THE APP BANNER (QR & 3 PHONES)           -->
     <!-- ======================================================== -->
-    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-16 pb-28 lg:pt-24 lg:pb-40 relative z-20 font-inter">
-        <div class="bg-[#101828] text-white rounded-[32px] sm:rounded-[40px] px-8 sm:px-12 lg:px-16 pt-10 sm:pt-14 lg:pt-16 pb-0 sm:pb-0 lg:pb-0 relative overflow-hidden shadow-2xl">
+    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 lg:py-16 relative z-20 font-inter">
+        <div class="bg-[#101828] text-white rounded-[32px] sm:rounded-[40px] px-8 sm:px-12 lg:px-16 pt-8 sm:pt-12 lg:pt-14 pb-0 relative overflow-hidden shadow-2xl">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
                 
-                <!-- LEFT COLUMN: TITLE, SUBTEXT & QR CODE -->
-                <div class="lg:col-span-6 flex flex-col items-start text-left space-y-6 sm:space-y-8 z-10 pb-8 sm:pb-12 lg:pb-16">
-                    <div class="space-y-3">
-                        <h2 class="text-4xl sm:text-5xl lg:text-[3.6rem] font-bold tracking-tight text-white leading-tight font-inter">
+                <!-- LEFT COLUMN: TITLE, SUBTEXT, QR CODE & PLAYSTORE -->
+                <div class="lg:col-span-6 flex flex-col items-start text-left space-y-4 sm:space-y-5 z-10 pb-8 sm:pb-10 lg:pb-12">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl sm:text-4xl lg:text-[3.2rem] font-bold tracking-tight text-white leading-tight font-inter">
                             Get The app
                         </h2>
-                        <p class="text-base sm:text-lg lg:text-xl text-slate-200 font-semibold font-inter">
+                        <p class="text-sm sm:text-base lg:text-lg text-slate-200 font-semibold font-inter">
                             Just scan the QR code to get started.
                         </p>
                     </div>
 
-                    <!-- QR Code with white rounded frame -->
-                    <div class="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 bg-white rounded-3xl p-3 sm:p-3.5 shadow-xl flex items-center justify-center">
+                    <!-- Compact QR Code with white rounded frame -->
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-white rounded-2xl p-2.5 sm:p-3 shadow-xl flex items-center justify-center">
                         <img src="/assets/qr.png" alt="Scan QR Code" class="w-full h-full object-contain select-none">
                     </div>
 
                     <!-- Google Play Store Badge (ps.png) -->
-                    <div class="pt-1">
+                    <div class="pt-0.5">
                         <a href="javascript:void(0)" class="inline-block transition-transform duration-200 hover:scale-105 active:scale-95">
-                            <img src="/assets/ps.png" alt="Get it on Google Play" class="h-11 sm:h-12 w-auto object-contain select-none">
+                            <img src="/assets/ps.png" alt="Get it on Google Play" class="h-9 sm:h-10 w-auto object-contain select-none">
                         </a>
                     </div>
                 </div>
@@ -278,7 +278,7 @@
                     <img id="cta-3ip-img" 
                          src="/assets/3ip.png" 
                          alt="SakuSiswa 3 Mockups" 
-                         class="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[560px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)] select-none pointer-events-none translate-y-2">
+                         class="w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)] select-none pointer-events-none translate-y-2">
                 </div>
 
             </div>
