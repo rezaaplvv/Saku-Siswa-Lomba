@@ -264,6 +264,13 @@
                     <div class="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 bg-white rounded-3xl p-3 sm:p-3.5 shadow-xl flex items-center justify-center">
                         <img src="/assets/qr.png" alt="Scan QR Code" class="w-full h-full object-contain select-none">
                     </div>
+
+                    <!-- Google Play Store Badge (ps.png) -->
+                    <div class="pt-1">
+                        <a href="javascript:void(0)" class="inline-block transition-transform duration-200 hover:scale-105 active:scale-95">
+                            <img src="/assets/ps.png" alt="Get it on Google Play" class="h-11 sm:h-12 w-auto object-contain select-none">
+                        </a>
+                    </div>
                 </div>
 
                 <!-- RIGHT COLUMN: 3 PHONES MOCKUP -->
