@@ -166,18 +166,18 @@
     <section id="showcase-section" class="w-full bg-transparent relative overflow-hidden py-16 lg:py-24">
         
         <!-- SCROLL-DRIVEN TRACING BEAM (VERTICAL GLOWING LINE) -->
-        <div class="hidden lg:block absolute inset-y-24 left-1/2 -translate-x-1/2 w-[3px] z-0 pointer-events-none">
+        <div class="hidden lg:block absolute top-28 bottom-28 left-1/2 -translate-x-1/2 w-1.5 z-10 pointer-events-none">
             <!-- Background Track (Mati / Redup) -->
-            <div class="w-full h-full bg-slate-200/90 rounded-full relative overflow-hidden">
+            <div class="w-full h-full bg-slate-300/80 rounded-full relative overflow-hidden shadow-xs">
                 <!-- Glowing Active Beam (Tumbuh Mengikuti Scroll) -->
                 <div id="tracing-beam" 
-                     class="w-full h-full rounded-full origin-top transform scale-y-0"
-                     style="background: linear-gradient(180deg, #FDE047 0%, #F59E0B 50%, #D97706 100%); box-shadow: 0 0 16px rgba(245, 158, 11, 0.85), 0 0 30px rgba(245, 158, 11, 0.4);">
+                     class="w-full h-full rounded-full origin-top"
+                     style="transform: scaleY(0); background: linear-gradient(180deg, #FDE047 0%, #F59E0B 50%, #D97706 100%); box-shadow: 0 0 16px #f59e0b, 0 0 28px rgba(245, 158, 11, 0.6);">
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64 relative z-20">
 
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 1: Target Tabungan (Text LEFT, Phone RIGHT)   -->
@@ -524,16 +524,20 @@
         );
 
         // 5. Scroll-Driven Tracing Beam Animation (0% to 100% Growth)
-        gsap.to("#tracing-beam", {
-            scaleY: 1,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#showcase-section",
-                start: "top 65%",
-                end: "bottom 85%",
-                scrub: 0.8,
+        gsap.fromTo("#tracing-beam", 
+            { scaleY: 0, transformOrigin: "top center" },
+            {
+                scaleY: 1,
+                transformOrigin: "top center",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#showcase-section",
+                    start: "top 75%",
+                    end: "bottom 80%",
+                    scrub: 0.5,
+                }
             }
-        });
+        );
     </script>
 
 </body>
