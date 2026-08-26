@@ -344,34 +344,27 @@
     <!-- ======================================================== -->
     <!-- SECTION 4: MODERN CLEAN FOOTER (WHITE THEME)             -->
     <!-- ======================================================== -->
-    <footer class="w-full border-t border-slate-200/90 py-12 px-6 sm:px-10 lg:px-12 bg-white text-slate-900 relative z-20 font-inter">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+    <footer class="w-full border-t border-slate-200/90 py-8 px-6 sm:px-10 lg:px-12 bg-white text-slate-900 relative z-20 font-inter">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             
             <!-- Brand & Tagline -->
-            <div class="flex flex-col items-center md:items-start space-y-2">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-2xl bg-amber-50 shadow-xs border border-amber-200/80 p-1.5 flex items-center justify-center">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <div class="flex items-center space-x-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-amber-50 shadow-xs border border-amber-200/80 p-1 flex items-center justify-center">
                         <img src="/assets/iconaplikasi.png" alt="SakuSiswa Logo" class="w-full h-full object-contain">
                     </div>
-                    <span class="font-fredoka text-2xl font-bold text-slate-900 tracking-tight">
+                    <span class="font-fredoka text-xl font-bold text-slate-900 tracking-tight">
                         Saku<span class="text-amber-900">Siswa</span>
                     </span>
                 </div>
-                <p data-i18n="footer_tagline" class="text-xs sm:text-sm font-medium text-slate-600 max-w-sm">
+                <span class="hidden sm:inline text-slate-300">|</span>
+                <p data-i18n="footer_tagline" class="text-xs sm:text-sm font-medium text-slate-600">
                     Platform tabungan sekolah digital yang aman, mudah, dan transparan untuk masa depan anak.
                 </p>
             </div>
 
-            <!-- Navigation Links -->
-            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm font-semibold text-slate-700">
-                <a href="{{ url('/') }}" data-i18n="nav_home" class="hover:text-amber-900 transition-colors">Beranda</a>
-                <a href="{{ route('login') }}" data-i18n="nav_login" class="hover:text-amber-900 transition-colors">Masuk Akun</a>
-                <a href="{{ route('register') }}" data-i18n="nav_register" class="hover:text-amber-900 transition-colors">Daftar Sekolah</a>
-                <a href="{{ route('privacy') }}" data-i18n="nav_privacy" class="hover:text-amber-900 transition-colors">Kebijakan Privasi</a>
-            </div>
-
-            <!-- Copyright -->
-            <div class="text-xs sm:text-sm font-medium text-slate-500">
+            <!-- Single-Line Copyright -->
+            <div class="text-xs sm:text-sm font-medium text-slate-500 whitespace-nowrap">
                 <p data-i18n="footer_copyright">&copy; 2026 SakuSiswa. Hak cipta dilindungi undang-undang.</p>
             </div>
 
@@ -577,10 +570,6 @@
                 cta_subtitle: "Cukup pindai kode QR untuk mulai menggunakan.",
                 cta_web_label: "atau akses langsung via web:",
                 footer_tagline: "Platform tabungan sekolah digital yang aman, mudah, dan transparan untuk masa depan anak.",
-                nav_home: "Beranda",
-                nav_login: "Masuk Akun",
-                nav_register: "Daftar Sekolah",
-                nav_privacy: "Kebijakan Privasi",
                 footer_copyright: "&copy; 2026 SakuSiswa. Hak cipta dilindungi undang-undang."
             },
             en: {
@@ -598,10 +587,6 @@
                 cta_subtitle: "Just scan the QR code to get started.",
                 cta_web_label: "or access directly via web:",
                 footer_tagline: "Digital school savings platform that is secure, simple, and transparent for children's future.",
-                nav_home: "Home",
-                nav_login: "Sign In",
-                nav_register: "Register School",
-                nav_privacy: "Privacy Policy",
                 footer_copyright: "&copy; 2026 SakuSiswa. All rights reserved."
             }
         };
