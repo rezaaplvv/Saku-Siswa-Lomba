@@ -239,31 +239,37 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 3: CALL TO ACTION BANNER (BOTTOM)                -->
+    <!-- SECTION 3: GET THE APP BANNER (QR & 3 PHONES)           -->
     <!-- ======================================================== -->
-    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-16 lg:py-24 text-center relative z-20">
-        <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 lg:p-16 border-2 border-slate-950 shadow-[0_16px_0_#020617] relative overflow-hidden">
+    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 lg:py-20 relative z-20 font-inter">
+        <div class="bg-[#101828] text-white rounded-[32px] sm:rounded-[40px] px-8 sm:px-12 lg:px-16 pt-10 sm:pt-14 lg:pt-16 pb-0 sm:pb-0 lg:pb-0 relative overflow-hidden shadow-2xl">
             
-            <div class="relative z-10 max-w-3xl mx-auto space-y-6">
-                <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold font-fredoka tracking-wider bg-amber-400 text-slate-900 uppercase">
-                    Mulai Sekarang
-                </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-fredoka font-bold leading-tight tracking-tight">
-                    Siap Memulai Transformasi Tabungan Sekolah?
-                </h2>
-                <p class="text-sm sm:text-base lg:text-lg text-slate-300 font-medium max-w-xl mx-auto leading-relaxed">
-                    Bergabung bersama ribuan siswa dan orang tua untuk membangun kebiasaan finansial yang bijak sejak bangku sekolah.
-                </p>
-                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <a href="{{ route('register') }}" 
-                       class="px-8 py-4 bg-[#ffd554] hover:bg-[#e5bf43] text-slate-900 font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-amber-300 shadow-[0_6px_0_#b45309] hover:shadow-[0_4px_0_#b45309] hover:translate-y-[2px] active:shadow-[0_0px_0_#b45309] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center">
-                        Daftar Akun Baru
-                    </a>
-                    <a href="{{ route('login') }}" 
-                       class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-white/20 shadow-[0_6px_0_rgba(0,0,0,0.4)] hover:shadow-[0_4px_0_rgba(0,0,0,0.4)] hover:translate-y-[2px] active:shadow-[0_0px_0_rgba(0,0,0,0.4)] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center">
-                        Masuk ke Portal
-                    </a>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
+                
+                <!-- LEFT COLUMN: TITLE, SUBTEXT & QR CODE -->
+                <div class="lg:col-span-6 flex flex-col items-start text-left space-y-6 sm:space-y-8 z-10 pb-8 sm:pb-12 lg:pb-16">
+                    <div class="space-y-3">
+                        <h2 class="text-4xl sm:text-5xl lg:text-[3.6rem] font-bold tracking-tight text-white leading-tight font-inter">
+                            Get The app
+                        </h2>
+                        <p class="text-base sm:text-lg lg:text-xl text-slate-200 font-semibold font-inter">
+                            Just scan the QR code to get started.
+                        </p>
+                    </div>
+
+                    <!-- QR Code with white rounded frame -->
+                    <div class="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 bg-white rounded-3xl p-3 sm:p-3.5 shadow-xl flex items-center justify-center">
+                        <img src="/assets/qr.png" alt="Scan QR Code" class="w-full h-full object-contain select-none">
+                    </div>
                 </div>
+
+                <!-- RIGHT COLUMN: 3 PHONES MOCKUP -->
+                <div class="lg:col-span-6 flex items-end justify-center lg:justify-end relative">
+                    <img src="/assets/3ip.png" 
+                         alt="SakuSiswa 3 Mockups" 
+                         class="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[560px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)] select-none pointer-events-none translate-y-2">
+                </div>
+
             </div>
 
         </div>
