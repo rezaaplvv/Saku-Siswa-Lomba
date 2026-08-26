@@ -500,7 +500,7 @@ class Siswa extends Component
                     $q->where('school_name', $this->schoolFilter);
                 });
             })
-            ->latest()
+            ->orderBy('name', 'asc')
             ->paginate(10);
 
         $availableSchools = \App\Models\User::where('role', 'guru')
