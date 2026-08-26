@@ -190,73 +190,67 @@
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64 relative z-20">
 
             <!-- ---------------------------------------------------- -->
-            <!-- FEATURE 1: Target Tabungan                           -->
+            <!-- FEATURE 1: Target Tabungan (Text LEFT, Phone RIGHT)   -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-1" class="showcase-feature-row min-h-[65vh] flex items-center">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
-                    <!-- Text on Left -->
-                    <div id="feature-1-text" class="lg:col-span-7 space-y-5 text-left">
-                        <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
-                            seru. mudah. terarah.
-                        </h2>
-                        <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
-                            Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
-                        </p>
-                    </div>
+            <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
+                <!-- Text on Left -->
+                <div id="feature-1-text" class="lg:col-span-6 space-y-5 text-left">
+                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                        seru. mudah. terarah.
+                    </h2>
+                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                        Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
+                    </p>
+                </div>
 
-                    <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
-                    <div id="dock-1" class="lg:col-span-5 flex items-center justify-center">
-                        <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
-                            <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-2xl">
-                        </div>
+                <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
+                <div id="dock-1" class="lg:col-span-6 flex items-center justify-center">
+                    <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
+                        <img src="/assets/iphone.png" alt="Target Tabungan" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
             </div>
 
             <!-- ---------------------------------------------------- -->
-            <!-- FEATURE 2: Riwayat Transaksi                         -->
+            <!-- FEATURE 2: Riwayat Transaksi (Phone LEFT, Text RIGHT) -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-2" class="showcase-feature-row min-h-[65vh] flex items-center">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
-                    <!-- Text on Left -->
-                    <div id="feature-2-text" class="lg:col-span-7 space-y-5 text-left">
-                        <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
-                            aman. transparan. tenang.
-                        </h2>
-                        <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
-                            Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
-                        </p>
+            <div id="feature-2" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
+                <!-- Target Dock on Left (For Desktop Motion) / Static on Mobile -->
+                <div id="dock-2" class="lg:col-span-6 flex items-center justify-center order-2 lg:order-1">
+                    <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
+                        <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
+                </div>
 
-                    <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
-                    <div id="dock-2" class="lg:col-span-5 flex items-center justify-center">
-                        <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
-                            <img src="/assets/iphone_riwayat.png" alt="Riwayat Transaksi" class="w-full h-auto object-contain drop-shadow-2xl">
-                        </div>
-                    </div>
+                <!-- Text on Right -->
+                <div id="feature-2-text" class="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
+                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                        aman. transparan. tenang.
+                    </h2>
+                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                        Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
+                    </p>
                 </div>
             </div>
 
             <!-- ---------------------------------------------------- -->
-            <!-- FEATURE 3: Guru & Sekolah                            -->
+            <!-- FEATURE 3: Guru & Sekolah (Text LEFT, Phone RIGHT)   -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-3" class="showcase-feature-row min-h-[65vh] flex items-center">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
-                    <!-- Text on Left -->
-                    <div id="feature-3-text" class="lg:col-span-7 space-y-5 text-left">
-                        <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
-                            cepat. rapi. otomatis.
-                        </h2>
-                        <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
-                            Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
-                        </p>
-                    </div>
+            <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
+                <!-- Text on Left -->
+                <div id="feature-3-text" class="lg:col-span-6 space-y-5 text-left">
+                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                        cepat. rapi. otomatis.
+                    </h2>
+                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                        Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
+                    </p>
+                </div>
 
-                    <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
-                    <div id="dock-3" class="lg:col-span-5 flex items-center justify-center">
-                        <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
-                            <img src="/assets/iphone_guru.png" alt="Panel Guru" class="w-full h-auto object-contain drop-shadow-2xl">
-                        </div>
+                <!-- Target Dock on Right (For Desktop Motion) / Static on Mobile -->
+                <div id="dock-3" class="lg:col-span-6 flex items-center justify-center">
+                    <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
+                        <img src="/assets/iphone_guru.png" alt="Panel Guru" class="w-full h-auto object-contain drop-shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -452,10 +446,10 @@
                 duration: 1.0
             }, 0);
 
-            // iPhone detaches and glides to Right Dock (left: 70%)
+            // iPhone detaches and glides to Section 1 (Right: 66%)
             masterTl.to(phoneContainer, {
                 top: "50%",
-                left: "70%",
+                left: "66%",
                 xPercent: 0,
                 scale: 1,
                 rotation: 0,
@@ -464,12 +458,11 @@
             }, 0.2);
 
             // --------------------------------------------------------
-            // STEP 2: SECTION 1 -> SECTION 2 (CROSS-FADE SCREEN 1 -> 2)
+            // STEP 2: SECTION 1 -> SECTION 2 (GLIDE TO LEFT: 26%)
             // --------------------------------------------------------
             masterTl.to(phoneContainer, {
-                top: "50%",
-                left: "70%",
-                rotation: -1,
+                left: "26%",
+                rotation: -3,
                 ease: "power1.inOut",
                 duration: 1.2
             }, 1.8)
@@ -477,12 +470,11 @@
             .to("#motion-img-2", { opacity: 1, duration: 0.5 }, 2.0);
 
             // --------------------------------------------------------
-            // STEP 3: SECTION 2 -> SECTION 3 (CROSS-FADE SCREEN 2 -> 3)
+            // STEP 3: SECTION 2 -> SECTION 3 (GLIDE BACK TO RIGHT: 66%)
             // --------------------------------------------------------
             masterTl.to(phoneContainer, {
-                top: "50%",
-                left: "70%",
-                rotation: 1,
+                left: "66%",
+                rotation: 2,
                 ease: "power1.inOut",
                 duration: 1.2
             }, 3.4)
