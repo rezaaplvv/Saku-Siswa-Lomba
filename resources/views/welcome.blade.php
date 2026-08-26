@@ -280,36 +280,36 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- SECTION 4: MODERN CLEAN FOOTER (DARK THEME)              -->
+    <!-- SECTION 4: MODERN CLEAN FOOTER (WHITE THEME)             -->
     <!-- ======================================================== -->
-    <footer class="w-full border-t border-slate-800 py-12 px-6 sm:px-10 lg:px-12 bg-[#101828] text-white relative z-20 font-inter">
+    <footer class="w-full border-t border-slate-200/90 py-12 px-6 sm:px-10 lg:px-12 bg-white text-slate-900 relative z-20 font-inter">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             
             <!-- Brand & Tagline -->
             <div class="flex flex-col items-center md:items-start space-y-2">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-2xl bg-white shadow-xs p-1.5 flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-50 shadow-xs border border-amber-200/80 p-1.5 flex items-center justify-center">
                         <img src="/assets/iconaplikasi.png" alt="SakuSiswa Logo" class="w-full h-full object-contain">
                     </div>
-                    <span class="font-fredoka text-2xl font-bold text-white tracking-tight">
+                    <span class="font-fredoka text-2xl font-bold text-slate-900 tracking-tight">
                         Saku<span class="text-amber-900">Siswa</span>
                     </span>
                 </div>
-                <p class="text-xs sm:text-sm font-medium text-slate-400 max-w-sm">
+                <p class="text-xs sm:text-sm font-medium text-slate-600 max-w-sm">
                     Platform tabungan sekolah digital yang aman, mudah, dan transparan untuk masa depan anak.
                 </p>
             </div>
 
             <!-- Navigation Links -->
-            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm font-semibold text-slate-300">
-                <a href="{{ url('/') }}" class="hover:text-[#FFE96E] transition-colors">Beranda</a>
-                <a href="{{ route('login') }}" class="hover:text-[#FFE96E] transition-colors">Masuk Akun</a>
-                <a href="{{ route('register') }}" class="hover:text-[#FFE96E] transition-colors">Daftar Sekolah</a>
-                <a href="{{ route('privacy') }}" class="hover:text-[#FFE96E] transition-colors">Kebijakan Privasi</a>
+            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm font-semibold text-slate-700">
+                <a href="{{ url('/') }}" class="hover:text-amber-900 transition-colors">Beranda</a>
+                <a href="{{ route('login') }}" class="hover:text-amber-900 transition-colors">Masuk Akun</a>
+                <a href="{{ route('register') }}" class="hover:text-amber-900 transition-colors">Daftar Sekolah</a>
+                <a href="{{ route('privacy') }}" class="hover:text-amber-900 transition-colors">Kebijakan Privasi</a>
             </div>
 
             <!-- Copyright -->
-            <div class="text-xs sm:text-sm font-medium text-slate-400">
+            <div class="text-xs sm:text-sm font-medium text-slate-500">
                 <p>&copy; 2026 SakuSiswa. All rights reserved.</p>
             </div>
 
