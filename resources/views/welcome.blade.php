@@ -41,60 +41,19 @@
         .lenis.lenis-stopped {
             overflow: hidden;
         }
-        .lenis.lenis-scrolling iframe {
-            pointer-events: none;
-        }
-        /* Left-Aligned Timeline Guide Line & Glowing Neon Dots */
-        .timeline-guide-line {
+        /* New-Porto Curved SVG Background Line */
+        .deka-svg-bg {
             position: absolute;
-            left: 20px;
-            top: 2rem;
-            bottom: 2rem;
-            width: 3px;
-            background: rgba(0, 0, 0, 0.08);
-            transform: translateX(-50%);
-            z-index: 15;
+            inset: 0;
             pointer-events: none;
-            border-radius: 9999px;
+            z-index: 10;
+            opacity: 0.85;
             overflow: hidden;
         }
-        .timeline-beam-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .deka-curved-svg {
             width: 100%;
-            height: 0%;
-            background: linear-gradient(180deg, #22c55e, #10b981);
-            box-shadow: 0 0 16px #22c55e, 0 0 28px rgba(34, 197, 94, 0.7);
-            border-radius: 9999px;
-        }
-        .timeline-node-dot {
-            position: absolute;
-            left: 20px;
-            top: 1.8rem;
-            transform: translate(-50%, 0);
-            width: 24px;
-            height: 24px;
-            z-index: 30;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-        }
-        .timeline-dot-inner {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #cbd5e1;
-            border: 2.5px solid #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.12);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .timeline-node-dot.active-dot .timeline-dot-inner {
-            background-color: #22c55e;
-            border-color: #22c55e;
-            transform: scale(1.45);
-            box-shadow: 0 0 18px #22c55e, 0 0 36px rgba(34, 197, 94, 0.75);
+            height: 100%;
+            display: block;
         }
     </style>
 </head>
@@ -217,23 +176,23 @@
     <!-- ======================================================== -->
     <section id="showcase-section" class="w-full bg-transparent relative overflow-hidden py-16 lg:py-24">
         
-        <!-- LEFT-ALIGNED VERTICAL GUIDE LINE & FILLING BEAM (LEFT: 20px) -->
-        <div class="timeline-guide-line">
-            <div id="timeline-beam-progress" class="timeline-beam-progress"></div>
+        <!-- Background Curved Lime-Green Line SVG (New-Porto Exact Replication) -->
+        <div class="deka-svg-bg">
+            <svg viewBox="0 0 1000 3800" class="deka-curved-svg" preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg">
+                <path id="dekaCurvedPath"
+                    d="M 2100 100 C 800 100, 650 200, 650 400 C 650 650, 850 750, 780 950 C 710 1150, 380 1200, 360 1450 C 340 1700, 680 1750, 620 2050 C 560 2350, 200 2360, 280 2600 C 350 2800, 800 2900, 750 3100 C 700 3300, -100 3550, -2500 3600"
+                    stroke="#CAE83A" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"
+                    fill="none" opacity="0.85" />
+            </svg>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64 relative z-20">
 
             <!-- ---------------------------------------------------- -->
-            <!-- FEATURE 1: Target Tabungan (Unified Left-to-Right)   -->
+            <!-- FEATURE 1: Target Tabungan                           -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-1" class="showcase-feature-row relative pl-[50px] sm:pl-[60px] md:pl-[70px] min-h-[65vh] flex items-center">
-                
-                <!-- Glowing Neon Node Dot at Left Line -->
-                <div class="timeline-node-dot">
-                    <div class="timeline-dot-inner"></div>
-                </div>
-
+            <div id="feature-1" class="showcase-feature-row min-h-[65vh] flex items-center">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
                     <!-- Text on Left -->
                     <div id="feature-1-text" class="lg:col-span-7 space-y-5 text-left">
@@ -252,19 +211,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <!-- ---------------------------------------------------- -->
-            <!-- FEATURE 2: Riwayat Transaksi (Unified Left-to-Right) -->
+            <!-- FEATURE 2: Riwayat Transaksi                         -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-2" class="showcase-feature-row relative pl-[50px] sm:pl-[60px] md:pl-[70px] min-h-[65vh] flex items-center">
-                
-                <!-- Glowing Neon Node Dot at Left Line -->
-                <div class="timeline-node-dot">
-                    <div class="timeline-dot-inner"></div>
-                </div>
-
+            <div id="feature-2" class="showcase-feature-row min-h-[65vh] flex items-center">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
                     <!-- Text on Left -->
                     <div id="feature-2-text" class="lg:col-span-7 space-y-5 text-left">
@@ -283,19 +235,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <!-- ---------------------------------------------------- -->
-            <!-- FEATURE 3: Guru & Sekolah (Unified Left-to-Right)     -->
+            <!-- FEATURE 3: Guru & Sekolah                            -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-3" class="showcase-feature-row relative pl-[50px] sm:pl-[60px] md:pl-[70px] min-h-[65vh] flex items-center">
-                
-                <!-- Glowing Neon Node Dot at Left Line -->
-                <div class="timeline-node-dot">
-                    <div class="timeline-dot-inner"></div>
-                </div>
-
+            <div id="feature-3" class="showcase-feature-row min-h-[65vh] flex items-center">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
                     <!-- Text on Left -->
                     <div id="feature-3-text" class="lg:col-span-7 space-y-5 text-left">
@@ -314,7 +259,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -591,34 +535,28 @@
             }
         );
 
-        // 5. New-Porto Style Timeline Vertical Beam Fill & Glowing Neon Dot Activation
-        const timelineProgress = document.getElementById("timeline-beam-progress");
-        if (timelineProgress) {
-            gsap.to(timelineProgress, {
-                height: "100%",
+        // 5. New-Porto Style Curved SVG Line ScrollTrigger Animation
+        const curvedPath = document.getElementById("dekaCurvedPath");
+        const showcaseSec = document.getElementById("showcase-section");
+        if (curvedPath && showcaseSec) {
+            const pathLength = curvedPath.getTotalLength ? curvedPath.getTotalLength() : 3500;
+
+            gsap.set(curvedPath, {
+                strokeDasharray: pathLength,
+                strokeDashoffset: pathLength
+            });
+
+            gsap.to(curvedPath, {
+                strokeDashoffset: 0,
                 ease: "none",
                 scrollTrigger: {
-                    trigger: "#showcase-section",
-                    start: "top 65%",
-                    end: "bottom 75%",
-                    scrub: 0.5,
+                    trigger: showcaseSec,
+                    start: "top 70%",
+                    end: "bottom 30%",
+                    scrub: 1
                 }
             });
         }
-
-        // Activate glowing dots as user scrolls into each feature row
-        const showcaseRows = document.querySelectorAll(".showcase-feature-row");
-        showcaseRows.forEach(row => {
-            const dot = row.querySelector(".timeline-node-dot");
-            if (dot) {
-                ScrollTrigger.create({
-                    trigger: row,
-                    start: "top 60%",
-                    onEnter: () => dot.classList.add("active-dot"),
-                    onLeaveBack: () => dot.classList.remove("active-dot")
-                });
-            }
-        });
     </script>
 
 </body>
