@@ -455,23 +455,16 @@
                     @error('name') <span class="text-[10px] text-rose-500 font-bold block mt-1">{{ $message }}</span> @enderror
                 </div>
 
-                <!-- Class (Otomatis dari Guru / Terkunci) -->
+                <!-- Class -->
                 <div class="space-y-1.5">
-                    <label class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Kelas (Otomatis dari Guru)</label>
-                    <div class="relative">
-                        <input 
-                            type="text" 
-                            wire:model="class_name"
-                            class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs text-slate-700 bg-slate-100/80 font-bold cursor-not-allowed select-none focus:outline-hidden pr-10"
-                            readonly
-                            disabled
-                        >
-                        <div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                            </svg>
-                        </div>
-                    </div>
+                    <label class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Kelas</label>
+                    <input 
+                        type="text" 
+                        wire:model="class_name"
+                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-700 bg-slate-100/80 font-bold cursor-not-allowed select-none focus:outline-hidden"
+                        readonly
+                        disabled
+                    >
                 </div>
 
                 <!-- Balance -->
