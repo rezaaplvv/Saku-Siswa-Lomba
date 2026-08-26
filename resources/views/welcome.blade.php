@@ -278,21 +278,21 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
                 
                 <!-- LEFT COLUMN: TITLE, SUBTEXT, QR CODE & PLAYSTORE -->
-                <div class="lg:col-span-6 flex flex-col items-start text-left space-y-4 sm:space-y-5 z-10 pb-8 sm:pb-10 lg:pb-12">
+                <div class="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left space-y-5 sm:space-y-6 z-10 pb-8 sm:pb-10 lg:pb-12 w-full">
                     <div class="space-y-2">
                         <h2 data-i18n="cta_title" class="text-3xl sm:text-4xl lg:text-[3.2rem] font-bold tracking-tight text-white leading-tight font-inter">
                             Dapatkan Aplikasi
                         </h2>
-                        <p data-i18n="cta_subtitle" class="text-sm sm:text-base lg:text-lg text-slate-200 font-semibold font-inter">
+                        <p data-i18n="cta_subtitle" class="text-sm sm:text-base lg:text-lg text-slate-200 font-semibold font-inter max-w-md mx-auto lg:mx-0">
                             Cukup pindai kode QR untuk mulai menggunakan.
                         </p>
                     </div>
 
                     <!-- Interactive Download & Direct Web Access Row -->
-                    <div class="flex flex-wrap items-center gap-8 sm:gap-10 lg:gap-12 pt-1">
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 sm:gap-10 lg:gap-12 pt-1 w-full">
                         
                         <!-- Left: QR Code & Playstore Badge -->
-                        <div class="flex flex-col items-start space-y-3">
+                        <div class="flex flex-col items-center lg:items-start space-y-3">
                             <!-- Compact QR Code with white rounded frame -->
                             <div class="w-28 h-28 sm:w-32 sm:h-32 bg-white rounded-2xl p-2.5 sm:p-3 shadow-xl flex items-center justify-center">
                                 <img src="/assets/qr.png" alt="Scan QR Code" class="w-full h-full object-contain select-none">
