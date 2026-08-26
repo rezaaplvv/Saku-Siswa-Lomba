@@ -146,7 +146,7 @@
             </div>
 
             <!-- RIGHT COLUMN: HERO HEADLINE & 3D BUTTONS (Slides Right on Scroll) -->
-            <div id="hero-text-wrap" class="lg:col-span-5 flex flex-col items-start text-left space-y-5 sm:space-y-6 z-20">
+            <div id="hero-text-wrap" class="lg:col-span-5 flex flex-col items-center text-center lg:items-start lg:text-left space-y-5 sm:space-y-6 z-20">
                 
                 <!-- Main Bold Headline (Font: Fredoka) -->
                 <h1 data-i18n="hero_title" class="font-fredoka font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] text-slate-900 leading-[1.12] tracking-tight">
@@ -154,24 +154,24 @@
                 </h1>
 
                 <!-- Sub-headline (Font: Inter) -->
-                <p data-i18n="hero_subtitle" class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                <p data-i18n="hero_subtitle" class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
                     SakuSiswa membantu mengelola tabungan dengan mudah, aman dan transparan
                 </p>
 
                 <!-- 2 Buttons with 3D Shadow Effect -->
-                <div class="flex flex-wrap items-center gap-4 sm:gap-5 pt-2 sm:pt-3">
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-2 sm:pt-3 w-full sm:w-auto">
                     
                     <!-- Button 1: Daftar Sekarang (White 3D Button) -->
                     <a href="{{ route('register') }}" 
                        data-i18n="btn_register"
-                       class="px-7 py-3.5 sm:px-8 sm:py-4 bg-white text-slate-900 font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-slate-200/90 shadow-[0_6px_0_#94a3b8] hover:shadow-[0_4px_0_#94a3b8] hover:translate-y-[2px] active:shadow-[0_0px_0_#94a3b8] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center text-center">
+                       class="w-full max-w-[280px] sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 bg-white text-slate-900 font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-slate-200/90 shadow-[0_6px_0_#94a3b8] hover:shadow-[0_4px_0_#94a3b8] hover:translate-y-[2px] active:shadow-[0_0px_0_#94a3b8] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center text-center">
                         Daftar Sekarang
                     </a>
 
                     <!-- Button 2: Masuk ke Akun (Dark Slate 3D Button) -->
                     <a href="{{ route('login') }}" 
                        data-i18n="btn_login"
-                       class="px-7 py-3.5 sm:px-8 sm:py-4 bg-slate-900 text-white font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-slate-950 shadow-[0_6px_0_#020617] hover:shadow-[0_4px_0_#020617] hover:translate-y-[2px] active:shadow-[0_0px_0_#020617] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center text-center">
+                       class="w-full max-w-[280px] sm:w-auto px-7 py-3.5 sm:px-8 sm:py-4 bg-slate-900 text-white font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-slate-950 shadow-[0_6px_0_#020617] hover:shadow-[0_4px_0_#020617] hover:translate-y-[2px] active:shadow-[0_0px_0_#020617] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center text-center">
                         Masuk ke Akun
                     </a>
 
