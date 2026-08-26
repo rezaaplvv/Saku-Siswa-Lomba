@@ -441,30 +441,23 @@
 
         });
 
-        // 3. Dynamic Smooth Background Fade Transitions (Bidirectional ScrollTrigger)
-        // Fade IN White Backdrop: Hero (Yellow) -> Showcase (White)
-        gsap.to("#white-backdrop", {
-            opacity: 1,
-            ease: "none",
+        // 3. Dynamic Smooth Background Fade (Unified Conflict-Free Timeline)
+        const bgTl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#showcase-section",
+                endTrigger: "#cta-section",
                 start: "top 80%",
-                end: "top 30%",
-                scrub: 1.0,
-            }
-        });
-
-        // Fade OUT White Backdrop: Showcase (White) -> Get The App (Yellow)
-        gsap.to("#white-backdrop", {
-            opacity: 0,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#cta-section",
-                start: "top 85%",
                 end: "top 35%",
                 scrub: 1.0,
             }
         });
+
+        bgTl.fromTo("#white-backdrop", 
+            { opacity: 0 }, 
+            { opacity: 1, ease: "power1.inOut", duration: 1.0 }
+        )
+        .to("#white-backdrop", { opacity: 1, duration: 3.5 }) // Stays pure white throughout the 3 features
+        .to("#white-backdrop", { opacity: 0, ease: "power1.inOut", duration: 1.0 }); // Fades out back to yellow at CTA
 
         // 4. CTA Section 3-Phones Emergence Rise Animation (Longer, Slower & Highly Visible)
         gsap.fromTo("#cta-3ip-img", 
