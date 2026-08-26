@@ -261,7 +261,7 @@
                     </div>
 
                     <!-- Interactive Download & Direct Web Access Row -->
-                    <div class="flex flex-wrap items-center gap-6 sm:gap-8 pt-1">
+                    <div class="flex flex-wrap items-center gap-8 sm:gap-10 lg:gap-12 pt-1">
                         
                         <!-- Left: QR Code & Playstore Badge -->
                         <div class="flex flex-col items-start space-y-3">
@@ -278,8 +278,8 @@
                             </div>
                         </div>
 
-                        <!-- Right: Direct Web Access Capsule (Search-bar Style) -->
-                        <div class="flex flex-col items-start space-y-2">
+                        <!-- Right: Direct Web Access Capsule (Centered & Spaced to the Right) -->
+                        <div class="flex flex-col items-center text-center space-y-2.5 sm:pl-2">
                             <span class="text-xs sm:text-sm font-medium text-slate-300/90 font-inter">
                                 or access directly via web:
                             </span>
@@ -287,7 +287,7 @@
                             <!-- Search-bar Rounded Capsule -->
                             <a href="https://www.sakusiswa.my.id" 
                                target="_blank"
-                               class="group inline-flex items-center space-x-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-amber-400/80 shadow-inner transition-all duration-200">
+                               class="group inline-flex items-center justify-center space-x-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-amber-400/80 shadow-inner transition-all duration-200">
                                 <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 group-hover:scale-110 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                                 </svg>
