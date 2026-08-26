@@ -292,7 +292,7 @@
                         <img src="/assets/iconaplikasi.png" alt="SakuSiswa Logo" class="w-full h-full object-contain">
                     </div>
                     <span class="font-fredoka text-2xl font-bold text-white tracking-tight">
-                        Saku<span class="text-[#FFE96E]">Siswa</span>
+                        Saku<span class="text-amber-900">Siswa</span>
                     </span>
                 </div>
                 <p class="text-xs sm:text-sm font-medium text-slate-400 max-w-sm">
