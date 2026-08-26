@@ -409,22 +409,22 @@
     <!-- Modal Form (Alpine controlled with wire:model bindings) -->
     <div 
         x-show="openForm" 
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs font-sans"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs font-['Outfit']"
         x-transition
         style="display: none;"
     >
         <div 
             @click.away="$wire.closeForm()" 
-            class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-100 relative font-['Outfit'] space-y-5"
+            class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-100 relative space-y-5"
         >
             <!-- Modal Header -->
             <div class="text-left space-y-1">
-                <h3 class="text-lg font-black text-slate-800">{{ $studentId ? 'Edit Data Siswa' : 'Tambah Siswa Baru' }}</h3>
+                <h3 class="text-lg font-black text-slate-800 tracking-tight">{{ $studentId ? 'Edit Data Siswa' : 'Tambah Siswa Baru' }}</h3>
                 <p class="text-xs text-slate-400 font-medium">Lengkapi rincian data diri dan target tabungan siswa</p>
             </div>
 
             <!-- Form -->
-            <form wire:submit.prevent="saveStudent" class="space-y-4 text-left font-['Plus_Jakarta_Sans']">
+            <form wire:submit.prevent="saveStudent" class="space-y-4 text-left">
                 <!-- NISN -->
                 <div class="space-y-1.5">
                     <label for="nisn" class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">NISN (10 Digit)</label>
@@ -434,7 +434,7 @@
                         pattern="[0-9]*"
                         id="nisn" 
                         wire:model="nisn"
-                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 font-mono font-bold"
+                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-800 placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 font-bold tracking-wider"
                         placeholder="Contoh: 0123456789"
                         required
                     >
@@ -448,7 +448,7 @@
                         type="text" 
                         id="name" 
                         wire:model="name"
-                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40"
+                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-800 placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 font-semibold"
                         placeholder="Nama Lengkap Siswa"
                         required
                     >
@@ -512,14 +512,14 @@
                         id="balance" 
                         x-model="formattedBalance"
                         @input="updateBalance($event.target.value)"
-                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 disabled:opacity-60 disabled:cursor-not-allowed font-bold"
+                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-800 placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 disabled:opacity-60 disabled:cursor-not-allowed font-bold"
                         placeholder="0"
                         required
                         @if($studentId) disabled @endif
                     >
                     @error('balance') <span class="text-[10px] text-rose-500 font-bold block mt-1">{{ $message }}</span> @enderror
                 </div>
- 
+
                 <!-- Saving Target -->
                 <div class="space-y-1.5">
                     <label for="saving_target" class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Target Tabungan (Rp)</label>
@@ -528,7 +528,7 @@
                         id="saving_target" 
                         x-model="formattedSavingTarget"
                         @input="updateSavingTarget($event.target.value)"
-                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 font-bold"
+                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-800 placeholder-slate-450 focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 font-bold"
                         placeholder="500.000"
                         required
                     >
