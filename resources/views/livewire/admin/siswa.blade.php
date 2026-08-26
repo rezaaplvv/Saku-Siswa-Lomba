@@ -455,53 +455,23 @@
                     @error('name') <span class="text-[10px] text-rose-500 font-bold block mt-1">{{ $message }}</span> @enderror
                 </div>
 
-                <!-- Class -->
-                <div class="space-y-1.5" x-data="{ 
-                    openSelect: false,
-                    value: @entangle('class_name'),
-                    options: @js($availableClasses),
-                    selectOption(val) {
-                        this.value = val;
-                        this.openSelect = false;
-                    }
-                }">
-                    <label class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Kelas</label>
+                <!-- Class (Otomatis dari Guru / Terkunci) -->
+                <div class="space-y-1.5">
+                    <label class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Kelas (Otomatis dari Guru)</label>
                     <div class="relative">
-                        <button 
-                            type="button"
-                            @click="openSelect = !openSelect"
-                            class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs font-semibold focus:outline-hidden focus:border-amber-500 focus:ring-4 focus:ring-amber-500/10 bg-slate-50/40 transition-all duration-200 text-left flex items-center justify-between cursor-pointer"
+                        <input 
+                            type="text" 
+                            wire:model="class_name"
+                            class="w-full px-4 py-3 rounded-2xl border border-slate-200 text-xs text-slate-700 bg-slate-100/80 font-bold cursor-not-allowed select-none focus:outline-hidden pr-10"
+                            readonly
+                            disabled
                         >
-                            <span x-text="value ? 'Kelas ' + value : 'Pilih Kelas'" class="text-slate-800"></span>
-                            <svg class="w-3.5 h-3.5 text-slate-450 transition-transform duration-200" :class="openSelect ? 'rotate-180' : ''" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        <div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                             </svg>
-                        </button>
-
-                        <div 
-                            x-show="openSelect" 
-                            @click.away="openSelect = false"
-                            x-transition
-                            class="absolute left-0 right-0 mt-1.5 max-h-48 overflow-y-auto rounded-2xl bg-white shadow-xl border border-slate-150 z-50 py-1"
-                            style="display: none; scrollbar-width: thin;"
-                        >
-                            <button type="button" @click="selectOption('')" class="w-full text-left px-4 py-2 hover:bg-slate-50 font-semibold text-slate-550 text-xs cursor-pointer">Pilih Kelas</button>
-                            <template x-for="cls in options" :key="cls">
-                                <button 
-                                    type="button" 
-                                    @click="selectOption(cls)" 
-                                    class="w-full text-left px-4 py-2 hover:bg-slate-50 font-semibold text-slate-700 text-xs flex items-center justify-between cursor-pointer"
-                                    :class="value === cls ? 'bg-amber-50 text-amber-900 font-bold' : ''"
-                                >
-                                    <span x-text="'Kelas ' + cls"></span>
-                                    <svg x-show="value === cls" class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                    </svg>
-                                </button>
-                            </template>
                         </div>
                     </div>
-                    @error('class_name') <span class="text-[10px] text-rose-500 font-bold block mt-1">{{ $message }}</span> @enderror
                 </div>
 
                 <!-- Balance -->
