@@ -344,27 +344,26 @@
     <!-- ======================================================== -->
     <!-- SECTION 4: MODERN CLEAN FOOTER (WHITE THEME)             -->
     <!-- ======================================================== -->
-    <footer class="w-full border-t border-slate-200/90 py-8 px-6 sm:px-10 lg:px-12 bg-white text-slate-900 relative z-20 font-inter">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+    <footer class="w-full border-t border-slate-200/90 py-10 px-6 sm:px-10 lg:px-12 bg-white text-slate-900 relative z-20 font-inter">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-end justify-between gap-6 text-center md:text-left">
             
-            <!-- Brand & Tagline -->
-            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                <div class="flex items-center space-x-2.5">
-                    <div class="w-8 h-8 rounded-xl bg-amber-50 shadow-xs border border-amber-200/80 p-1 flex items-center justify-center">
+            <!-- Brand & Tagline Underneath Logo -->
+            <div class="flex flex-col items-center md:items-start space-y-2.5">
+                <a href="{{ url('/') }}" class="inline-flex items-center space-x-3 group transition-transform duration-200 hover:scale-[1.02]">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-50 shadow-xs border border-amber-200/80 p-1.5 flex items-center justify-center">
                         <img src="/assets/iconaplikasi.png" alt="SakuSiswa Logo" class="w-full h-full object-contain">
                     </div>
-                    <span class="font-fredoka text-xl font-bold text-slate-900 tracking-tight">
+                    <span class="font-fredoka text-2xl font-bold text-slate-900 tracking-tight">
                         Saku<span class="text-amber-900">Siswa</span>
                     </span>
-                </div>
-                <span class="hidden sm:inline text-slate-300">|</span>
-                <p data-i18n="footer_tagline" class="text-xs sm:text-sm font-medium text-slate-600">
+                </a>
+                <p data-i18n="footer_tagline" class="text-xs sm:text-sm font-medium text-slate-600 max-w-md leading-relaxed">
                     Platform tabungan sekolah digital yang aman, mudah, dan transparan untuk masa depan anak.
                 </p>
             </div>
 
             <!-- Single-Line Copyright -->
-            <div class="text-xs sm:text-sm font-medium text-slate-500 whitespace-nowrap">
+            <div class="text-xs sm:text-sm font-medium text-slate-500 whitespace-nowrap pb-1">
                 <p data-i18n="footer_copyright">&copy; 2026 SakuSiswa. Hak cipta dilindungi undang-undang.</p>
             </div>
 
