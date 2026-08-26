@@ -76,11 +76,20 @@
                 </span>
             </a>
 
-            <div class="hidden sm:flex items-center space-x-3">
-                <a href="{{ route('login') }}" 
-                   class="px-5 py-2.5 bg-slate-900 text-white font-fredoka font-bold text-sm rounded-xl border border-slate-950 shadow-[0_4px_0_#020617] hover:shadow-[0_2px_0_#020617] hover:translate-y-[2px] active:shadow-[0_0px_0_#020617] active:translate-y-[4px] transition-all inline-flex items-center justify-center">
-                    Masuk Akun
-                </a>
+            <!-- LANGUAGE SWITCHER (ID / EN) -->
+            <div class="flex items-center">
+                <div class="bg-white/90 p-1 rounded-2xl border border-amber-300/80 shadow-xs flex items-center space-x-1 font-fredoka font-bold text-xs sm:text-sm">
+                    <button id="lang-btn-id" 
+                            onclick="setLanguage('id')" 
+                            class="px-3 py-1.5 rounded-xl bg-slate-900 text-white shadow-xs transition-all duration-200 cursor-pointer">
+                        ID
+                    </button>
+                    <button id="lang-btn-en" 
+                            onclick="setLanguage('en')" 
+                            class="px-3 py-1.5 rounded-xl text-slate-700 hover:text-slate-900 transition-all duration-200 cursor-pointer">
+                        EN
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -140,12 +149,12 @@
             <div id="hero-text-wrap" class="lg:col-span-5 flex flex-col items-start text-left space-y-5 sm:space-y-6 z-20">
                 
                 <!-- Main Bold Headline (Font: Fredoka) -->
-                <h1 class="font-fredoka font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] text-slate-900 leading-[1.12] tracking-tight">
+                <h1 data-i18n="hero_title" class="font-fredoka font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-[3.15rem] text-slate-900 leading-[1.12] tracking-tight">
                     Cara modern membiasakan menabung sejak dini!
                 </h1>
 
                 <!-- Sub-headline (Font: Inter) -->
-                <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                <p data-i18n="hero_subtitle" class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
                     SakuSiswa membantu mengelola tabungan dengan mudah, aman dan transparan
                 </p>
 
@@ -154,12 +163,14 @@
                     
                     <!-- Button 1: Daftar Sekarang (White 3D Button) -->
                     <a href="{{ route('register') }}" 
+                       data-i18n="btn_register"
                        class="px-7 py-3.5 sm:px-8 sm:py-4 bg-white text-slate-900 font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-slate-200/90 shadow-[0_6px_0_#94a3b8] hover:shadow-[0_4px_0_#94a3b8] hover:translate-y-[2px] active:shadow-[0_0px_0_#94a3b8] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center text-center">
                         Daftar Sekarang
                     </a>
 
                     <!-- Button 2: Masuk ke Akun (Dark Slate 3D Button) -->
                     <a href="{{ route('login') }}" 
+                       data-i18n="btn_login"
                        class="px-7 py-3.5 sm:px-8 sm:py-4 bg-slate-900 text-white font-fredoka font-bold text-base sm:text-lg rounded-2xl border-2 border-slate-950 shadow-[0_6px_0_#020617] hover:shadow-[0_4px_0_#020617] hover:translate-y-[2px] active:shadow-[0_0px_0_#020617] active:translate-y-[6px] transition-all cursor-pointer inline-flex items-center justify-center text-center">
                         Masuk ke Akun
                     </a>
@@ -195,10 +206,10 @@
             <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 <!-- Text on Left -->
                 <div id="feature-1-text" class="lg:col-span-6 space-y-5 text-left">
-                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                    <h2 data-i18n="f1_title" class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
                         seru. mudah. terarah.
                     </h2>
-                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                    <p data-i18n="f1_desc" class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
                         Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.
                     </p>
                 </div>
@@ -224,10 +235,10 @@
 
                 <!-- Text on Right -->
                 <div id="feature-2-text" class="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
-                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                    <h2 data-i18n="f2_title" class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
                         aman. transparan. tenang.
                     </h2>
-                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                    <p data-i18n="f2_desc" class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
                         Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.
                     </p>
                 </div>
@@ -239,10 +250,10 @@
             <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
                 <!-- Text on Left -->
                 <div id="feature-3-text" class="lg:col-span-6 space-y-5 text-left">
-                    <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
+                    <h2 data-i18n="f3_title" class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
                         cepat. rapi. otomatis.
                     </h2>
-                    <p class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
+                    <p data-i18n="f3_desc" class="font-inter text-base sm:text-lg lg:text-xl text-slate-800/90 font-medium leading-relaxed max-w-lg">
                         Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.
                     </p>
                 </div>
@@ -269,11 +280,11 @@
                 <!-- LEFT COLUMN: TITLE, SUBTEXT, QR CODE & PLAYSTORE -->
                 <div class="lg:col-span-6 flex flex-col items-start text-left space-y-4 sm:space-y-5 z-10 pb-8 sm:pb-10 lg:pb-12">
                     <div class="space-y-2">
-                        <h2 class="text-3xl sm:text-4xl lg:text-[3.2rem] font-bold tracking-tight text-white leading-tight font-inter">
-                            Get The app
+                        <h2 data-i18n="cta_title" class="text-3xl sm:text-4xl lg:text-[3.2rem] font-bold tracking-tight text-white leading-tight font-inter">
+                            Dapatkan Aplikasi
                         </h2>
-                        <p class="text-sm sm:text-base lg:text-lg text-slate-200 font-semibold font-inter">
-                            Just scan the QR code to get started.
+                        <p data-i18n="cta_subtitle" class="text-sm sm:text-base lg:text-lg text-slate-200 font-semibold font-inter">
+                            Cukup pindai kode QR untuk mulai menggunakan.
                         </p>
                     </div>
 
@@ -297,8 +308,8 @@
 
                         <!-- Right: Direct Web Access Capsule (Centered & Spaced to the Right) -->
                         <div class="flex flex-col items-center text-center space-y-2.5 sm:pl-2">
-                            <span class="text-xs sm:text-sm font-medium text-slate-300/90 font-inter">
-                                or access directly via web:
+                            <span data-i18n="cta_web_label" class="text-xs sm:text-sm font-medium text-slate-300/90 font-inter">
+                                atau akses langsung via web:
                             </span>
                             
                             <!-- Search-bar Rounded Capsule -->
@@ -346,22 +357,22 @@
                         Saku<span class="text-amber-900">Siswa</span>
                     </span>
                 </div>
-                <p class="text-xs sm:text-sm font-medium text-slate-600 max-w-sm">
+                <p data-i18n="footer_tagline" class="text-xs sm:text-sm font-medium text-slate-600 max-w-sm">
                     Platform tabungan sekolah digital yang aman, mudah, dan transparan untuk masa depan anak.
                 </p>
             </div>
 
             <!-- Navigation Links -->
             <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm font-semibold text-slate-700">
-                <a href="{{ url('/') }}" class="hover:text-amber-900 transition-colors">Beranda</a>
-                <a href="{{ route('login') }}" class="hover:text-amber-900 transition-colors">Masuk Akun</a>
-                <a href="{{ route('register') }}" class="hover:text-amber-900 transition-colors">Daftar Sekolah</a>
-                <a href="{{ route('privacy') }}" class="hover:text-amber-900 transition-colors">Kebijakan Privasi</a>
+                <a href="{{ url('/') }}" data-i18n="nav_home" class="hover:text-amber-900 transition-colors">Beranda</a>
+                <a href="{{ route('login') }}" data-i18n="nav_login" class="hover:text-amber-900 transition-colors">Masuk Akun</a>
+                <a href="{{ route('register') }}" data-i18n="nav_register" class="hover:text-amber-900 transition-colors">Daftar Sekolah</a>
+                <a href="{{ route('privacy') }}" data-i18n="nav_privacy" class="hover:text-amber-900 transition-colors">Kebijakan Privasi</a>
             </div>
 
             <!-- Copyright -->
             <div class="text-xs sm:text-sm font-medium text-slate-500">
-                <p>&copy; 2026 SakuSiswa. All rights reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 SakuSiswa. Hak cipta dilindungi undang-undang.</p>
             </div>
 
         </div>
@@ -548,6 +559,81 @@
                     scrub: 1
                 }
             });
+        }
+        // 6. Interactive Bilingual Translation Engine (ID <-> EN)
+        const translations = {
+            id: {
+                hero_title: "Cara modern membiasakan menabung sejak dini!",
+                hero_subtitle: "SakuSiswa membantu mengelola tabungan dengan mudah, aman dan transparan",
+                btn_register: "Daftar Sekarang",
+                btn_login: "Masuk ke Akun",
+                f1_title: "seru. mudah. terarah.",
+                f1_desc: 'Menabung bersama SakuSiswa itu seru dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">membuat anak bersemangat</span>! Dengan target tabungan impian dan progress bar yang jelas, anak belajar menyisihkan uang jajan sehari-hari untuk mewujudkan cita-citanya.',
+                f2_title: "aman. transparan. tenang.",
+                f2_desc: 'Orang tua bisa memantau aliran tabungan anak <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">secara real-time dari rumah</span>. Setiap uang yang disetor di sekolah langsung tercatat rapi, tanpa rasa khawatir uang hilang atau salah catat.',
+                f3_title: "cepat. rapi. otomatis.",
+                f3_desc: 'Bebaskan guru dari kerumitan buku kas manual. Pencatatan setoran selesai dalam hitungan detik dan <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">laporan keuangan sekolah otomatis siap dicetak</span> kapan saja.',
+                cta_title: "Dapatkan Aplikasi",
+                cta_subtitle: "Cukup pindai kode QR untuk mulai menggunakan.",
+                cta_web_label: "atau akses langsung via web:",
+                footer_tagline: "Platform tabungan sekolah digital yang aman, mudah, dan transparan untuk masa depan anak.",
+                nav_home: "Beranda",
+                nav_login: "Masuk Akun",
+                nav_register: "Daftar Sekolah",
+                nav_privacy: "Kebijakan Privasi",
+                footer_copyright: "&copy; 2026 SakuSiswa. Hak cipta dilindungi undang-undang."
+            },
+            en: {
+                hero_title: "The modern way to build saving habits early!",
+                hero_subtitle: "SakuSiswa helps manage school savings easily, securely, and transparently",
+                btn_register: "Register Now",
+                btn_login: "Sign In",
+                f1_title: "fun. easy. focused.",
+                f1_desc: 'Saving with SakuSiswa is fun and <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">excites children</span>! With dream savings goals and clear progress bars, students learn to set aside daily pocket money to achieve their dreams.',
+                f2_title: "safe. transparent. peaceful.",
+                f2_desc: 'Parents can monitor their child\'s savings flow <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">in real-time from home</span>. Every deposit made at school is neatly recorded, free from worries of lost or miscalculated cash.',
+                f3_title: "fast. neat. automated.",
+                f3_desc: 'Free teachers from the hassle of manual ledger books. Deposit recording is done in seconds and <span class="font-bold text-slate-900 underline decoration-amber-600 decoration-2 underline-offset-4">school financial reports are ready to print</span> anytime.',
+                cta_title: "Get The App",
+                cta_subtitle: "Just scan the QR code to get started.",
+                cta_web_label: "or access directly via web:",
+                footer_tagline: "Digital school savings platform that is secure, simple, and transparent for children's future.",
+                nav_home: "Home",
+                nav_login: "Sign In",
+                nav_register: "Register School",
+                nav_privacy: "Privacy Policy",
+                footer_copyright: "&copy; 2026 SakuSiswa. All rights reserved."
+            }
+        };
+
+        function setLanguage(lang) {
+            const btnId = document.getElementById("lang-btn-id");
+            const btnEn = document.getElementById("lang-btn-en");
+            
+            if (btnId && btnEn) {
+                if (lang === 'en') {
+                    btnEn.className = "px-3 py-1.5 rounded-xl bg-slate-900 text-white shadow-xs transition-all duration-200 cursor-pointer";
+                    btnId.className = "px-3 py-1.5 rounded-xl text-slate-700 hover:text-slate-900 transition-all duration-200 cursor-pointer";
+                } else {
+                    btnId.className = "px-3 py-1.5 rounded-xl bg-slate-900 text-white shadow-xs transition-all duration-200 cursor-pointer";
+                    btnEn.className = "px-3 py-1.5 rounded-xl text-slate-700 hover:text-slate-900 transition-all duration-200 cursor-pointer";
+                }
+            }
+
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            localStorage.setItem("sakusiswa_lang", lang);
+        }
+
+        // Initialize saved language if exists
+        const savedLang = localStorage.getItem("sakusiswa_lang") || "id";
+        if (savedLang !== "id") {
+            setLanguage(savedLang);
         }
     </script>
 
