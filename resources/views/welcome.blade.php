@@ -176,13 +176,13 @@
     <!-- ======================================================== -->
     <section id="showcase-section" class="w-full bg-transparent relative overflow-hidden py-16 lg:py-24">
         
-        <!-- Background Curved Lime-Green Line SVG (New-Porto Exact Replication) -->
+        <!-- Background Curved Yellow Line SVG -->
         <div class="deka-svg-bg">
             <svg viewBox="0 0 1000 3800" class="deka-curved-svg" preserveAspectRatio="xMidYMid meet"
                 xmlns="http://www.w3.org/2000/svg">
                 <path id="dekaCurvedPath"
                     d="M 2100 100 C 800 100, 650 200, 650 400 C 650 650, 850 750, 780 950 C 710 1150, 380 1200, 360 1450 C 340 1700, 680 1750, 620 2050 C 560 2350, 200 2360, 280 2600 C 350 2800, 800 2900, 750 3100 C 700 3300, -100 3550, -2500 3600"
-                    stroke="#CAE83A" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"
+                    stroke="#FBBF24" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"
                     fill="none" opacity="0.85" />
             </svg>
         </div>
