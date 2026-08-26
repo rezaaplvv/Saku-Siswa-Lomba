@@ -239,33 +239,33 @@
                     </div>
                     
                     <div class="flex items-center justify-between sm:justify-end sm:space-x-4 shrink-0 font-['Outfit'] border-t border-slate-50 pt-2.5 sm:border-0 sm:pt-0">
-                        <!-- School, Class & Metrics Badges -->
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-1.5 sm:gap-2">
+                        <!-- School, Class & Metrics Badges (Unified Minimalist Professional Styling) -->
+                        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
                             <!-- School Badge -->
-                            <span class="inline-flex items-center px-2.5 py-1 bg-slate-100 border border-slate-200 rounded-lg text-[10px] font-extrabold text-slate-700 uppercase tracking-wide">
+                            <span class="inline-flex items-center px-2.5 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-[10px] font-bold text-slate-700 uppercase tracking-wide">
                                 {{ $teacher->school_name ?? 'Sekolah' }}
                             </span>
 
                             <!-- Class Badge -->
                             @if($teacher->class_name)
-                                <span class="inline-flex items-center px-2.5 py-1 bg-amber-50 border border-amber-200 rounded-lg text-[10px] font-extrabold text-amber-800 uppercase tracking-wide">
-                                    Wali Kelas {{ $teacher->class_name }}
+                                <span class="inline-flex items-center px-2.5 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-[10px] font-bold text-slate-700 uppercase tracking-wide">
+                                    Kelas {{ $teacher->class_name }}
                                 </span>
                             @else
-                                <span class="inline-flex items-center px-2.5 py-1 bg-slate-50 border border-slate-100 rounded-lg text-[10px] font-bold text-slate-400 tracking-wide">
-                                    Belum Ada Kelas
+                                <span class="inline-flex items-center px-2.5 py-1 bg-slate-50 border border-slate-100 rounded-lg text-[10px] font-medium text-slate-400">
+                                    Tanpa Kelas
                                 </span>
                             @endif
 
-                            <!-- Student Count & Balance Badge -->
-                            <div class="flex items-center space-x-2 text-[11px] font-bold text-slate-600 pl-0.5 sm:pl-1">
-                                <span class="px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded-md border border-emerald-100 font-extrabold">
-                                    {{ $teacher->student_count ?? 0 }} Siswa
-                                </span>
-                                <span class="font-extrabold text-slate-800">
-                                    Rp {{ number_format($teacher->total_balance ?? 0, 0, ',', '.') }}
-                                </span>
-                            </div>
+                            <!-- Student Count Badge -->
+                            <span class="inline-flex items-center px-2.5 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-[10px] font-bold text-slate-700">
+                                {{ $teacher->student_count ?? 0 }} Siswa
+                            </span>
+
+                            <!-- Balance -->
+                            <span class="text-xs font-black text-slate-850 pl-1 sm:pl-2">
+                                Rp {{ number_format($teacher->total_balance ?? 0, 0, ',', '.') }}
+                            </span>
                         </div>
                         
                         <!-- Three Dots Menu -->

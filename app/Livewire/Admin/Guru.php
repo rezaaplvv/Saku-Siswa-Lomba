@@ -231,7 +231,7 @@ class Guru extends Component
                       ->orWhere('class_name', 'like', '%' . $this->search . '%');
                 });
             })
-            ->latest()
+            ->orderBy('name', 'asc')
             ->get()
             ->map(function ($teacher) {
                 $studentQuery = \App\Models\Student::where('user_id', $teacher->id);
