@@ -241,7 +241,7 @@
     <!-- ======================================================== -->
     <!-- SECTION 3: GET THE APP BANNER (QR & 3 PHONES)           -->
     <!-- ======================================================== -->
-    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-12 lg:py-20 relative z-20 font-inter">
+    <section id="cta-section" class="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-16 pb-28 lg:pt-24 lg:pb-40 relative z-20 font-inter">
         <div class="bg-[#101828] text-white rounded-[32px] sm:rounded-[40px] px-8 sm:px-12 lg:px-16 pt-10 sm:pt-14 lg:pt-16 pb-0 sm:pb-0 lg:pb-0 relative overflow-hidden shadow-2xl">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
@@ -401,9 +401,9 @@
 
         });
 
-        // 3. CTA Section 3-Phones Emergence Rise Animation (Smooth Scroll-linked)
+        // 3. CTA Section 3-Phones Emergence Rise Animation (Longer, Slower & Highly Visible)
         gsap.fromTo("#cta-3ip-img", 
-            { y: 150, scale: 0.92, opacity: 0.5 },
+            { y: 260, scale: 0.86, opacity: 0.2 },
             {
                 y: 0,
                 scale: 1,
@@ -411,9 +411,9 @@
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: "#cta-section",
-                    start: "top 85%",
-                    end: "bottom 90%",
-                    scrub: 1.2,
+                    start: "top 95%",
+                    end: "center 45%",
+                    scrub: 1.5,
                 }
             }
         );
