@@ -44,6 +44,58 @@
         .lenis.lenis-scrolling iframe {
             pointer-events: none;
         }
+        /* New-Porto Timeline Guide Line & Glowing Neon Dots */
+        .timeline-guide-line {
+            position: absolute;
+            left: 50%;
+            top: 4rem;
+            bottom: 4rem;
+            width: 2.5px;
+            background: rgba(0, 0, 0, 0.08);
+            transform: translateX(-50%);
+            z-index: 15;
+            pointer-events: none;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        .timeline-beam-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(180deg, #22c55e, #10b981);
+            box-shadow: 0 0 16px #22c55e, 0 0 28px rgba(34, 197, 94, 0.6);
+            border-radius: 9999px;
+        }
+        .timeline-node-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .timeline-dot-inner {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #cbd5e1;
+            border: 2.5px solid #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .timeline-node-dot.active-dot .timeline-dot-inner {
+            background-color: #22c55e;
+            border-color: #22c55e;
+            transform: scale(1.4);
+            box-shadow: 0 0 18px #22c55e, 0 0 36px rgba(34, 197, 94, 0.7);
+        }
     </style>
 </head>
 <body class="bg-[#FFE96E] text-slate-900 min-h-screen overflow-x-hidden selection:bg-amber-400 selection:text-slate-900 font-inter relative">
@@ -165,36 +217,9 @@
     <!-- ======================================================== -->
     <section id="showcase-section" class="w-full bg-transparent relative overflow-hidden py-16 lg:py-24">
         
-        <!-- ACETERNITY-STYLE SVG CURVED NEON TRACING BEAM -->
-        <div class="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-hidden">
-            <svg class="w-full h-full" viewBox="0 0 100 1000" preserveAspectRatio="none">
-                <defs>
-                    <!-- Neon Gradient -->
-                    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#22c55e" stop-opacity="0.2" />
-                        <stop offset="70%" stop-color="#22c55e" stop-opacity="1" />
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="1" />
-                    </linearGradient>
-                </defs>
-
-                <!-- Background Track (Muted Path) -->
-                <path class="path-bg" 
-                      d="M 50,0 Q 80,250 50,500 T 50,1000" 
-                      fill="none" 
-                      stroke="rgba(0,0,0,0.07)" 
-                      stroke-width="3" 
-                      stroke-linecap="round" />
-
-                <!-- Active Neon Glowing Path (Animated via strokeDashoffset) -->
-                <path id="neonPath" 
-                      class="path-glow" 
-                      d="M 50,0 Q 80,250 50,500 T 50,1000" 
-                      fill="none" 
-                      stroke="url(#neonGradient)" 
-                      stroke-width="3.5" 
-                      stroke-linecap="round"
-                      style="filter: drop-shadow(0 0 8px #22c55e) drop-shadow(0 0 16px #10b981);" />
-            </svg>
+        <!-- NEW-PORTO STYLE CENTRAL VERTICAL GUIDE LINE & FILLING BEAM -->
+        <div class="hidden lg:block timeline-guide-line">
+            <div id="timeline-beam-progress" class="timeline-beam-progress"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64 relative z-20">
@@ -202,8 +227,13 @@
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 1: Target Tabungan (Text LEFT, Phone RIGHT)   -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-1" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
+            <div id="feature-1" class="showcase-feature-row grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh] relative">
                 
+                <!-- Central Glowing Neon Node Dot -->
+                <div class="hidden lg:flex timeline-node-dot">
+                    <div class="timeline-dot-inner"></div>
+                </div>
+
                 <!-- Text on Left -->
                 <div id="feature-1-text" class="lg:col-span-6 space-y-5 text-left">
                     <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
@@ -226,8 +256,13 @@
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 2: Riwayat Transaksi (Phone LEFT, Text RIGHT) -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-2" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
+            <div id="feature-2" class="showcase-feature-row grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh] relative">
                 
+                <!-- Central Glowing Neon Node Dot -->
+                <div class="hidden lg:flex timeline-node-dot">
+                    <div class="timeline-dot-inner"></div>
+                </div>
+
                 <!-- Target Dock on Left (For Desktop Motion) / Static on Mobile -->
                 <div id="dock-2" class="lg:col-span-6 flex items-center justify-center order-2 lg:order-1">
                     <div class="block lg:hidden w-full max-w-[170px] mx-auto py-4">
@@ -250,8 +285,13 @@
             <!-- ---------------------------------------------------- -->
             <!-- FEATURE 3: Guru & Sekolah (Text LEFT, Phone RIGHT)   -->
             <!-- ---------------------------------------------------- -->
-            <div id="feature-3" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh]">
+            <div id="feature-3" class="showcase-feature-row grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center min-h-[70vh] relative">
                 
+                <!-- Central Glowing Neon Node Dot -->
+                <div class="hidden lg:flex timeline-node-dot">
+                    <div class="timeline-dot-inner"></div>
+                </div>
+
                 <!-- Text on Left -->
                 <div id="feature-3-text" class="lg:col-span-6 space-y-5 text-left">
                     <h2 class="font-fredoka font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.08] tracking-tight">
@@ -543,24 +583,34 @@
             }
         );
 
-        // 5. Aceternity-Style SVG Curved Neon Tracing Beam Scroll Drawing
-        const neonPath = document.getElementById("neonPath");
-        if (neonPath) {
-            const pathLength = neonPath.getTotalLength();
-            neonPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-            neonPath.style.strokeDashoffset = `${pathLength}`;
-
-            gsap.to(neonPath, {
-                strokeDashoffset: 0,
+        // 5. New-Porto Style Timeline Vertical Beam Fill & Glowing Neon Dot Activation
+        const timelineProgress = document.getElementById("timeline-beam-progress");
+        if (timelineProgress) {
+            gsap.to(timelineProgress, {
+                height: "100%",
                 ease: "none",
                 scrollTrigger: {
                     trigger: "#showcase-section",
-                    start: "top 70%",
-                    end: "bottom 80%",
-                    scrub: 0.6,
+                    start: "top 65%",
+                    end: "bottom 75%",
+                    scrub: 0.5,
                 }
             });
         }
+
+        // Activate glowing dots as user scrolls into each feature row
+        const showcaseRows = document.querySelectorAll(".showcase-feature-row");
+        showcaseRows.forEach(row => {
+            const dot = row.querySelector(".timeline-node-dot");
+            if (dot) {
+                ScrollTrigger.create({
+                    trigger: row,
+                    start: "top 60%",
+                    onEnter: () => dot.classList.add("active-dot"),
+                    onLeaveBack: () => dot.classList.remove("active-dot")
+                });
+            }
+        });
     </script>
 
 </body>
