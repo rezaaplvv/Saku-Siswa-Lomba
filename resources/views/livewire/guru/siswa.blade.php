@@ -473,10 +473,36 @@
                 </div>
 
                 <form wire:submit.prevent="importCsv" class="space-y-4">
-                    <div class="space-y-1">
+                    <div class="space-y-1.5">
                         <label class="text-xs font-bold text-slate-700">Pilih Berkas CSV</label>
-                        <input type="file" wire:model="csvFile" accept=".csv" class="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs bg-slate-50">
-                        @error('csvFile') <span class="text-xs text-rose-500 font-bold">{{ $message }}</span> @enderror
+                        <div class="relative border-2 border-dashed border-slate-250 hover:border-amber-400 bg-slate-50/60 rounded-2xl p-5 transition-all flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <input 
+                                type="file" 
+                                wire:model="csvFile" 
+                                accept=".csv,text/csv" 
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                            >
+                            <div class="space-y-2.5 flex flex-col items-center pointer-events-none">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100/80 text-amber-700 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                                    </svg>
+                                </div>
+                                <div class="text-xs font-extrabold text-slate-700">
+                                    @if($csvFile)
+                                        <span class="inline-flex items-center px-3.5 py-1.5 bg-emerald-100 text-emerald-800 rounded-xl text-xs font-bold shadow-3xs">
+                                            Terpilih: {{ $csvFile->getClientOriginalName() }}
+                                        </span>
+                                    @else
+                                        <span class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-extrabold shadow-sm inline-block transition-colors">
+                                            Pilih Berkas dari Komputer
+                                        </span>
+                                    @endif
+                                </div>
+                                <p class="text-[10px] text-slate-400 font-semibold">Hanya berkas format .csv (Maksimal 2MB)</p>
+                            </div>
+                        </div>
+                        @error('csvFile') <span class="text-xs text-rose-500 font-bold block mt-1">{{ $message }}</span> @enderror
                     </div>
 
                     @if(!empty($importErrors))
@@ -489,8 +515,21 @@
                     @endif
 
                     <div class="pt-2 flex items-center justify-end space-x-2">
-                        <button type="button" wire:click="closeImportModal" class="px-4 py-2.5 bg-slate-100 text-slate-600 font-bold rounded-xl text-xs">Batal</button>
-                        <button type="submit" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-xs">Mulai Impor</button>
+                        <button type="button" wire:click="closeImportModal" class="px-4 py-2.5 bg-slate-100 text-slate-600 font-bold rounded-xl text-xs hover:bg-slate-200 transition-colors cursor-pointer">Batal</button>
+                        <button 
+                            type="submit" 
+                            wire:loading.attr="disabled"
+                            class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-xs shadow-xs transition-all active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1.5"
+                        >
+                            <span wire:loading.remove>Mulai Impor</span>
+                            <span wire:loading class="flex items-center space-x-1.5">
+                                <svg class="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>Memproses...</span>
+                            </span>
+                        </button>
                     </div>
                 </form>
             </div>
