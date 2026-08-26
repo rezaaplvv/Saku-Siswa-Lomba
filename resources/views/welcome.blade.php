@@ -160,7 +160,7 @@
     <!-- ======================================================== -->
     <!-- SECTION 2: CONTINUOUS SCROLLING SHOWCASE (MOTION PATH)   -->
     <!-- ======================================================== -->
-    <section id="showcase-section" class="w-full bg-[#FFE96E] relative overflow-hidden py-16 lg:py-24">
+    <section id="showcase-section" class="w-full bg-transparent relative overflow-hidden py-16 lg:py-24">
         <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-36 lg:space-y-64">
 
             <!-- ---------------------------------------------------- -->
@@ -438,7 +438,32 @@
 
         });
 
-        // 3. CTA Section 3-Phones Emergence Rise Animation (Longer, Slower & Highly Visible)
+        // 3. Dynamic Smooth Background Color Transitions
+        // Transition 1: Hero (Yellow #FFE96E) -> Showcase (Pure White #FFFFFF)
+        gsap.to("body", {
+            backgroundColor: "#FFFFFF",
+            ease: "power1.inOut",
+            scrollTrigger: {
+                trigger: "#showcase-section",
+                start: "top 75%",
+                end: "top 25%",
+                scrub: true,
+            }
+        });
+
+        // Transition 2: Showcase (White #FFFFFF) -> Get The App Banner (Yellow #FFE96E)
+        gsap.to("body", {
+            backgroundColor: "#FFE96E",
+            ease: "power1.inOut",
+            scrollTrigger: {
+                trigger: "#cta-section",
+                start: "top 85%",
+                end: "top 45%",
+                scrub: true,
+            }
+        });
+
+        // 4. CTA Section 3-Phones Emergence Rise Animation (Longer, Slower & Highly Visible)
         gsap.fromTo("#cta-3ip-img", 
             { y: 260, scale: 0.86, opacity: 0.2 },
             {
