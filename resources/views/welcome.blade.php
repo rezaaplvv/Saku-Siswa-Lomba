@@ -265,7 +265,8 @@
 
                 <!-- RIGHT COLUMN: 3 PHONES MOCKUP -->
                 <div class="lg:col-span-6 flex items-end justify-center lg:justify-end relative">
-                    <img src="/assets/3ip.png" 
+                    <img id="cta-3ip-img" 
+                         src="/assets/3ip.png" 
                          alt="SakuSiswa 3 Mockups" 
                          class="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-[560px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.5)] select-none pointer-events-none translate-y-2">
                 </div>
@@ -399,6 +400,23 @@
             }, 4.8);
 
         });
+
+        // 3. CTA Section 3-Phones Emergence Rise Animation (Smooth Scroll-linked)
+        gsap.fromTo("#cta-3ip-img", 
+            { y: 150, scale: 0.92, opacity: 0.5 },
+            {
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#cta-section",
+                    start: "top 85%",
+                    end: "bottom 90%",
+                    scrub: 1.2,
+                }
+            }
+        );
     </script>
 
 </body>
