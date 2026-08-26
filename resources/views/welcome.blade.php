@@ -46,7 +46,10 @@
         }
     </style>
 </head>
-<body class="bg-[#FFE96E] text-slate-900 min-h-screen overflow-x-hidden selection:bg-amber-400 selection:text-slate-900 font-inter">
+<body class="bg-[#FFE96E] text-slate-900 min-h-screen overflow-x-hidden selection:bg-amber-400 selection:text-slate-900 font-inter relative">
+
+    <!-- SMOOTH WHITE BACKDROP FADE LAYER -->
+    <div id="white-backdrop" class="fixed inset-0 bg-white pointer-events-none z-0 opacity-0 will-change-[opacity]"></div>
 
     <!-- ======================================================== -->
     <!-- TOP NAVBAR: LOGO SAKUSISWA                              -->
@@ -438,28 +441,28 @@
 
         });
 
-        // 3. Dynamic Smooth Background Color Transitions
-        // Transition 1: Hero (Yellow #FFE96E) -> Showcase (Pure White #FFFFFF)
-        gsap.to("body", {
-            backgroundColor: "#FFFFFF",
-            ease: "power1.inOut",
+        // 3. Dynamic Smooth Background Fade Transitions (Bidirectional ScrollTrigger)
+        // Fade IN White Backdrop: Hero (Yellow) -> Showcase (White)
+        gsap.to("#white-backdrop", {
+            opacity: 1,
+            ease: "none",
             scrollTrigger: {
                 trigger: "#showcase-section",
-                start: "top 75%",
-                end: "top 25%",
-                scrub: true,
+                start: "top 80%",
+                end: "top 30%",
+                scrub: 1.0,
             }
         });
 
-        // Transition 2: Showcase (White #FFFFFF) -> Get The App Banner (Yellow #FFE96E)
-        gsap.to("body", {
-            backgroundColor: "#FFE96E",
-            ease: "power1.inOut",
+        // Fade OUT White Backdrop: Showcase (White) -> Get The App (Yellow)
+        gsap.to("#white-backdrop", {
+            opacity: 0,
+            ease: "none",
             scrollTrigger: {
                 trigger: "#cta-section",
                 start: "top 85%",
-                end: "top 45%",
-                scrub: true,
+                end: "top 35%",
+                scrub: 1.0,
             }
         });
 
