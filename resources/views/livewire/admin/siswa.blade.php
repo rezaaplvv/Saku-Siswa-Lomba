@@ -461,7 +461,7 @@
                     <input 
                         type="text" 
                         wire:model="class_name"
-                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-700 bg-slate-100/80 font-bold cursor-not-allowed select-none focus:outline-hidden"
+                        class="w-full px-4 py-3 rounded-2xl border border-slate-250 text-xs text-slate-800 placeholder-slate-450 focus:outline-hidden bg-slate-50/40 opacity-60 cursor-not-allowed select-none font-bold"
                         readonly
                         disabled
                     >
@@ -469,7 +469,7 @@
 
                 <!-- Balance -->
                 <div class="space-y-1.5">
-                    <label for="balance" class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Saldo Tabungan Awal (Rp)</label>
+                    <label for="balance" class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Saldo Aktif</label>
                     <input 
                         type="text" 
                         id="balance" 
